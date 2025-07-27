@@ -1,12 +1,17 @@
+import { BenefitsSection } from "@/components/home/benefits-section";
+import { FeatureMarquee } from "@/components/home/feature-marquee";
+import { HeroSection } from "@/components/home/hero-section";
+import { HowItWorksSection } from "@/components/home/howitworks-section";
+import { TrustedBySection } from "@/components/home/trusted-section";
+
 export default function NeuronHireLanding() {
   return (
-    <section className="container mx-auto py-16">
-      <h1 className="text-4xl font-bold text-gray-800 mb-4">
-        Welcome to NeuronHire
-      </h1>
-      <p className="text-lg text-gray-700">
-        Revolutionizing recruiting with smart tech.
-      </p>
-    </section>
+    <div className="bg-pink-100 min-h-screen">
+      <HeroSection />
+      <FeatureMarquee />
+      <TrustedBySection />
+      <HowItWorksSection />
+      <BenefitsSection />
+    </div>
   );
 }

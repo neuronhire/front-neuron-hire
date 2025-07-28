@@ -10,7 +10,7 @@ export function BenefitsSection() {
           Get it done with a hiring engine <br /> you can actually rely on
         </h2>
         <p className="text-neutral-600 max-w-2xl mx-auto mb-16">
-          We obsess over quality so you don't have to. Here’s why hundreds of
+          We obsess over quality so you don&apos;t have to. Here’s why hundreds of
           teams trust us with their hiring.
         </p>
 

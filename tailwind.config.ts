@@ -16,6 +16,30 @@ export default {
     },
     extend: {
       colors: {
+        neuronhire: {
+          primary: {
+            100: "#FD4C86", 
+          },
+          orange: {
+            100: "#FD694C", 
+          },
+          green: {
+            100: "#4EFF4E",
+          },
+          bg: {
+            main: "#FCF4F8", 
+          },
+          gray: {
+            100: "rgba(17,17,17, 1)",
+            80: "rgba(17,17,17, 0.8)",
+            64: "rgba(17,17,17, 0.64)",
+            40: "rgba(17,17,17, 0.4)",
+            24: "rgba(17,17,17, 0.24)",
+            12: "rgba(17,17,17, 0.12)",
+            6: "rgba(17,17,17, 0.06)",
+            3: "rgba(17,17,17, 0.03)",
+          }
+        },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

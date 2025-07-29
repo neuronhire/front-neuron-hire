@@ -8,13 +8,13 @@ export function BenefitsSection() {
     <section className="py-24 px-6 text-center bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl mx-auto mb-12">
-          <p className="text-[#4D1729] max-w-2xl mx-auto text-sm font-medium mb-1 body-satoshi">
+          <p className="text-neuronhire-red-30 max-w-2xl mx-auto text-sm font-medium mb-1 body-satoshi">
             A RADICALLY DIFFERENT WAY TO HIRE
           </p>
-          <h2 className="text-5xl font-bold text-[#4D1729] mb-5 body-mackinac">
+          <h2 className="text-5xl font-bold text-neuronhire-red-30 mb-5 body-mackinac">
             Built from the ground up for speed, quality, and control.
           </h2>
-          <p className="text-[#4D1729] max-w-3xl mx-auto text-lg font-medium body-satoshi">
+          <p className="text-neuronhire-red-30 max-w-3xl mx-auto text-lg font-medium body-satoshi">
             NeuronHire replaces bloated hiring workflows with a lean,
             async-first system engineered for speed, quality, and complete team
             control.
@@ -23,7 +23,7 @@ export function BenefitsSection() {
 
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mb-2">
-            <BenefitsCard className="bg-[#FD4C86] w-sm h-90 flex flex-col relative overflow-hidden">
+            <BenefitsCard className="bg-neuronhire-primary w-sm h-90 flex flex-col relative overflow-hidden">
               <div className="absolute top-7 -right-27 z-10">
                 <Image
                   src="/assets/benefits-cards-images/card1.png"
@@ -45,7 +45,7 @@ export function BenefitsSection() {
               </div>
             </BenefitsCard>
 
-            <BenefitsCard className="bg-[#330F1B] w-193">
+            <BenefitsCard className="bg-neuronhire-red-30 w-193">
               <div className="absolute bottom-0 right-0 z-10">
                 <Image
                   src="/assets/benefits-cards-images/card3.png"
@@ -67,7 +67,7 @@ export function BenefitsSection() {
             </BenefitsCard>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <BenefitsCard className="bg-[#330F1B] w-sm h-90 flex flex-col justify-end overflow-hidden">
+            <BenefitsCard className="bg-neuronhire-red-30 w-sm h-90 flex flex-col justify-end overflow-hidden">
               <div className="absolute left-6 -top-20 z-10 ">
                 <Image
                   src="/assets/benefits-cards-images/card2.png"
@@ -88,7 +88,7 @@ export function BenefitsSection() {
                 </p>
               </div>
             </BenefitsCard>
-            <BenefitsCard className="bg-[#330F1B] w-sm flex flex-col justify-end overflow-hidden">
+            <BenefitsCard className="bg-neuronhire-red-30 w-sm flex flex-col justify-end overflow-hidden">
               <div className="absolute -top-15 -right-22 z-10">
                 <Image
                   src="/assets/benefits-cards-images/card4.png"
@@ -109,7 +109,7 @@ export function BenefitsSection() {
               </div>
             </BenefitsCard>
 
-            <BenefitsCard className="bg-[#330F1B] w-sm flex flex-col justify-end overflow-hidden">
+            <BenefitsCard className="bg-neuronhire-red-30 w-sm flex flex-col justify-end overflow-hidden">
               <div className="absolute left-6 -top-15 z-10 ">
                 <Image
                   src="/assets/benefits-cards-images/card5.png"

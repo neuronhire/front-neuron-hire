@@ -17,21 +17,11 @@ export default {
     extend: {
       colors: {
         neuronhire: {
-          primary: {
-            100: "#FD4C86", 
-          },
-          orange: {
-            100: "#FD694C", 
-          },
-          green: {
-            100: "#4EFF4E",
-          },
-          bg: {
-            main: "#FCF4F8", 
-          },
-          red: {
-            30: "#4D1729",
-          },
+          primary: "#FD4C86",
+          "orange-100": "#FD694C",
+          "green-100": "#4EFF4E",
+          "bg-main": "#FCF4F8",
+          "red-30": "#4D1729",
           gray: {
             100: "rgba(17,17,17, 1)",
             80: "rgba(17,17,17, 0.8)",
@@ -41,7 +31,7 @@ export default {
             12: "rgba(17,17,17, 0.12)",
             6: "rgba(17,17,17, 0.06)",
             3: "rgba(17,17,17, 0.03)",
-          }
+          },
         },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -92,6 +82,8 @@ export default {
       fontFamily: {
         sans: ["var(--font-geist-sans)", "ui-sans-serif", "system-ui"],
         mono: ["var(--font-geist-mono)", "ui-monospace", "SFMono-Regular"],
+        mackinac: ["P22 Mackinac Pro", "serif"],
+        satoshi: ["Satoshi", "sans-serif"],
       },
     },
   },

@@ -29,6 +29,9 @@ export default {
           bg: {
             main: "#FCF4F8", 
           },
+          red: {
+            30: "#4D1729",
+          },
           gray: {
             100: "rgba(17,17,17, 1)",
             80: "rgba(17,17,17, 0.8)",

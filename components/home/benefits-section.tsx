@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import BenefitsCard from "./cards/benefits-cards";
 
 export function BenefitsSection() {
@@ -22,9 +23,18 @@ export function BenefitsSection() {
 
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mb-2">
-            <BenefitsCard className="bg-[#FD4C86] w-sm h-80 flex flex-col justify-end">
-              <div className="relative p-6 pt-0">
-                <h3 className="text-xl font-bold mb-2 body-mackinac">
+            <BenefitsCard className="bg-[#FD4C86] w-sm h-90 flex flex-col relative overflow-hidden">
+              <div className="absolute top-7 -right-27 z-10">
+                <Image
+                  src="/assets/benefits-cards-images/card1.png"
+                  alt="Pre-vetted talent illustration"
+                  width={350}
+                  height={330}
+                  className="object-contain"
+                />
+              </div>
+              <div className="px-6 pb-6 mt-auto relative z-20">
+                <h3 className="text-2xl font-medium mb-2 body-mackinac">
                   Pre-Vetted Talent Only
                 </h3>
                 <p className="body-satoshi">
@@ -36,8 +46,17 @@ export function BenefitsSection() {
             </BenefitsCard>
 
             <BenefitsCard className="bg-[#330F1B] w-193">
-              <div className="relative p-6">
-                <h3 className="text-xl font-bold mb-2 body-mackinac">
+              <div className="absolute bottom-0 right-0 z-10">
+                <Image
+                  src="/assets/benefits-cards-images/card3.png"
+                  alt="Latam connection illustration"
+                  width={800}
+                  height={200}
+                  className="object-contain"
+                />
+              </div>
+              <div className="relative p-6 z-20">
+                <h3 className="text-2xl font-medium mb-2 body-mackinac">
                   Timezone-Aligned Collaboration
                 </h3>
                 <p className="body-satoshi">
@@ -48,9 +67,18 @@ export function BenefitsSection() {
             </BenefitsCard>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <BenefitsCard className="bg-[#330F1B] w-sm h-80 flex flex-col justify-end">
-              <div className="relative p-6 pt-0">
-                <h3 className="text-xl font-bold mb-2 body-mackinac">
+            <BenefitsCard className="bg-[#330F1B] w-sm h-90 flex flex-col justify-end overflow-hidden">
+              <div className="absolute left-6 -top-20 z-10 ">
+                <Image
+                  src="/assets/benefits-cards-images/card2.png"
+                  alt="Candidates match illustration"
+                  width={337}
+                  height={310}
+                  className="object-contain"
+                />
+              </div>
+              <div className="relative p-6 pt-0 z-20">
+                <h3 className="text-2xl font-medium mb-2 body-mackinac">
                   Hire Candidates With Your Company DNA
                 </h3>
                 <p className="body-satoshi">
@@ -60,9 +88,18 @@ export function BenefitsSection() {
                 </p>
               </div>
             </BenefitsCard>
-            <BenefitsCard className="bg-[#330F1B] w-sm flex flex-col justify-end">
-              <div className="relative p-6 pt-0">
-                <h3 className="text-xl font-bold mb-2 body-mackinac">
+            <BenefitsCard className="bg-[#330F1B] w-sm flex flex-col justify-end overflow-hidden">
+              <div className="absolute -top-15 -right-22 z-10">
+                <Image
+                  src="/assets/benefits-cards-images/card4.png"
+                  alt="Long-Term Retention Support illustration"
+                  width={260}
+                  height={330}
+                  className="object-contain"
+                />
+              </div>
+              <div className="relative p-6 pt-0 z-20">
+                <h3 className="text-2xl font-medium mb-2 body-mackinac">
                   Long-Term Retention Support
                 </h3>
                 <p className="body-satoshi">
@@ -72,9 +109,18 @@ export function BenefitsSection() {
               </div>
             </BenefitsCard>
 
-            <BenefitsCard className="bg-[#330F1B] w-sm flex flex-col justify-end">
-              <div className="relative p-6 pt-0">
-                <h3 className="text-xl font-bold mb-2 body-mackinac">
+            <BenefitsCard className="bg-[#330F1B] w-sm flex flex-col justify-end overflow-hidden">
+              <div className="absolute left-6 -top-15 z-10 ">
+                <Image
+                  src="/assets/benefits-cards-images/card5.png"
+                  alt="Onboarding illustration"
+                  width={337}
+                  height={310}
+                  className="object-contain"
+                />
+              </div>
+              <div className="relative p-6 pt-0 z-20">
+                <h3 className="text-2xl font-medium mb-2 body-mackinac">
                   Onboard candidates in 1 week
                 </h3>
                 <p className="body-satoshi">

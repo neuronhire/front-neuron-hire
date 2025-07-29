@@ -8,13 +8,13 @@ export function BenefitsSection() {
     <section className="py-24 px-6 text-center bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl mx-auto mb-12">
-          <p className="text-neuronhire-red-30 max-w-2xl mx-auto text-sm font-medium mb-1 body-satoshi">
+          <p className="text-neuronhire-red-lines max-w-2xl mx-auto text-sm font-medium mb-1 body-satoshi">
             A RADICALLY DIFFERENT WAY TO HIRE
           </p>
-          <h2 className="text-5xl font-bold text-neuronhire-red-30 mb-5 body-mackinac">
+          <h2 className="text-5xl font-bold text-neuronhire-red-lines mb-5 body-mackinac">
             Built from the ground up for speed, quality, and control.
           </h2>
-          <p className="text-neuronhire-red-30 max-w-3xl mx-auto text-lg font-medium body-satoshi">
+          <p className="text-neuronhire-red-lines max-w-3xl mx-auto text-lg font-medium body-satoshi">
             NeuronHire replaces bloated hiring workflows with a lean,
             async-first system engineered for speed, quality, and complete team
             control.

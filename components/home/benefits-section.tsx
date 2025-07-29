@@ -22,9 +22,9 @@ export function BenefitsSection() {
         </div>
 
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mb-2">
-            <BenefitsCard className="bg-neuronhire-primary w-sm h-90 flex flex-col relative overflow-hidden">
-              <div className="absolute top-7 -right-27 z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 mb-3">
+            <BenefitsCard className="bg-neuronhire-primary h-90 flex flex-col relative overflow-hidden">
+              <div className="absolute top-7 -right-29 z-10">
                 <Image
                   src="/assets/benefits-cards-images/card1.png"
                   alt="Pre-vetted talent illustration"
@@ -45,7 +45,7 @@ export function BenefitsSection() {
               </div>
             </BenefitsCard>
 
-            <BenefitsCard className="bg-neuronhire-red-30 w-193">
+            <BenefitsCard className="bg-neuronhire-red-30 h-90 lg:col-span-2 flex flex-col relative overflow-hidden">
               <div className="absolute bottom-0 right-0 z-10">
                 <Image
                   src="/assets/benefits-cards-images/card3.png"
@@ -66,9 +66,10 @@ export function BenefitsSection() {
               </div>
             </BenefitsCard>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <BenefitsCard className="bg-neuronhire-red-30 w-sm h-90 flex flex-col justify-end overflow-hidden">
-              <div className="absolute left-6 -top-20 z-10 ">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            <BenefitsCard className="bg-neuronhire-red-30 h-90 flex flex-col justify-end overflow-hidden relative">
+              <div className="absolute left-5 -top-16 z-10">
                 <Image
                   src="/assets/benefits-cards-images/card2.png"
                   alt="Candidates match illustration"
@@ -82,13 +83,13 @@ export function BenefitsSection() {
                   Hire Candidates With Your Company DNA
                 </h3>
                 <p className="body-satoshi">
-                  We’ve identified a senior candidate that aligns with your tech
-                  stack, communication style, and team culture. They’re
+                  We've identified a senior candidate that aligns with your tech
+                  stack, communication style, and team culture. They're
                   pre-vetted and ready to meet.
                 </p>
               </div>
             </BenefitsCard>
-            <BenefitsCard className="bg-neuronhire-red-30 w-sm flex flex-col justify-end overflow-hidden">
+            <BenefitsCard className="bg-neuronhire-red-30 h-90 flex flex-col justify-end overflow-hidden relative">
               <div className="absolute -top-15 -right-22 z-10">
                 <Image
                   src="/assets/benefits-cards-images/card4.png"
@@ -109,8 +110,8 @@ export function BenefitsSection() {
               </div>
             </BenefitsCard>
 
-            <BenefitsCard className="bg-neuronhire-red-30 w-sm flex flex-col justify-end overflow-hidden">
-              <div className="absolute left-6 -top-15 z-10 ">
+            <BenefitsCard className="bg-neuronhire-red-30 h-90 flex flex-col justify-end overflow-hidden relative">
+              <div className="absolute left-5 -top-15 z-10">
                 <Image
                   src="/assets/benefits-cards-images/card5.png"
                   alt="Onboarding illustration"

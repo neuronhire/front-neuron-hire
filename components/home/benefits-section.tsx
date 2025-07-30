@@ -90,7 +90,7 @@ export function BenefitsSection() {
               </div>
             </BenefitsCard>
             <BenefitsCard className="bg-neuronhire-red-30 h-90 flex flex-col justify-end overflow-hidden relative">
-              <div className="absolute -top-15 -right-22 z-10">
+              <div className="absolute -top-11 -right-18 md:-top-15 md:-right-22 z-10">
                 <Image
                   src="/assets/benefits-cards-images/card4.png"
                   alt="Long-Term Retention Support illustration"

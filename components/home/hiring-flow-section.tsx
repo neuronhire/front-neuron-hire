@@ -58,7 +58,7 @@ export function HiringFlowSection() {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
         {/* Left Side */}
         <div>
-          <p className="body-satoshi uppercase text-sm font-medium text-neuronhire-red-30 mb-3">
+          <p className="body-satoshi uppercase text-sm font-thin text-neuronhire-red-30 mb-3">
             Total control, zero lock-in
           </p>
           <h2 className="body-mackinac text-4xl md:text-5xl font-semibold text-neuronhire-red-30 mb-6 leading-tight">

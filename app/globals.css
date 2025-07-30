@@ -8,6 +8,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-mackinac: "P22 Mackinac Pro", serif;
+  --font-satoshi: "Satoshi", sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -41,6 +43,22 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Neuron Hire Theme Colors */
+  --color-neuronhire-primary: var(--neuronhire-primary);
+  --color-neuronhire-orange-100: var(--neuronhire-orange-100);
+  --color-neuronhire-green-100: var(--neuronhire-green-100);
+  --color-neuronhire-bg-main: var(--neuronhire-bg-main);
+  --color-neuronhire-red-30: var(--neuronhire-red-30);
+  --color-neuronhire-red-lines: var(--neuronhire-red-lines);
+  --color-neuronhire-gray-100: var(--neuronhire-gray-100);
+  --color-neuronhire-gray-80: var(--neuronhire-gray-80);
+  --color-neuronhire-gray-64: var(--neuronhire-gray-64);
+  --color-neuronhire-gray-40: var(--neuronhire-gray-40);
+  --color-neuronhire-gray-24: var(--neuronhire-gray-24);
+  --color-neuronhire-gray-12: var(--neuronhire-gray-12);
+  --color-neuronhire-gray-6: var(--neuronhire-gray-6);
+  --color-neuronhire-gray-3: var(--neuronhire-gray-3);
 }
 
 /* P22 Mackinac Pro */
@@ -269,6 +287,24 @@
 }
 
 @layer base {
+  :root {
+    /* Neuron Hire Colors */
+    --neuronhire-primary: #fd4c86;
+    --neuronhire-orange-100: #fd694c;
+    --neuronhire-green-100: #4eff4e;
+    --neuronhire-bg-main: #fcf4f8;
+    --neuronhire-red-30: #330f1b;
+    --neuronhire-red-lines: #4d1729;
+    --neuronhire-gray-100: rgba(17, 17, 17, 1);
+    --neuronhire-gray-80: rgba(17, 17, 17, 0.8);
+    --neuronhire-gray-64: rgba(17, 17, 17, 0.64);
+    --neuronhire-gray-40: rgba(17, 17, 17, 0.4);
+    --neuronhire-gray-24: rgba(17, 17, 17, 0.24);
+    --neuronhire-gray-12: rgba(17, 17, 17, 0.12);
+    --neuronhire-gray-6: rgba(17, 17, 17, 0.06);
+    --neuronhire-gray-3: rgba(17, 17, 17, 0.03);
+  }
+
   * {
     @apply border-border outline-ring/50;
   }

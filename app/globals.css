@@ -59,6 +59,9 @@
   --color-neuronhire-gray-12: var(--neuronhire-gray-12);
   --color-neuronhire-gray-6: var(--neuronhire-gray-6);
   --color-neuronhire-gray-3: var(--neuronhire-gray-3);
+
+  --color-neuronhire-gradient-1: var(--neuronhire-gradient-1);
+  --color-neuronhire-gradient-2: var(--neuronhire-gradient-2);
 }
 
 /* P22 Mackinac Pro */
@@ -303,6 +306,19 @@
     --neuronhire-gray-12: rgba(17, 17, 17, 0.12);
     --neuronhire-gray-6: rgba(17, 17, 17, 0.06);
     --neuronhire-gray-3: rgba(17, 17, 17, 0.03);
+
+    /* Neuron Hire Gradients */
+    --neuronhire-gradient-1: linear-gradient(
+      95deg,
+      #fd4c86 36.75%,
+      #ff3db8 57.4%,
+      #ffdf80 86.7%
+    );
+    --neuronhire-gradient-2: linear-gradient(
+      215deg,
+      #ffdf80 -1.62%,
+      #fd4c86 99.16%
+    );
   }
 
   * {

@@ -21,9 +21,7 @@ export function HeroSection() {
 
       <div className="mt-8 flex justify-center gap-4 flex-wrap">
         <Link href="#">
-          <Button className="rounded-full px-6 py-2 text-base font-semibold shadow-md border-2 border-black bg-black text-white hover:bg-gray-900">
-            Start Hiring
-          </Button>
+          <Button className="">Start Hiring</Button>
         </Link>
         <Link href="#">
           <Button

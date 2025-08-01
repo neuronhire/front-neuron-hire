@@ -4,154 +4,192 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useState } from "react";
 
-const roles = [
+const roles_map = {
+  'Engineering': [
   {
     title: "Frontend Engineer",
     description:
       "Builds seamless, high-performance user interfaces using frameworks",
-    icon: "/icons/frontend.png",
+    icon: "/assets/icons/roles/braces.svg",
   },
   {
     title: "Backend Engineer",
     description:
       "Architects and maintains scalable APIs, databases, and services.",
-    icon: "/icons/backend.png",
+    icon: "/assets/icons/roles/database.svg",
   },
   {
     title: "Fullstack Engineer",
     description:
       "Bridges frontend and backend with clean, end-to-end solutions.",
-    icon: "/icons/fullstack.png",
+    icon: "/assets/icons/roles/codesandbox.svg",
   },
   {
     title: "Mobile Developer",
     description:
       "Crafts smooth, responsive mobile apps. Focused on UX, performance, and cross-platform consistency.",
-    icon: "/icons/mobile.png",
+    icon: "/assets/icons/roles/smartphone.svg",
   },
   {
     title: "DevOps / Cloud Engineer",
     description:
       "Automates infrastructure, CI/CD pipelines, and cloud environments (AWS, GCP, Azure)",
-    icon: "/icons/devops.png",
+    icon: "/assets/icons/roles/cloud-check.svg",
   },
   {
     title: "QA Engineer",
     description:
       "Ensures software quality with automated testing, performance checks, and CI integration.",
-    icon: "/icons/qa.png",
+    icon: "/assets/icons/roles/bug.svg",
   },
   {
     title: "Embedded Systems Engineer",
     description: "Develops low-level code for hardware and IoT devices.",
-    icon: "/icons/embedded.png",
+    icon: "/assets/icons/roles/braces.svg",
   },
-];
+],
+  'Data & AI': [],
+  'Product & Design': [],
+  'Product & Strategy': [],
+  'Leadership': [],
+}
+
+const roles = [];
 
 const stacks = [
-  { name: "ReactJS", icon: "/assets/icons/tech/react.png" },
-  { name: "Vue.JS", icon: "/assets/icons/tech/vue.png" },
-  { name: "Angular", icon: "/assets/icons/tech/angular.png" },
-  { name: "SVELTE", icon: "/assets/icons/tech/svelte.png" },
-  { name: "Node.JS", icon: "/assets/icons/tech/node.png" },
-  { name: "Python", icon: "/assets/icons/tech/python.png" },
-  { name: "Golang", icon: "/assets/icons/tech/golang.png" },
-  { name: "Java", icon: "/assets/icons/tech/java.png" },
-  { name: "Go", icon: "/assets/icons/tech/go.png" },
-  { name: ".NET Core", icon: "/assets/icons/tech/dotnet.png" },
-  { name: "PHP", icon: "/assets/icons/tech/php.png" },
-  { name: "PostgreSQL", icon: "/assets/icons/tech/postgres.png" },
+  { name: "ReactJS", icon: "/assets/icons/tech/react.svg" },
+  { name: "Vue.JS", icon: "/assets/icons/tech/vue.svg" },
+  { name: "Angular", icon: "/assets/icons/tech/angular.svg" },
+  { name: "SVELTE", icon: "/assets/icons/tech/svelte.svg" },
+  { name: "Node.JS", icon: "/assets/icons/tech/node.svg" },
+  { name: "Python", icon: "/assets/icons/tech/python.svg" },
+  { name: "Golang", icon: "/assets/icons/tech/golang.svg" },
+  { name: "Java", icon: "/assets/icons/tech/java.svg" },
+  { name: "Go", icon: "/assets/icons/tech/go.svg" },
+  { name: ".NET Core", icon: "/assets/icons/tech/dotnet.svg" },
+  { name: "PHP", icon: "/assets/icons/tech/php.svg" },
+  { name: "PostgreSQL", icon: "/assets/icons/tech/postgres.svg" },
 ];
 
+// Utility to chunk array into rows of N items
+function chunkArray<T>(arr: T[], chunkSize: number): T[][] {
+  const res: T[][] = [];
+  for (let i = 0; i < arr.length; i += chunkSize) {
+    res.push(arr.slice(i, i + chunkSize));
+  }
+  return res;
+}
+
 export function RolesAndStacksSection() {
-  const [selectedTab, setSelectedTab] = useState<"role" | "stack">("role");
+  const [selectedTab, setSelectedTab] = useState<>("Engineering");
 
   return (
     <section className="py-24 px-6 bg-[#fdf4f7]">
       <div className="max-w-6xl mx-auto text-center">
-        <p className="text-sm uppercase tracking-wide text-neutral-500 mb-2">
+        <p className="body-mackinac text-sm font-thin uppercase tracking-wide text-neuronhire-red-lines mb-2">
           Hire with ease
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+        <h2 className="body-mackinac text-3xl  font-thin md:text-4xl font-bold text-neuronhire-red-lines mb-6">
           Organized by what really <br /> matters.
         </h2>
 
-        <div className="flex justify-center mb-10 gap-2">
-          <button
-            onClick={() => setSelectedTab("role")}
-            className={cn(
-              "px-4 py-2 rounded-full text-sm font-medium",
-              selectedTab === "role"
-                ? "bg-black text-white"
-                : "bg-white text-neutral-800 border border-neutral-300"
-            )}
-          >
-            Role
-          </button>
-          <button
-            onClick={() => setSelectedTab("stack")}
-            className={cn(
-              "px-4 py-2 rounded-full text-sm font-medium",
-              selectedTab === "stack"
-                ? "bg-black text-white"
-                : "bg-white text-neutral-800 border border-neutral-300"
-            )}
-          >
-            Tech Stack
-          </button>
+        <h3 className="body-mackinac text-left text-4xl font-bold text-neuronhire-red-lines py-3">
+          Roles
+        </h3>
+
+        <div className="flex text-left">
+          <span className="p-1 bg-white gap-2 mb-10 rounded-sm">
+            {Object.keys(roles_map).map((key, index) => (
+              <button
+                key={key}
+                onClick={() => setSelectedTab(key as keyof typeof roles_map)}
+                className={cn(
+                  "body-mackinac px-4 py-1 rounded-sm text-sm font-thin",
+                  index !== 0 && "ml-2",
+                  selectedTab === key
+                    ? "bg-black text-white"
+                    : "bg-white border border-neutral-300 text-neuronhire-red-lines-60"
+                )}
+              >
+                {key}
+              </button>
+            ))}
+          </span>
         </div>
 
-        {selectedTab === "role" && (
+
+        {roles_map[selectedTab] && roles_map[selectedTab].length > 0 && (
           <>
-            <h3 className="text-left font-semibold text-lg mb-4 text-neutral-800">
-              Engineering
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-              {roles.map((role) => (
-                <div
-                  key={role.title}
-                  className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition"
-                >
-                  <Image
-                    src={role.icon}
-                    alt={role.title}
-                    width={32}
-                    height={32}
-                    className="mb-3"
-                  />
-                  <h4 className="text-md font-semibold text-neutral-900 mb-1">
-                    {role.title}
-                  </h4>
-                  <p className="text-sm text-neutral-600">{role.description}</p>
+            {chunkArray(roles_map[selectedTab], 4).map((row, rowIndex) => {
+
+              return (
+                <div key={rowIndex} className={cn(
+                    "grid gap-2 mb-2",
+                    "grid-cols-1",
+                    row.length === 1 && "md:grid-cols-1",
+                    row.length === 2 && "md:grid-cols-2",
+                    row.length === 3 && "md:grid-cols-3",
+                    row.length === 4 && "md:grid-cols-4"
+                  )}>
+                  {row.map((role) => (
+                    <div
+                      key={role.title}
+                      className={cn(
+                        "bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition",
+                      )}
+                    >
+                      <Image
+                        src={role.icon}
+                        alt={role.title}
+                        width={40}
+                        height={40}
+                        className="mb-3"
+                      />
+                      <h4 className="text-md text-left text-xl text-neuronhire-red-lines font-bold mb-1">
+                        {role.title}
+                      </h4>
+                      <p className="text-sm text-left text-neuronhire-red-lines-70 font-bold break-words">{role.description}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </>
         )}
 
-        {selectedTab === "stack" && (
+        {(
           <>
-            <h3 className="text-left font-semibold text-lg mb-4 text-neutral-800">
+            <h3 className="body-mackinac text-left text-4xl font-bold text-neuronhire-red-lines py-5">
               Tech Stacks
             </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-left">
-              {stacks.map((stack) => (
-                <div
-                  key={stack.name}
-                  className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition"
-                >
-                  <Image
-                    src={stack.icon}
-                    alt={stack.name}
-                    width={24}
-                    height={24}
-                  />
-                  <span className="text-sm font-medium text-neutral-800">
-                    {stack.name}
-                  </span>
+            {chunkArray(stacks, 4).map((row, rowIndex, allRows) => {
+              const isLast = rowIndex === allRows.length - 1;
+              const colSpan = isLast && row.length < 4 ? Math.floor(4 / row.length) : 1;
+
+              return (
+                <div key={rowIndex} className={cn(
+                    "grid gap-2 mb-2",
+                    "grid-cols-1",
+                    "sm:grid-cols-2",
+                    "md:grid-cols-4"
+                  )}>
+                  {row.map((stack) => (
+                    <div
+                      key={stack.name}
+                      className={cn(
+                        "flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition",
+                        `col-span-${colSpan}`
+                      )}
+                    >
+                      <Image src={stack.icon} alt={stack.name} width={40} height={40} />
+                      <span className="body-mackinac text-4xl font-semibold text-neuronhire-red-lines text-sm">
+                        {stack.name}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </>
         )}
       </div>

@@ -8,13 +8,27 @@ import {
 } from "@/components/ui/popover";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="px-4 lg:px-10 h-16 flex items-center justify-between bg-transparent md:mx-4">
+    <header
+      className={`fixed top-0 left-0 right-0 w-full z-50 px-4 sm:px-12 h-16 flex items-center justify-between transition-all duration-300 ${
+        isScrolled ? "bg-white shadow-sm" : "bg-transparent"
+      }`}
+    >
       <div className="flex items-center">
         <Popover open={menuOpen} onOpenChange={setMenuOpen}>
           <PopoverTrigger asChild>
@@ -56,7 +70,9 @@ export function Header() {
           </PopoverContent>
         </Popover>
 
-        <div className="hidden md:flex items-center bg-white rounded-full px-5 py-2 space-x-6 ml-4">
+        <div
+          className={`hidden md:flex items-center rounded-full px-3 py-2 space-x-6 ml-4 bg-white`}
+        >
           <div className="flex items-center space-x-2">
             <Image
               src="/assets/logo.svg"
@@ -90,11 +106,17 @@ export function Header() {
         </div>
       </div>
 
-      <div className="flex items-center space-x-2">
-        <Button variant="ghost" className="rounded-full px-4 text-sm md:px-6">
+      <div className="flex items-center space-x-1 sm:space-x-2">
+        <Button
+          variant="ghost"
+          className="text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 h-8 sm:h-9"
+        >
           Be Hired
         </Button>
-        <Button className="bg-white text-black rounded-full px-4 text-sm md:px-6">
+        <Button
+          variant="secondary"
+          className="text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 h-8 sm:h-9"
+        >
           Start Hiring
         </Button>
       </div>

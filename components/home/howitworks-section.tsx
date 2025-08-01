@@ -36,13 +36,13 @@ const steps = [
 export function HowItWorksSection() {
   return (
     <section className="py-24 px-6 text-center">
-      <h4 className="text-sm uppercase tracking-wide text-neutral-500 mb-2">
+      <h4 className="text-sm uppercase tracking-wide text-black mb-2 font-satoshi font-medium">
         How it works :)
       </h4>
-      <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+      <h2 className="text-3xl md:text-5xl text-black mb-4 font-mackinac font-bold">
         A frictionless hiring engine <br /> made for speed and certainty.
       </h2>
-      <p className="text-neutral-600 max-w-2xl mx-auto mb-12">
+      <p className="text-black max-w-2xl mx-auto mb-12 font-medium text-lg">
         We don’t waste your time with endless calls or shallow candidate pools.
         You tell us what you need. We deliver top-tier matches. Fast.
       </p>

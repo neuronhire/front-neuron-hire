@@ -47,16 +47,22 @@ export function HowItWorksCard({
       initial="hidden"
       animate={controls}
       variants={cardVariants}
-      className="bg-white rounded-3xl shadow-md p-6 pb-0 flex flex-col justify-between overflow-hidden hover:shadow-lg transition-shadow"
+      className="bg-white opacity-90 rounded-xl shadow-md p-6 pb-0 flex flex-col justify-between overflow-hidden hover:shadow-lg transition-shadow"
     >
       <div>
-        <h3 className="text-lg font-semibold text-neutral-900 mb-2">{title}</h3>
-        <p className="text-sm text-neutral-600">{description}</p>
+        <h3 className=" text-black mb-2 font-mackinac font-bold text-xl text-start">
+          {title}
+        </h3>
+        <p className="text-lg text-neuronhire-gray-64 font-satoshi font-medium">
+          {description}
+        </p>
         {highlight && (
-          <p className="italic text-sm text-neutral-500 mt-3">{highlight}</p>
+          <p className="italic text-medium text-neuronhire-gray-64 mt-3 font-satoshi text-base">
+            {highlight}
+          </p>
         )}
       </div>
-      <div className="mt-6">
+      <div className="mt-4">
         <Image
           src={image}
           alt={title}

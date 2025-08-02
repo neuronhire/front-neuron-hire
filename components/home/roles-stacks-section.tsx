@@ -4,71 +4,61 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useState } from "react";
 
-type Role = {
+interface RoleItem {
   title: string;
   description: string;
   icon: string;
-};
+}
 
-const ROLE_TABS = [
-  "Engineering",
-  "Data & AI",
-  "Product & Design",
-  "Product & Strategy",
-  "Leadership",
-] as const;
-
-type RoleTab = (typeof ROLE_TABS)[number];
-
-const roles_map: Record<RoleTab, Role[]> = {
-  Engineering: [
-    {
-      title: "Frontend Engineer",
-      description:
-        "Builds seamless, high-performance user interfaces using frameworks",
-      icon: "/assets/icons/roles/braces.svg",
-    },
-    {
-      title: "Backend Engineer",
-      description:
-        "Architects and maintains scalable APIs, databases, and services.",
-      icon: "/assets/icons/roles/database.svg",
-    },
-    {
-      title: "Fullstack Engineer",
-      description:
-        "Bridges frontend and backend with clean, end-to-end solutions.",
-      icon: "/assets/icons/roles/codesandbox.svg",
-    },
-    {
-      title: "Mobile Developer",
-      description:
-        "Crafts smooth, responsive mobile apps. Focused on UX, performance, and cross-platform consistency.",
-      icon: "/assets/icons/roles/smartphone.svg",
-    },
-    {
-      title: "DevOps / Cloud Engineer",
-      description:
-        "Automates infrastructure, CI/CD pipelines, and cloud environments (AWS, GCP, Azure)",
-      icon: "/assets/icons/roles/cloud-check.svg",
-    },
-    {
-      title: "QA Engineer",
-      description:
-        "Ensures software quality with automated testing, performance checks, and CI integration.",
-      icon: "/assets/icons/roles/bug.svg",
-    },
-    {
-      title: "Embedded Systems Engineer",
-      description: "Develops low-level code for hardware and IoT devices.",
-      icon: "/assets/icons/roles/braces.svg",
-    },
-  ],
+const roles_map: Record<string, RoleItem[]> = {
+  'Engineering': [
+  {
+    title: "Frontend Engineer",
+    description:
+      "Builds seamless, high-performance user interfaces using frameworks",
+    icon: "/assets/icons/roles/braces.svg",
+  },
+  {
+    title: "Backend Engineer",
+    description:
+      "Architects and maintains scalable APIs, databases, and services.",
+    icon: "/assets/icons/roles/database.svg",
+  },
+  {
+    title: "Fullstack Engineer",
+    description:
+      "Bridges frontend and backend with clean, end-to-end solutions.",
+    icon: "/assets/icons/roles/codesandbox.svg",
+  },
+  {
+    title: "Mobile Developer",
+    description:
+      "Crafts smooth, responsive mobile apps. Focused on UX, performance, and cross-platform consistency.",
+    icon: "/assets/icons/roles/smartphone.svg",
+  },
+  {
+    title: "DevOps / Cloud Engineer",
+    description:
+      "Automates infrastructure, CI/CD pipelines, and cloud environments (AWS, GCP, Azure)",
+    icon: "/assets/icons/roles/cloud-check.svg",
+  },
+  {
+    title: "QA Engineer",
+    description:
+      "Ensures software quality with automated testing, performance checks, and CI integration.",
+    icon: "/assets/icons/roles/bug.svg",
+  },
+  {
+    title: "Embedded Systems Engineer",
+    description: "Develops low-level code for hardware and IoT devices.",
+    icon: "/assets/icons/roles/braces.svg",
+  },
+],
   "Data & AI": [],
   "Product & Design": [],
   "Product & Strategy": [],
-  Leadership: [],
-};
+  "Leadership": [],
+}
 
 const stacks: { name: string; icon: string }[] = [
   { name: "ReactJS", icon: "/assets/icons/tech/react.svg" },
@@ -94,7 +84,7 @@ function chunkArray<T>(arr: T[], chunkSize: number): T[][] {
 }
 
 export function RolesAndStacksSection() {
-  const [selectedTab, setSelectedTab] = useState<RoleTab>("Engineering");
+  const [selectedTab, setSelectedTab] = useState("Engineering");
 
   return (
     <section className="py-24 px-6 bg-[#FCF4F8]">
@@ -111,8 +101,8 @@ export function RolesAndStacksSection() {
         </h3>
 
         <div className="flex text-left">
-          <span className="p-1 bg-white gap-2 mb-10 rounded-sm">
-            {ROLE_TABS.map((key, index) => (
+          <span className="p-1 gap-2 mb-10 rounded-sm">
+            {Object.keys(roles_map).map((key, index) => (
               <button
                 key={key}
                 onClick={() => setSelectedTab(key)}

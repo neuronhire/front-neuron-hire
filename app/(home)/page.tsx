@@ -10,7 +10,7 @@ import { TrustedBySection } from "@/components/home/trusted-section";
 export default function NeuronHireLanding() {
   return (
     <div className="min-h-screen">
-      <div className="bg-[#FCF4F8]">
+      <div className="bg-neuronhire-bg-main">
         <HeroSection />
         <FeatureMarquee />
         <TrustedBySection />

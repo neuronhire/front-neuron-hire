@@ -56,7 +56,6 @@ export function HiringFlowSection() {
   return (
     <section className="py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
-        {/* Left Side */}
         <div>
           <p className="body-satoshi uppercase text-sm font-thin text-neuronhire-red-30 mb-3">
             Total control, zero lock-in
@@ -92,9 +91,7 @@ export function HiringFlowSection() {
           </button>
         </div>
 
-        {/* Right Side */}
         <div className="order-1 lg:order-2">
-          {/* Mobile: Single column layout */}
           <div className="grid grid-cols-1 sm:hidden gap-3">
             {rightItems.map((item, index) => (
               <div
@@ -120,7 +117,6 @@ export function HiringFlowSection() {
             ))}
           </div>
 
-          {/* Tablet and Desktop: Two column layout */}
           <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 gap-3 auto-rows-fr">
             {rightItems.map((item, index) => {
               const isLast = index === rightItems.length - 1;

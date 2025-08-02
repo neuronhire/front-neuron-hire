@@ -97,7 +97,7 @@ export function RolesAndStacksSection() {
   const [selectedTab, setSelectedTab] = useState<RoleTab>("Engineering");
 
   return (
-    <section className="py-24 px-6 bg-[#fdf4f7]">
+    <section className="py-24 px-6 bg-[#FCF4F8]">
       <div className="max-w-6xl mx-auto text-center">
         <p className="body-mackinac text-sm font-medium uppercase tracking-wide text-neuronhire-red-lines mb-2">
           Hire with ease

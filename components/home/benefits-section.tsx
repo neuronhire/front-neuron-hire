@@ -5,7 +5,7 @@ import BenefitsCard from "./cards/benefits-cards";
 
 export function BenefitsSection() {
   return (
-    <section className="py-24 px-6 text-center bg-white">
+    <section className="py-24 px-6 text-center">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl mx-auto mb-12">
           <p className="text-neuronhire-red-lines max-w-2xl mx-auto text-sm font-medium mb-1 body-satoshi">

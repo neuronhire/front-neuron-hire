@@ -9,15 +9,20 @@ import { TrustedBySection } from "@/components/home/trusted-section";
 
 export default function NeuronHireLanding() {
   return (
-    <div className="bg-pink-100 min-h-screen">
-      <HeroSection />
-      <FeatureMarquee />
-      <TrustedBySection />
-      <HowItWorksSection />
-      <BenefitsSection />
+    <div className="min-h-screen">
+      <div className="bg-[#FCF4F8]">
+        <HeroSection />
+        <FeatureMarquee />
+        <TrustedBySection />
+        <HowItWorksSection />
+        <BenefitsSection />
+      </div>
+
       <HiringFlowSection />
       <RolesAndStacksSection />
-      <TestimonialsSection />
+      <div className="bg-white">
+        <TestimonialsSection />
+      </div>
     </div>
   );
 }

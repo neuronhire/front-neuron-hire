@@ -9,7 +9,7 @@ const testimonials = Array.from({ length: 5 }, (_, i) => ({
 
 export function TestimonialsSection() {
   return (
-    <section className="py-24 px-6 bg-[#fdf4f7]">
+    <section className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-xs uppercase tracking-wide text-neutral-500 mb-2">

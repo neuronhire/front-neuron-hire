@@ -83,8 +83,8 @@ export function BenefitsSection() {
                   Hire Candidates With Your Company DNA
                 </h3>
                 <p className="body-satoshi">
-                  We've identified a senior candidate that aligns with your tech
-                  stack, communication style, and team culture. They're
+                  We&apos;ve identified a senior candidate that aligns with your tech
+                  stack, communication style, and team culture. They&apos;re
                   pre-vetted and ready to meet.
                 </p>
               </div>

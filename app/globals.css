@@ -51,6 +51,7 @@
   --color-neuronhire-bg-main: var(--neuronhire-bg-main);
   --color-neuronhire-red-30: var(--neuronhire-red-30);
   --color-neuronhire-red-lines: var(--neuronhire-red-lines);
+  --color-neuronhire-black-100: var(--neuronhire-black-100);
   --color-neuronhire-gray-100: var(--neuronhire-gray-100);
   --color-neuronhire-gray-80: var(--neuronhire-gray-80);
   --color-neuronhire-gray-64: var(--neuronhire-gray-64);
@@ -301,6 +302,7 @@
     --neuronhire-red-lines-70: rgba(77, 23, 41, 0.7);
     --neuronhire-red-lines-60: rgba(77, 23, 41, 0.6);
     --roles-pink: #fdf4f7;
+    --neuronhire-black-100: #111111;
     --neuronhire-gray-100: rgba(17, 17, 17, 1);
     --neuronhire-gray-80: rgba(17, 17, 17, 0.8);
     --neuronhire-gray-64: rgba(17, 17, 17, 0.64);

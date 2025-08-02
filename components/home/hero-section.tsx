@@ -6,20 +6,20 @@ import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <section className="px-6 md:px-10 py-20 text-center max-w-4xl mx-auto">
-      <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
+    <section className="px-6 md:px-6 lg:px-0 pt-10 pb-7 mt-15 md:mt-25 text-center max-w-4xl mx-auto">
+      <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-neuronhire-black-100 body-mackinac">
         Hire the best full-time remote
-        <br className="hidden md:block" />
+        <br className="block" />
         tech talent from Latin America
       </h1>
 
-      <p className="mt-6 text-base md:text-lg text-gray-600">
+      <p className="mt-8 text-base md:text-lg xl:text-xl text-neuronhire-black-100 font-normal body-satoshi">
         Top tech talents of LATAM, pre-vetted and timezone-aligned.
         <br className="hidden md:block" />
         Transparent pricing. No hidden fees. No long-term commitments.
       </p>
 
-      <div className="mt-8 flex justify-center gap-4 flex-wrap">
+      <div className="mt-8 flex justify-center gap-4 flex-wrap font-bold body-mackinac">
         <Link href="#">
           <Button className="">Start Hiring</Button>
         </Link>
@@ -33,18 +33,18 @@ export function HeroSection() {
         </Link>
       </div>
 
-      <div className="mt-10 flex flex-col sm:flex-row justify-center gap-6 text-sm text-gray-600">
-        <div className="flex items-center gap-2">
-          <Pencil size={16} />
-          Pre-Vetted Talent
+      <div className="mt-10 flex flex-row justify-center gap-2 sm:gap-6 text-base font-bold text-neuronhire-black-100 body-satoshi">
+        <div className="flex items-center gap-0 sm:gap-2">
+          <Pencil size={20} />
+          Pre-Vetted Talent.
         </div>
-        <div className="flex items-center gap-2">
-          <CalendarClock size={16} />
-          No Long-Term Contracts
+        <div className="flex items-center gap-0 sm:gap-2">
+          <CalendarClock size={20} />
+          No Long-Term Contracts.
         </div>
-        <div className="flex items-center gap-2">
-          <Briefcase size={16} />
-          Full-Time Hiring
+        <div className="flex items-center gap-0 sm:gap-2">
+          <Briefcase size={20} />
+          Full-Time Hiring.
         </div>
       </div>
     </section>

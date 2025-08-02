@@ -97,9 +97,16 @@ export function HiringFlowSection() {
           {/* Mobile: Single column layout */}
           <div className="grid grid-cols-1 sm:hidden gap-3">
             {rightItems.map((item, index) => (
-              <div key={index} className="bg-neuronhire-bg-main body-satoshi rounded-xl p-4 flex flex-col relative min-h-[120px]">
-                <h3 className="body-mackinac text-lg text-neuronhire-gray-100 font-semibold mb-1 z-10 pr-16">{item.title}</h3>
-                <p className="body-satoshi text-sm text-neuronhire-red-30 z-10 pr-16 leading-relaxed">{item.description}</p>
+              <div
+                key={index}
+                className="bg-neuronhire-bg-main body-satoshi rounded-xl p-4 flex flex-col relative min-h-[120px]"
+              >
+                <h3 className="body-mackinac text-lg text-neuronhire-gray-100 font-semibold mb-1 z-10 pr-16">
+                  {item.title}
+                </h3>
+                <p className="body-satoshi text-sm text-neuronhire-red-30 z-10 pr-16 leading-relaxed">
+                  {item.description}
+                </p>
                 <div className="absolute bottom-2 right-2 pointer-events-none select-none opacity-60">
                   <Image
                     src={item.icon || "/placeholder.svg"}
@@ -116,13 +123,13 @@ export function HiringFlowSection() {
           {/* Tablet and Desktop: Two column layout */}
           <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 gap-3 auto-rows-fr">
             {rightItems.map((item, index) => {
-              const isLast = index === rightItems.length - 1
-              const colSpanClass = isLast && isOdd ? "md:col-span-2" : ""
+              const isLast = index === rightItems.length - 1;
+              const colSpanClass = isLast && isOdd ? "md:col-span-2" : "";
 
               return (
                 <div
                   key={index}
-                  className={`bg-neuronhire-bg-main body-satoshi bg-neuronhire-bg-main rounded-xl p-4 flex flex-col relative  ${colSpanClass}`}
+                  className={`bg-neuronhire-bg-main body-satoshi rounded-xl p-4 flex flex-col relative  ${colSpanClass}`}
                 >
                   <h3 className="body-mackinac text-2xl text-neuronhire-gray-100 font-semibold mb-1 z-10">
                     {item.title}
@@ -140,7 +147,7 @@ export function HiringFlowSection() {
                     />
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
         </div>

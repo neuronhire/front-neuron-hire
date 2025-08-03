@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Briefcase, CalendarClock, Pencil } from "lucide-react";
+import { BriefcaseMedical, Shredder, TestTubeDiagonal } from "lucide-react";
 import Link from "next/link";
 
 export function HeroSection() {
@@ -19,31 +19,36 @@ export function HeroSection() {
         Transparent pricing. No hidden fees. No long-term commitments.
       </p>
 
-      <div className="mt-8 flex justify-center gap-4 flex-wrap font-bold body-mackinac">
+      <div className="mt-6 flex justify-center items-center gap-3 flex-wrap font-bold body-mackinac">
         <Link href="#">
-          <Button className="">Start Hiring</Button>
+          <div
+            className="inline-block p-0.5 rounded-full"
+            style={{ background: "var(--neuronhire-gradient-2)" }}
+          >
+            <Button className="px-7">Start Hiring</Button>
+          </div>
         </Link>
         <Link href="#">
           <Button
             variant="ghost"
-            className="rounded-full px-6 py-2 text-base font-semibold border border-gray-300 text-black hover:bg-gray-100"
+            className="rounded-full px-7 py-2 text-base font-semibold border border-gray-300 bg-neuronhire-gray-12 text-black hover:bg-gray-100"
           >
             Be Hired
           </Button>
         </Link>
       </div>
 
-      <div className="mt-10 flex flex-row justify-center gap-2 sm:gap-6 text-base font-bold text-neuronhire-black-100 body-satoshi">
-        <div className="flex items-center gap-0 sm:gap-2">
-          <Pencil size={20} />
+      <div className="mt-10 flex flex-wrap justify-center gap-3 sm:gap-6 text-base font-bold text-neuronhire-black-100 body-satoshi">
+        <div className="flex items-center gap-2 whitespace-nowrap order-1">
+          <TestTubeDiagonal size={23} className="text-neuronhire-gray-24" />
           Pre-Vetted Talent.
         </div>
-        <div className="flex items-center gap-0 sm:gap-2">
-          <CalendarClock size={20} />
+        <div className="flex items-center gap-2 whitespace-nowrap order-3 sm:order-2">
+          <Shredder size={23} className="text-neuronhire-gray-24" />
           No Long-Term Contracts.
         </div>
-        <div className="flex items-center gap-0 sm:gap-2">
-          <Briefcase size={20} />
+        <div className="flex items-center gap-2 whitespace-nowrap order-2 sm:order-3">
+          <BriefcaseMedical size={23} className="text-neuronhire-gray-24" />
           Full-Time Hiring.
         </div>
       </div>

@@ -99,7 +99,7 @@ export function TestimonialsSection() {
               <h3 className="text-lg font-semibold mb-2 text-neuronhire-red-lines">
                 {first.title}
               </h3>
-              <p className="text-sm text-neuronhire-red-lines">
+              <p className="text-sm text-neuronhire-red-lines hover:text-neuronhire-primary">
                 {first.description}
               </p>
             </motion.article>

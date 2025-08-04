@@ -120,7 +120,7 @@ export function TestimonialsSection() {
               >
                 <div
                   aria-hidden
-                  className="w-20 md:w-24 h-28 rounded-lg bg-neuronhire-bg-main shrink-0"
+                  className="w-20 md:w-24 rounded-lg bg-neuronhire-bg-main shrink-0 "
                 />
                 <div>
                   <p className="text-xs uppercase tracking-[0.16em] mb-1 text-neuronhire-red-lines body-satoshi">

@@ -1,6 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import type { BezierDefinition, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -10,55 +12,92 @@ interface RoleItem {
   icon: string;
 }
 
+const EASE: BezierDefinition = [0.22, 1, 0.36, 1];
+
+const textItem: Variants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE } },
+};
+
+const sectionStagger: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } },
+};
+
+const rowStagger: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.05 } },
+};
+
+const cardItem: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE } },
+};
+
+const pillItem: Variants = {
+  hidden: { opacity: 0, y: 14 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: EASE } },
+};
+
+const stackItem: Variants = {
+  hidden: { opacity: 0, y: 16, scale: 0.98 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.45, ease: EASE },
+  },
+};
+
 const roles_map: Record<string, RoleItem[]> = {
-  'Engineering': [
-  {
-    title: "Frontend Engineer",
-    description:
-      "Builds seamless, high-performance user interfaces using frameworks",
-    icon: "/assets/icons/roles/braces.svg",
-  },
-  {
-    title: "Backend Engineer",
-    description:
-      "Architects and maintains scalable APIs, databases, and services.",
-    icon: "/assets/icons/roles/database.svg",
-  },
-  {
-    title: "Fullstack Engineer",
-    description:
-      "Bridges frontend and backend with clean, end-to-end solutions.",
-    icon: "/assets/icons/roles/codesandbox.svg",
-  },
-  {
-    title: "Mobile Developer",
-    description:
-      "Crafts smooth, responsive mobile apps. Focused on UX, performance, and cross-platform consistency.",
-    icon: "/assets/icons/roles/smartphone.svg",
-  },
-  {
-    title: "DevOps / Cloud Engineer",
-    description:
-      "Automates infrastructure, CI/CD pipelines, and cloud environments (AWS, GCP, Azure)",
-    icon: "/assets/icons/roles/cloud-check.svg",
-  },
-  {
-    title: "QA Engineer",
-    description:
-      "Ensures software quality with automated testing, performance checks, and CI integration.",
-    icon: "/assets/icons/roles/bug.svg",
-  },
-  {
-    title: "Embedded Systems Engineer",
-    description: "Develops low-level code for hardware and IoT devices.",
-    icon: "/assets/icons/roles/braces.svg",
-  },
-],
+  Engineering: [
+    {
+      title: "Frontend Engineer",
+      description:
+        "Builds seamless, high-performance user interfaces using frameworks",
+      icon: "/assets/icons/roles/braces.svg",
+    },
+    {
+      title: "Backend Engineer",
+      description:
+        "Architects and maintains scalable APIs, databases, and services.",
+      icon: "/assets/icons/roles/database.svg",
+    },
+    {
+      title: "Fullstack Engineer",
+      description:
+        "Bridges frontend and backend with clean, end-to-end solutions.",
+      icon: "/assets/icons/roles/codesandbox.svg",
+    },
+    {
+      title: "Mobile Developer",
+      description:
+        "Crafts smooth, responsive mobile apps. Focused on UX, performance, and cross-platform consistency.",
+      icon: "/assets/icons/roles/smartphone.svg",
+    },
+    {
+      title: "DevOps / Cloud Engineer",
+      description:
+        "Automates infrastructure, CI/CD pipelines, and cloud environments (AWS, GCP, Azure)",
+      icon: "/assets/icons/roles/cloud-check.svg",
+    },
+    {
+      title: "QA Engineer",
+      description:
+        "Ensures software quality with automated testing, performance checks, and CI integration.",
+      icon: "/assets/icons/roles/bug.svg",
+    },
+    {
+      title: "Embedded Systems Engineer",
+      description: "Develops low-level code for hardware and IoT devices.",
+      icon: "/assets/icons/roles/braces.svg",
+    },
+  ],
   "Data & AI": [],
   "Product & Design": [],
   "Product & Strategy": [],
-  "Leadership": [],
-}
+  Leadership: [],
+};
 
 const stacks: { name: string; icon: string }[] = [
   { name: "ReactJS", icon: "/assets/icons/tech/react.svg" },
@@ -77,9 +116,8 @@ const stacks: { name: string; icon: string }[] = [
 
 function chunkArray<T>(arr: T[], chunkSize: number): T[][] {
   const res: T[][] = [];
-  for (let i = 0; i < arr.length; i += chunkSize) {
+  for (let i = 0; i < arr.length; i += chunkSize)
     res.push(arr.slice(i, i + chunkSize));
-  }
   return res;
 }
 
@@ -87,25 +125,46 @@ export function RolesAndStacksSection() {
   const [selectedTab, setSelectedTab] = useState("Engineering");
 
   return (
-    <section className="py-24 px-6 bg-[#FCF4F8]">
+    <motion.section
+      className="py-24 px-6 bg-[#FCF4F8]"
+      variants={sectionStagger}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25 }}
+    >
       <div className="max-w-6xl mx-auto text-center">
-        <p className="body-mackinac text-sm font-medium uppercase tracking-wide text-neuronhire-red-lines mb-2">
+        <motion.p
+          variants={textItem}
+          className="body-mackinac text-sm font-medium uppercase tracking-wide text-neuronhire-red-lines mb-2"
+        >
           Hire with ease
-        </p>
-        <h2 className="body-mackinac text-3xl  font-medium md:text-5xl text-neuronhire-red-lines mb-6">
+        </motion.p>
+
+        <motion.h2
+          variants={textItem}
+          className="body-mackinac text-3xl font-medium md:text-5xl text-neuronhire-red-lines mb-6"
+        >
           Organized by what really <br /> matters.
-        </h2>
+        </motion.h2>
 
-        <h3 className="body-mackinac text-left text-4xl font-bold text-neuronhire-red-lines py-3">
+        <motion.h3
+          variants={textItem}
+          className="body-mackinac text-left text-4xl font-bold text-neuronhire-red-lines py-3"
+        >
           Roles
-        </h3>
+        </motion.h3>
 
-        <div className="flex text-left">
+        <motion.div variants={rowStagger} className="flex text-left">
           <span className="p-1 gap-2 mb-10 rounded-sm">
             {Object.keys(roles_map).map((key, index) => (
-              <button
+              <motion.button
                 key={key}
+                variants={pillItem}
                 onClick={() => setSelectedTab(key)}
+                whileHover={{
+                  y: -2,
+                  transition: { type: "spring", stiffness: 240, damping: 18 },
+                }}
                 className={cn(
                   "body-mackinac px-4 py-1 rounded-sm text-sm font-thin",
                   index !== 0 && "ml-2",
@@ -115,16 +174,23 @@ export function RolesAndStacksSection() {
                 )}
               >
                 {key}
-              </button>
+              </motion.button>
             ))}
           </span>
-        </div>
+        </motion.div>
 
         {roles_map[selectedTab] && roles_map[selectedTab].length > 0 && (
-          <>
+          <motion.div
+            key={selectedTab}
+            variants={rowStagger}
+            initial="hidden"
+            animate="visible"
+            className="space-y-2"
+          >
             {chunkArray(roles_map[selectedTab], 4).map((row, rowIndex) => (
-              <div
+              <motion.div
                 key={rowIndex}
+                variants={rowStagger}
                 className={cn(
                   "grid gap-2 mb-2",
                   "grid-cols-1",
@@ -134,76 +200,95 @@ export function RolesAndStacksSection() {
                   row.length === 4 && "md:grid-cols-4"
                 )}
               >
-                {row.map((role) => (
-                  <div
+                {row.map((role, i) => (
+                  <motion.div
                     key={role.title}
-                    className={cn(
-                      "bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition"
-                    )}
+                    variants={cardItem}
+                    whileHover={{
+                      y: -4,
+                      boxShadow: "0 12px 24px rgba(0,0,0,0.08)",
+                      transition: {
+                        type: "spring",
+                        stiffness: 280,
+                        damping: 20,
+                      },
+                    }}
+                    className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition group"
                   >
-                    <Image
-                      src={role.icon}
-                      alt={role.title}
-                      width={40}
-                      height={40}
-                      className="mb-3"
-                    />
-                    <h4 className="text-md text-left text-xl text-neuronhire-red-lines font-bold mb-1">
-                      {role.title}
-                    </h4>
+                    <div className="flex items-center gap-3 mb-3">
+                      <Image
+                        src={role.icon}
+                        alt={role.title}
+                        width={40}
+                        height={40}
+                        className="mb-0 transition-transform duration-300 group-hover:-translate-y-0.5"
+                      />
+                      <h4 className="text-md text-left text-xl text-neuronhire-red-lines font-bold">
+                        {role.title}
+                      </h4>
+                    </div>
                     <p className="text-sm text-left text-neuronhire-red-lines-70 font-bold break-words">
                       {role.description}
                     </p>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             ))}
-          </>
+          </motion.div>
         )}
 
-        <>
-          <h3 className="body-mackinac text-left text-4xl font-bold text-neuronhire-red-lines py-5">
-            Tech Stacks
-          </h3>
-          {chunkArray(stacks, 4).map((row, rowIndex, allRows) => {
-            const isLast = rowIndex === allRows.length - 1;
-            const colSpan =
-              isLast && row.length < 4 ? Math.floor(4 / row.length) : 1;
+        <motion.h3
+          variants={textItem}
+          className="body-mackinac text-left text-4xl font-bold text-neuronhire-red-lines py-5"
+        >
+          Tech Stacks
+        </motion.h3>
 
-            return (
-              <div
-                key={rowIndex}
-                className={cn(
-                  "grid gap-2 mb-2",
-                  "grid-cols-1",
-                  "sm:grid-cols-2",
-                  "md:grid-cols-4"
-                )}
-              >
-                {row.map((stack) => (
-                  <div
-                    key={stack.name}
-                    className={cn(
-                      "flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition",
-                      `col-span-${colSpan}`
-                    )}
-                  >
-                    <Image
-                      src={stack.icon}
-                      alt={stack.name}
-                      width={40}
-                      height={40}
-                    />
-                    <span className="body-mackinac font-semibold text-neuronhire-red-lines text-sm">
-                      {stack.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            );
-          })}
-        </>
+        {chunkArray(stacks, 4).map((row, rowIndex, allRows) => {
+          const isLast = rowIndex === allRows.length - 1;
+          const colSpan =
+            isLast && row.length < 4 ? Math.floor(4 / row.length) : 1;
+
+          return (
+            <motion.div
+              key={rowIndex}
+              variants={rowStagger}
+              className={cn(
+                "grid gap-2 mb-2",
+                "grid-cols-1",
+                "sm:grid-cols-2",
+                "md:grid-cols-4"
+              )}
+            >
+              {row.map((stack, i) => (
+                <motion.div
+                  key={stack.name}
+                  variants={stackItem}
+                  whileHover={{
+                    y: -3,
+                    scale: 1.01,
+                    transition: { type: "spring", stiffness: 280, damping: 22 },
+                  }}
+                  className={cn(
+                    "flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition",
+                    `col-span-${colSpan}`
+                  )}
+                >
+                  <Image
+                    src={stack.icon}
+                    alt={stack.name}
+                    width={40}
+                    height={40}
+                  />
+                  <span className="body-mackinac font-semibold text-neuronhire-red-lines text-sm">
+                    {stack.name}
+                  </span>
+                </motion.div>
+              ))}
+            </motion.div>
+          );
+        })}
       </div>
-    </section>
+    </motion.section>
   );
 }

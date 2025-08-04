@@ -1,6 +1,10 @@
 "use client";
 
+import type { BezierDefinition, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { HowItWorksCard } from "./howitworks-card";
+
+const EASE: BezierDefinition = [0.22, 1, 0.36, 1];
 
 const steps = [
   {
@@ -33,23 +37,60 @@ const steps = [
   },
 ];
 
+const textVariants: Variants = {
+  hidden: { opacity: 0, y: 18 },
+  // usa o "custom" do Framer para receber o delay
+  visible: (custom: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: custom,
+      duration: 0.55,
+      ease: EASE,
+    },
+  }),
+};
+
 export function HowItWorksSection() {
   return (
-    <section className="py-24 px-6 text-center">
-      <h4 className="text-sm uppercase tracking-wide text-black mb-2 font-satoshi font-medium">
+    <section className="py-24 px-6 text-center bg-neuronhire-bg-main">
+      <motion.h4
+        className="text-sm uppercase tracking-wide text-black mb-2 font-satoshi font-medium"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.35 }}
+        variants={textVariants}
+        custom={0}
+      >
         How it works :)
-      </h4>
-      <h2 className="text-3xl md:text-5xl text-black mb-4 font-mackinac font-bold">
+      </motion.h4>
+
+      <motion.h2
+        className="text-3xl md:text-5xl text-black mb-4 font-mackinac font-bold"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.35 }}
+        variants={textVariants}
+        custom={0.05}
+      >
         A frictionless hiring engine <br /> made for speed and certainty.
-      </h2>
-      <p className="text-black max-w-2xl mx-auto mb-12 font-medium text-lg">
+      </motion.h2>
+
+      <motion.p
+        className="text-black max-w-2xl mx-auto mb-12 font-medium text-lg"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.35 }}
+        variants={textVariants}
+        custom={0.1}
+      >
         We don’t waste your time with endless calls or shallow candidate pools.
         You tell us what you need. We deliver top-tier matches. Fast.
-      </p>
+      </motion.p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
         {steps.map((step, index) => (
-          <HowItWorksCard key={index} {...step} />
+          <HowItWorksCard key={index} index={index} {...step} />
         ))}
       </div>
     </section>

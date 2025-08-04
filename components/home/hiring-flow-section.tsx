@@ -1,6 +1,10 @@
 "use client";
 
+import type { BezierDefinition, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
+
+const EASE: BezierDefinition = [0.22, 1, 0.36, 1];
 
 const leftItems = [
   {
@@ -52,26 +56,72 @@ const rightItems = [
 
 const isOdd = rightItems.length % 2 !== 0;
 
+const sectionVariant: Variants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.06, delayChildren: 0.05 },
+  },
+};
+
+const textItem: Variants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: EASE },
+  },
+};
+
+const cardItem: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: EASE },
+  },
+};
+
 export function HiringFlowSection() {
   return (
-    <section className="py-24 px-6 bg-white">
+    <motion.section
+      className="py-24 px-6 bg-white"
+      variants={sectionVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25 }}
+    >
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
-        <div>
-          <p className="body-satoshi uppercase text-sm font-thin text-neuronhire-red-30 mb-3">
+        <motion.div variants={sectionVariant} className="">
+          <motion.p
+            variants={textItem}
+            className="body-satoshi uppercase text-sm font-thin text-neuronhire-red-30 mb-3"
+          >
             Total control, zero lock-in
-          </p>
-          <h2 className="body-mackinac text-4xl md:text-5xl font-semibold text-neuronhire-red-30 mb-6 leading-tight">
+          </motion.p>
+
+          <motion.h2
+            variants={textItem}
+            className="body-mackinac text-4xl md:text-5xl font-semibold text-neuronhire-red-30 mb-6 leading-tight"
+          >
             You have ultimate <br /> control over your hiring <br /> flow.
-          </h2>
-          <p className="body-satoshi text-neuronhire-red-30 mb-10 text-base max-w-lg">
+          </motion.h2>
+
+          <motion.p
+            variants={textItem}
+            className="body-satoshi text-neuronhire-red-30 mb-10 text-base max-w-lg"
+          >
             Scale up, scale down, or hire permanently, all without risk,
             contracts, or friction. NeuronHire replaces bloated hiring pipelines
             with a sharp, async-first system that works on your terms.
-          </p>
+          </motion.p>
 
-          <div className="space-y-6 mb-10">
+          <motion.div variants={sectionVariant} className="space-y-6 mb-10">
             {leftItems.map((item, index) => (
-              <div key={index} className="flex items-start gap-3">
+              <motion.div
+                key={index}
+                variants={textItem}
+                className="flex items-start gap-3"
+              >
                 <Image
                   src={item.icon}
                   alt="icon"
@@ -82,20 +132,24 @@ export function HiringFlowSection() {
                 <p className="text-neuronhire-red-30 text-base font-medium">
                   {item.text}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          <button className="body-satoshi px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-neutral-800 transition">
+          <motion.button
+            variants={textItem}
+            className="body-satoshi px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-neutral-800 transition"
+          >
             Build my team
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
 
-        <div className="order-1 lg:order-2">
+        <motion.div variants={sectionVariant} className="order-1 lg:order-2">
           <div className="grid grid-cols-1 sm:hidden gap-3">
             {rightItems.map((item, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={cardItem}
                 className="bg-neuronhire-bg-main body-satoshi rounded-xl p-4 flex flex-col relative min-h-[120px]"
               >
                 <h3 className="body-mackinac text-lg text-neuronhire-gray-100 font-semibold mb-1 z-10 pr-16">
@@ -113,7 +167,7 @@ export function HiringFlowSection() {
                     className="w-12 h-12 sm:w-16 sm:h-16"
                   />
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -121,11 +175,11 @@ export function HiringFlowSection() {
             {rightItems.map((item, index) => {
               const isLast = index === rightItems.length - 1;
               const colSpanClass = isLast && isOdd ? "md:col-span-2" : "";
-
               return (
-                <div
+                <motion.div
                   key={index}
-                  className={`bg-neuronhire-bg-main body-satoshi rounded-xl p-4 flex flex-col relative  ${colSpanClass}`}
+                  variants={cardItem}
+                  className={`bg-neuronhire-bg-main body-satoshi rounded-xl p-4 flex flex-col relative ${colSpanClass}`}
                 >
                   <h3 className="body-mackinac text-2xl text-neuronhire-gray-100 font-semibold mb-1 z-10">
                     {item.title}
@@ -142,12 +196,12 @@ export function HiringFlowSection() {
                       className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24"
                     />
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

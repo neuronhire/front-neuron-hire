@@ -1,6 +1,12 @@
 "use client";
 
-import { motion, useAnimation, Variants } from "framer-motion";
+import type { BezierDefinition } from "framer-motion";
+import {
+  motion,
+  useAnimation,
+  useReducedMotion,
+  Variants,
+} from "framer-motion";
 import Image from "next/image";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
@@ -13,6 +19,8 @@ interface HowItWorksCardProps {
   index?: number;
 }
 
+const EASE: BezierDefinition = [0.22, 1, 0.36, 1];
+
 export function HowItWorksCard({
   title,
   description,
@@ -21,26 +29,30 @@ export function HowItWorksCard({
   index = 0,
 }: HowItWorksCardProps) {
   const controls = useAnimation();
+  const prefersReducedMotion = useReducedMotion();
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
+    if (inView) controls.start("visible");
   }, [controls, inView]);
 
+  const distance = prefersReducedMotion ? 0 : 24;
+  const duration = prefersReducedMotion ? 0 : 0.55;
+
   const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: distance, x: -distance },
     visible: {
       opacity: 1,
       y: 0,
+      x: 0,
       transition: {
-        delay: index * 0.15,
-        duration: 0.5,
-        ease: [0.25, 0.8, 0.25, 1],
+        delay: index * 0.1,
+        duration,
+        ease: EASE,
       },
     },
   };
+
   return (
     <motion.div
       ref={ref}
@@ -50,7 +62,7 @@ export function HowItWorksCard({
       className="bg-white opacity-90 rounded-xl shadow-md p-6 pb-0 flex flex-col justify-between overflow-hidden hover:shadow-lg transition-shadow"
     >
       <div>
-        <h3 className=" text-black mb-2 font-mackinac font-bold text-xl text-start">
+        <h3 className="text-black mb-2 font-mackinac font-bold text-xl text-start">
           {title}
         </h3>
         <p className="text-lg text-neuronhire-gray-64 font-satoshi font-medium">
@@ -62,6 +74,7 @@ export function HowItWorksCard({
           </p>
         )}
       </div>
+
       <div className="mt-4">
         <Image
           src={image}

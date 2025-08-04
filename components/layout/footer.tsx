@@ -7,7 +7,13 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer className="relative bg-black text-white">
-      <div className="mx-auto max-w-7xl px-6 py-10 md:py-14">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/assets/background/footer-background.png')",
+        }}
+      />
+      <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-14">
         <div className="grid grid-cols-1 gap-12 md:[grid-template-columns:4fr_1fr_1fr_1fr]">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -114,7 +120,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-4 text-xs text-white/60 md:flex md items-center md:justify-between">
+        <div className="mt-10  pt-4 text-xs text-white/60 md:flex md items-center md:justify-between">
           <span className="block">
             Designed by{" "}
             <Link href="#" className="underline hover:text-white">

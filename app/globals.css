@@ -332,4 +332,156 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* BASE */
+  .nh-hero-right-bg {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    position: relative;
+    isolation: isolate;
+  }
+
+  .nh-hero-right-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/assets/background/map-background.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: mapAppear 1.2s ease-out 0.4s forwards;
+    z-index: -1;
+  }
+
+  @keyframes mapAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes gradientRotation {
+    0% {
+      transform: translate(0%, 0%) rotate(-77.209deg);
+    }
+    100% {
+      transform: translate(0%, 0%) rotate(282.791deg);
+    }
+  }
+
+  .nh-hero-right-bg::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    right: -5%;
+    width: 714.427px;
+    height: 515.161px;
+    border-radius: 714.427px;
+    opacity: 0.6;
+    background: linear-gradient(
+      95deg,
+      #fd4c86 36.75%,
+      #ff3db8 57.4%,
+      #ffdf80 86.7%
+    );
+    filter: blur(125px);
+    transform: translate(0%, 0%) rotate(-77.209deg);
+    pointer-events: none;
+    z-index: -1;
+    animation: gradientRotation 20s linear infinite;
+  }
+
+  /* qualidade/perf */
+  .nh-hero-right-bg::before,
+  .nh-hero-right-bg::after {
+    pointer-events: none;
+    will-change: transform, opacity;
+  }
+
+  @media (max-width: 1279px) {
+    .nh-hero-right-bg::before {
+      background-size: 900px auto;
+      background-position: right -80px top 0px;
+    }
+    .nh-hero-right-bg::after {
+      width: 640px;
+      height: 470px;
+      top: 4%;
+      right: -8%;
+      filter: blur(110px);
+      opacity: 0.6;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .nh-hero-right-bg::before {
+      background-size: 720px auto;
+      background-position: right -120px top -20px;
+    }
+    .nh-hero-right-bg::after {
+      width: 520px;
+      height: 400px;
+      top: 2%;
+      right: -12%;
+      filter: blur(100px);
+      opacity: 0.58;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .nh-hero-right-bg {
+      min-height: clamp(520px, 78vh, 680px);
+    }
+
+    .nh-hero-right-bg::before {
+      background-size: contain;
+      background-position: center 72px;
+      animation: mapAppear 0.9s ease-out 0.2s forwards;
+    }
+
+    .nh-hero-right-bg::after {
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%) rotate(-77.209deg);
+      width: clamp(260px, 70vw, 440px);
+      height: clamp(200px, 52vw, 330px);
+      top: 4%;
+      filter: blur(90px);
+      opacity: 0.55;
+      animation: gradientRotation 28s linear infinite;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nh-hero-right-bg::before {
+      background-position: center 88px;
+    }
+
+    .nh-hero-right-bg::after {
+      width: clamp(220px, 78vw, 360px);
+      height: clamp(180px, 50vw, 270px);
+      top: 6%;
+      filter: blur(80px);
+      opacity: 0.5;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nh-hero-right-bg::before {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+    .nh-hero-right-bg::after {
+      animation: none;
+    }
+  }
 }

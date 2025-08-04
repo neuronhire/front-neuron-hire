@@ -11,21 +11,18 @@ export default function NeuronHireLanding() {
   return (
     <div className="min-h-screen">
       <div className="bg-neuronhire-bg-main">
-        <section className="relative overflow-hidden nh-hero-right-bg">
+        <section className="relative overflow-hidden nh-hero-right-bg min-h-[100svh]">
           <HeroSection />
           <FeatureMarquee />
           <TrustedBySection />
         </section>
-
-        <HowItWorksSection />
-        <BenefitsSection />
       </div>
 
+      <HowItWorksSection />
+      <BenefitsSection />
       <HiringFlowSection />
       <RolesAndStacksSection />
-      <div className="bg-white">
-        <TestimonialsSection />
-      </div>
+      <TestimonialsSection />
     </div>
   );
 }

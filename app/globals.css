@@ -399,7 +399,6 @@
     animation: gradientRotation 20s linear infinite;
   }
 
-  /* qualidade/perf */
   .nh-hero-right-bg::before,
   .nh-hero-right-bg::after {
     pointer-events: none;

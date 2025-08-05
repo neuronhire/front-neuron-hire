@@ -14,9 +14,9 @@ export function Footer() {
         }}
       />
       <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-14">
-        <div className="grid grid-cols-1 gap-12 md:[grid-template-columns:6fr_1fr_1fr]">
+        <div className="grid grid-cols-1 gap-12 text-center md:text-left md:[grid-template-columns:6fr_1fr_1fr]">
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center gap-3 md:justify-start">
               <Image
                 src="/assets/logos/neurohire-white-logo.png"
                 alt="NeuronHire"
@@ -27,12 +27,12 @@ export function Footer() {
               />
             </div>
 
-            <p className="max-w-sm text-sm leading-5 text-white/70">
+            <p className="mx-auto max-w-sm text-sm leading-5 text-white/70 text-center md:mx-0 md:text-left">
               NeuronHire connects LATAM tech talent to global companies fast,
               risk-free, scalable and with zero overhead.
             </p>
 
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center justify-center gap-3 pt-2 md:justify-start">
               {[
                 { Icon: X, label: "X", href: "#" },
                 { Icon: Linkedin, label: "LinkedIn", href: "#" },
@@ -95,13 +95,13 @@ export function Footer() {
         </div>
 
         <div className="mt-10 pt-4 text-xs text-white/60 md:flex md:items-center md:justify-between">
-          <span className="block">
+          <span className="block text-center md:text-left">
             Designed by{" "}
             <Link href="#" className="underline hover:text-white">
               HumanMade™ Club
             </Link>
           </span>
-          <span className="mt-2 block md:mt-0">
+          <span className="mt-2 block text-center md:mt-0 md:text-right md:pe-12">
             © 2025 NeuronHire. Todos os direitos reservados
           </span>
         </div>

@@ -25,7 +25,7 @@ const features = [
 
 export function FeatureMarquee() {
   return (
-    <div className="bg-black rotate-[1deg] h-12 overflow-hidden flex items-center shadow-[0_4px_5px_-1px_rgba(0,0,0,0.6)]">
+    <div className="bg-black h-12 overflow-hidden flex items-center shadow-[0_4px_5px_-1px_rgba(0,0,0,0.6)]">
       <Marquee
         speed={25}
         gradient={false}

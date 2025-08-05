@@ -14,7 +14,7 @@ export function Footer() {
         }}
       />
       <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-14">
-        <div className="grid grid-cols-1 gap-12 md:[grid-template-columns:4fr_1fr_1fr_1fr]">
+        <div className="grid grid-cols-1 gap-12 md:[grid-template-columns:6fr_1fr_1fr]">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <Image
@@ -73,32 +73,6 @@ export function Footer() {
           </div>
 
           <div className="space-y-3">
-            <h4 className="text-lg font-semibold">Social</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="#" className="text-white/70 hover:text-white">
-                  Twitter
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-white/70 hover:text-white">
-                  Facebook
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-white/70 hover:text-white">
-                  Instagram
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-white/70 hover:text-white">
-                  Tiktok
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="space-y-3">
             <h4 className="text-lg font-semibold">Legal</h4>
             <ul className="space-y-2 text-sm">
               <li>
@@ -120,7 +94,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10  pt-4 text-xs text-white/60 md:flex md items-center md:justify-between">
+        <div className="mt-10 pt-4 text-xs text-white/60 md:flex md:items-center md:justify-between">
           <span className="block">
             Designed by{" "}
             <Link href="#" className="underline hover:text-white">

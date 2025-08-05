@@ -223,7 +223,7 @@ export function RolesAndStacksSection() {
       <div className="max-w-6xl mx-auto text-center">
         <motion.p
           variants={textItem}
-          className="body-mackinac text-sm font-thin uppercase tracking-wide text-neuronhire-red-lines mb-2"
+          className="body-mackinac text-sm font-normal uppercase tracking-wide text-neuronhire-red-lines mb-2"
         >
           Hire with ease
         </motion.p>
@@ -254,7 +254,7 @@ export function RolesAndStacksSection() {
                   transition: { type: "spring", stiffness: 240, damping: 18 },
                 }}
                 className={cn(
-                  "body-mackinac px-4 py-1 rounded-sm text-sm font-thin",
+                  "body-mackinac px-4 py-1 rounded-sm text-sm font-normal",
                   index !== 0 && "ml-2",
                   selectedTab === key
                     ? "bg-black text-white"

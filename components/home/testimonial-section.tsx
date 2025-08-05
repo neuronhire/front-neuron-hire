@@ -61,7 +61,7 @@ export function TestimonialsSection() {
         >
           <motion.p
             variants={textItem}
-            className="text-sm uppercase font-thin tracking-wide text-neuronhire-red-lines mb-2 body-satoshi"
+            className="text-sm uppercase font-normal tracking-wide text-neuronhire-red-lines mb-2 body-satoshi"
           >
             A DISRUPTIVE NEW MODEL
           </motion.p>
@@ -75,7 +75,7 @@ export function TestimonialsSection() {
 
           <motion.p
             variants={textItem}
-            className="text-base text-neuronhire-red-lines font-thin body-satoshi"
+            className="text-base text-neuronhire-red-lines font-normal body-satoshi"
           >
             We are incredibly pleased with Teilur Talent as our talent partner.
             Their expertise has <br /> allowed us to recruit qualified

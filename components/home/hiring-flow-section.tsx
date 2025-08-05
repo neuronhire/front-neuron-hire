@@ -94,7 +94,7 @@ export function HiringFlowSection() {
         <motion.div variants={sectionVariant} className="">
           <motion.p
             variants={textItem}
-            className="body-satoshi uppercase text-sm font-thin text-neuronhire-red-30 mb-3"
+            className="body-satoshi uppercase text-sm font-normal text-neuronhire-red-30 mb-3"
           >
             Total control, zero lock-in
           </motion.p>

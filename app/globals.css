@@ -377,6 +377,18 @@
     }
   }
 
+  @keyframes sphereBreathing {
+    0% {
+      transform: translateX(-50%) scale(1);
+    }
+    50% {
+      transform: translateX(-50%) scale(0.95);
+    }
+    100% {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+
   .nh-hero-right-bg::after {
     content: "";
     position: absolute;
@@ -481,6 +493,78 @@
     }
     .nh-hero-right-bg::after {
       animation: none;
+    }
+  }
+
+  .nh-sphere-bg {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    position: relative;
+    isolation: isolate;
+  }
+
+  .nh-sphere-bg::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 80%;
+    background: url("/assets/background/sphere-background.png") no-repeat center /
+      contain;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(2px);
+    will-change: transform, opacity;
+    animation: sphereBreathing 6s ease-in-out infinite;
+  }
+
+  @media (max-width: 1279px) {
+    .nh-sphere-bg::after {
+      width: 85%;
+      height: 85%;
+      top: 5%;
+      animation: sphereBreathing 6s ease-in-out infinite;
+    }
+  }
+  @media (max-width: 1023px) {
+    .nh-sphere-bg::after {
+      width: 120%;
+      height: 120%;
+      top: 0%;
+      filter: blur(2px);
+      animation: sphereBreathing 6s ease-in-out infinite;
+    }
+  }
+  @media (max-width: 767px) {
+    .nh-sphere-bg {
+      min-height: clamp(520px, 78vh, 680px);
+    }
+    .nh-sphere-bg::after {
+      width: 120%;
+      height: 110%;
+      top: 0%;
+      filter: blur(2px);
+      opacity: 0.8;
+      animation: sphereBreathing 6s ease-in-out infinite;
+    }
+  }
+  @media (max-width: 480px) {
+    .nh-sphere-bg::after {
+      width: 120%;
+      height: 120%;
+      top: -5%;
+      filter: blur(2px);
+      opacity: 0.9;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nh-sphere-bg::after {
+      animation: none;
+      transform: translateX(-50%) scale(1);
     }
   }
 }

@@ -27,11 +27,11 @@ const cardVariants: Variants = {
 
 export function BenefitsSection() {
   return (
-    <section className="py-24 px-6 text-center bg-neuronhire-bg-main">
+    <section className="py-24 px-6 text-center">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl mx-auto mb-12">
           <motion.p
-            className="text-neuronhire-red-lines max-w-2xl mx-auto text-sm font-medium mb-1 body-satoshi"
+            className="text-neuronhire-red-lines max-w-2xl mx-auto text-sm font-normal mb-1 body-satoshi"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.35 }}
@@ -53,7 +53,7 @@ export function BenefitsSection() {
           </motion.h2>
 
           <motion.p
-            className="text-neuronhire-red-lines max-w-3xl mx-auto text-lg font-medium body-satoshi"
+            className="text-neuronhire-red-lines max-w-3xl mx-auto text-lg font-normal body-satoshi"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.35 }}

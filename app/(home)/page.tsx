@@ -16,10 +16,13 @@ export default function NeuronHireLanding() {
           <FeatureMarquee />
           <TrustedBySection />
         </section>
+
+        <section className="relative overflow-hidden nh-sphere-bg">
+          <HowItWorksSection />
+          <BenefitsSection />
+        </section>
       </div>
 
-      <HowItWorksSection />
-      <BenefitsSection />
       <HiringFlowSection />
       <RolesAndStacksSection />
       <TestimonialsSection />

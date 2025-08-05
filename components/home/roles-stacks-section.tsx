@@ -93,10 +93,98 @@ const roles_map: Record<string, RoleItem[]> = {
       icon: "/assets/icons/roles/braces.svg",
     },
   ],
-  "Data & AI": [],
-  "Product & Design": [],
-  "Product & Strategy": [],
-  Leadership: [],
+  "Data & AI": [
+    {
+      title: "Data Analyst",
+      description:
+        "Transforms data into insights to guide decision-making processes.",
+      icon: "/assets/icons/roles/database.svg",
+    },
+    {
+      title: "Data Engineer",
+      description:
+        "Designs and builds data pipelines, ensuring reliable data flow.",
+      icon: "/assets/icons/roles/cloud-check.svg",
+    },
+    {
+      title: "Machine Learning Engineer",
+      description:
+        "Develops models that enable intelligent behavior in applications.",
+      icon: "/assets/icons/roles/codesandbox.svg",
+    },
+    {
+      title: "AI Researcher",
+      description:
+        "Explores cutting-edge AI techniques and their applications.",
+      icon: "/assets/icons/roles/bug.svg",
+    },
+  ],
+  "Product & Design": [
+    {
+      title: "Product Designer",
+      description:
+        "Designs intuitive and engaging user experiences across products.",
+      icon: "/assets/icons/roles/smartphone.svg",
+    },
+    {
+      title: "UX Researcher",
+      description:
+        "Studies user behavior to inform product and design decisions.",
+      icon: "/assets/icons/roles/bug.svg",
+    },
+    {
+      title: "UI Designer",
+      description:
+        "Crafts visually appealing interfaces aligned with product goals.",
+      icon: "/assets/icons/roles/braces.svg",
+    },
+  ],
+  "Product & Strategy": [
+    {
+      title: "Product Manager",
+      description:
+        "Defines product vision, aligns teams, and drives execution.",
+      icon: "/assets/icons/roles/cloud-check.svg",
+    },
+    {
+      title: "Business Analyst",
+      description:
+        "Analyzes business needs and aligns solutions with strategic goals.",
+      icon: "/assets/icons/roles/database.svg",
+    },
+    {
+      title: "Strategy Analyst",
+      description:
+        "Drives company direction through data-driven insights and planning.",
+      icon: "/assets/icons/roles/codesandbox.svg",
+    },
+  ],
+  Leadership: [
+    {
+      title: "Engineering Manager",
+      description:
+        "Leads engineering teams, fosters growth, and ensures technical excellence.",
+      icon: "/assets/icons/roles/braces.svg",
+    },
+    {
+      title: "Product Lead",
+      description:
+        "Oversees product strategy and ensures value delivery across teams.",
+      icon: "/assets/icons/roles/smartphone.svg",
+    },
+    {
+      title: "CTO / Tech Lead",
+      description:
+        "Guides technology vision, architecture, and high-level technical decisions.",
+      icon: "/assets/icons/roles/cloud-check.svg",
+    },
+    {
+      title: "Design Lead",
+      description:
+        "Shapes design culture, standards, and user experience strategy.",
+      icon: "/assets/icons/roles/bug.svg",
+    },
+  ],
 };
 
 const stacks: { name: string; icon: string }[] = [
@@ -135,7 +223,7 @@ export function RolesAndStacksSection() {
       <div className="max-w-6xl mx-auto text-center">
         <motion.p
           variants={textItem}
-          className="body-mackinac text-sm font-medium uppercase tracking-wide text-neuronhire-red-lines mb-2"
+          className="body-mackinac text-sm font-thin uppercase tracking-wide text-neuronhire-red-lines mb-2"
         >
           Hire with ease
         </motion.p>
@@ -170,7 +258,7 @@ export function RolesAndStacksSection() {
                   index !== 0 && "ml-2",
                   selectedTab === key
                     ? "bg-black text-white"
-                    : "bg-white border border-neutral-300 text-neuronhire-red-lines-60"
+                    : "bg-white border border-neutral-300 text-[var(--neuronhire-red-lines-60)]"
                 )}
               >
                 {key}
@@ -227,7 +315,7 @@ export function RolesAndStacksSection() {
                         {role.title}
                       </h4>
                     </div>
-                    <p className="text-sm text-left text-neuronhire-red-lines-70 font-bold break-words">
+                    <p className="text-[var(--neuronhire-red-lines-70)] text-sm text-left font-medium break-words">
                       {role.description}
                     </p>
                   </motion.div>

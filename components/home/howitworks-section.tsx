@@ -55,7 +55,7 @@ export function HowItWorksSection() {
   return (
     <section className="py-24 px-6 text-center bg-neuronhire-bg-main">
       <motion.h4
-        className="text-sm uppercase tracking-wide text-black mb-2 font-satoshi font-medium"
+        className="text-sm uppercase tracking-wide text-black mb-2 font-satoshi font-thin"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.35 }}
@@ -77,7 +77,7 @@ export function HowItWorksSection() {
       </motion.h2>
 
       <motion.p
-        className="text-black max-w-2xl mx-auto mb-12 font-medium text-lg"
+        className="text-black max-w-2xl mx-auto mb-12 font-thin text-lg"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.35 }}

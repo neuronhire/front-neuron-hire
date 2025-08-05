@@ -27,7 +27,7 @@ const cardVariants: Variants = {
 
 export function BenefitsSection() {
   return (
-    <section className="py-24 px-6 text-center bg-neuronhire-bg-main">
+    <section className="py-24 px-6 text-center">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl mx-auto mb-12">
           <motion.p

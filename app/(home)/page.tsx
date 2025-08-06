@@ -25,7 +25,7 @@ export default function NeuronHireLanding() {
 
       <HiringFlowSection />
       <RolesAndStacksSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
     </div>
   );
 }

@@ -34,10 +34,10 @@ export function Footer() {
 
             <div className="flex items-center justify-center gap-3 pt-2 md:justify-start">
               {[
-                { Icon: X, label: "X", href: "#" },
-                { Icon: Linkedin, label: "LinkedIn", href: "#" },
-                { Icon: Instagram, label: "Instagram", href: "#" },
-                { Icon: Youtube, label: "YouTube", href: "#" },
+                { Icon: X, label: "X", href: "https://www.linkedin.com/company/neuronhire/" },
+                { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/neuronhire/" },
+                { Icon: Instagram, label: "Instagram", href: "https://www.linkedin.com/company/neuronhire/" },
+                { Icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@NeuronHire" },
               ].map(({ Icon, label, href }) => (
                 <Link
                   key={label}
@@ -51,7 +51,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="space-y-3">
+          {/* <div className="space-y-3">
             <h4 className="text-lg font-semibold">Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
@@ -91,7 +91,7 @@ export function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="mt-10 pt-4 text-xs text-white/60 md:flex md:items-center md:justify-between">

@@ -2,10 +2,12 @@
 
 import { Button } from "@/components/ui/button";
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { ChevronDown, ChevronRight, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -13,12 +15,12 @@ import { useEffect, useState } from "react";
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [howItWorksOpen, setHowItWorksOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -30,41 +32,21 @@ export function Header() {
       }`}
     >
       <div className="flex items-center">
-        <Popover open={menuOpen} onOpenChange={setMenuOpen}>
-          <PopoverTrigger asChild>
-            <button className="flex items-center space-x-2 md:hidden focus:outline-none">
-              <Image
-                src="/assets/logo.svg"
-                alt="NeuronHire Logo"
-                className="w-8 h-8"
-                width={32}
-                height={32}
-              />
-              <span className="text-lg font-bold text-gray-900">
-                NeuronHire
-              </span>
-            </button>
-          </PopoverTrigger>
-          <PopoverContent align="start" className="w-48 p-2 space-y-2">
-            <Link
-              href="#"
-              className="body-satoshi block text-neuronhire-black-100 hover:text-gray-900"
-              onClick={() => setMenuOpen(false)}
-            >
-              For Companies
-            </Link>
-            <Link
-              href="#"
-              className="body-satoshi block text-neuronhire-black-100 hover:text-gray-900"
-              onClick={() => setMenuOpen(false)}
-            >
-              For Developers
-            </Link>
-          </PopoverContent>
-        </Popover>
+        <div className="md:hidden flex items-center">
+          <Link href="#" className="flex items-center space-x-2">
+            <Image
+              src="/assets/logo.svg"
+              alt="NeuronHire Logo"
+              className="w-8 h-8"
+              width={32}
+              height={32}
+            />
+            <span className="text-lg font-bold text-gray-900">NeuronHire</span>
+          </Link>
+        </div>
 
         <div
-          className={`hidden md:flex items-center rounded-full px-3 py-2 space-x-6 ml-4 bg-white`}
+          className={`hidden md:flex items-center rounded-full px-3 py-2 space-x-6 bg-white`}
         >
           <Link href="#">
             <div className="flex items-center space-x-2 pr-4">
@@ -110,6 +92,96 @@ export function Header() {
         >
           Start Hiring
         </Button>
+
+        <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="p-2 md:hidden">
+              <Menu className="h-6 w-6" />
+              <span className="sr-only">Toggle menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-80 p-0">
+            <div className="flex flex-col h-full">
+              <div className="flex items-center justify-center py-6 border-b">
+                <Image
+                  src="/assets/logo.svg"
+                  alt="NeuronHire Logo"
+                  className="w-8 h-8 mr-2"
+                  width={32}
+                  height={32}
+                />
+                <span className="text-xl font-bold text-gray-900">
+                  NeuronHire
+                </span>
+              </div>
+
+              <div className="flex-1 py-6">
+                <Collapsible
+                  open={howItWorksOpen}
+                  onOpenChange={setHowItWorksOpen}
+                >
+                  <CollapsibleTrigger className="flex items-center justify-between w-full px-6 py-4 text-left hover:bg-gray-50">
+                    <span className="text-lg font-semibold text-gray-900">
+                      How It Works
+                    </span>
+                    <ChevronDown
+                      className={`h-5 w-5 text-pink-500 transition-transform ${
+                        howItWorksOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="px-6 pb-4">
+                    <div className="space-y-3 ml-4">
+                      <Link
+                        href="#"
+                        className="block text-gray-600 hover:text-gray-900 py-1"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        Subpage
+                      </Link>
+                      <Link
+                        href="#"
+                        className="block text-gray-600 hover:text-gray-900 py-1"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        Subpage
+                      </Link>
+                      <Link
+                        href="#"
+                        className="block text-gray-600 hover:text-gray-900 py-1"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        Subpage
+                      </Link>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+
+                <Link
+                  href="#"
+                  className="flex items-center justify-between px-6 py-4 hover:bg-gray-50"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <span className="text-lg font-semibold text-gray-900">
+                    For Companies
+                  </span>
+                  <ChevronRight className="h-5 w-5 text-pink-500" />
+                </Link>
+
+                <Link
+                  href="#"
+                  className="flex items-center justify-between px-6 py-4 hover:bg-gray-50"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <span className="text-lg font-semibold text-gray-900">
+                    For Talent
+                  </span>
+                  <ChevronRight className="h-5 w-5 text-pink-500" />
+                </Link>
+              </div>
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );

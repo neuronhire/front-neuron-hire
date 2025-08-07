@@ -80,18 +80,31 @@ export function Header() {
       </div>
 
       <div className="flex items-center space-x-1 sm:space-x-2">
-        <Button
-          variant="ghost"
-          className="body-satoshi text-xs sm:text-base px-2 sm:px-4 py-1 sm:py-2 h-8 sm:h-9 text-black font-bold"
+        <Link
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfK_M8uJ7t8Dt5RguEJm-u4XNGzznIoniMoiJjRRxA6tO6ozA/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Be Hired
-        </Button>
-        <Button
-          variant="secondary"
-          className="body-satoshi text-xs sm:text-base px-2 sm:px-4 py-1 sm:py-2 h-8 sm:h-9 text-black font-bold"
+          <Button
+            variant="ghost"
+            className="body-satoshi text-xs sm:text-base px-2 sm:px-4 py-1 sm:py-2 h-8 sm:h-9 text-black font-bold cursor-pointer"
+          >
+            Be Hired
+          </Button>
+        </Link>
+
+        <Link
+          href="https://calendly.com/contact-neuronhire/30min"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Start Hiring
-        </Button>
+          <Button
+            variant="secondary"
+            className="body-satoshi text-xs sm:text-base px-2 sm:px-4 py-1 sm:py-2 h-8 sm:h-9 text-black font-bold cursor-pointer"
+          >
+            Start Hiring
+          </Button>
+        </Link>
 
         <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
           <SheetTrigger asChild>

@@ -20,18 +20,26 @@ export function HeroSection() {
       </p>
 
       <div className="mt-6 flex justify-center items-center gap-3 flex-wrap font-bold body-mackinac">
-        <Link href="#">
+        <Link
+          href="https://calendly.com/contact-neuronhire/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div
             className="inline-block p-0.5 rounded-full"
             style={{ background: "var(--neuronhire-gradient-2)" }}
           >
-            <Button className="px-7">Start Hiring</Button>
+            <Button className="px-7 cursor-pointer">Start Hiring</Button>
           </div>
         </Link>
-        <Link href="#">
+        <Link
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfK_M8uJ7t8Dt5RguEJm-u4XNGzznIoniMoiJjRRxA6tO6ozA/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Button
             variant="ghost"
-            className="rounded-full px-7 py-2 text-base font-semibold border border-gray-300 bg-neuronhire-gray-12 text-black hover:bg-gray-100"
+            className="rounded-full px-7 py-2 text-base font-semibold border border-gray-300 bg-neuronhire-gray-12 text-black hover:bg-gray-100 cursor-pointer"
           >
             Be Hired
           </Button>

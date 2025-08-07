@@ -1,13 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { ChevronDown, ChevronRight, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -64,14 +59,18 @@ export function Header() {
           </Link>
           <nav className="flex items-center space-x-5 pr-3">
             <Link
-              href="#"
-              className="body-satoshi text-neuronhire-black-100 hover:text-gray-700 text-base font-medium"
+              href="https://calendly.com/contact-neuronhire/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="body-satoshi text-neuronhire-black-100 hover:text-gray-700 text-base font-medium cursor-pointer"
             >
               For Companies
             </Link>
             <Link
-              href="#"
-              className="body-satoshi text-neuronhire-black-100 hover:text-gray-700 text-base font-medium"
+              href="https://calendly.com/contact-neuronhire/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="body-satoshi text-neuronhire-black-100 hover:text-gray-700 text-base font-medium cursor-pointer"
             >
               For Developers
             </Link>
@@ -80,18 +79,31 @@ export function Header() {
       </div>
 
       <div className="flex items-center space-x-1 sm:space-x-2">
-        <Button
-          variant="ghost"
-          className="body-satoshi text-xs sm:text-base px-2 sm:px-4 py-1 sm:py-2 h-8 sm:h-9 text-black font-bold"
+        <Link
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfK_M8uJ7t8Dt5RguEJm-u4XNGzznIoniMoiJjRRxA6tO6ozA/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Be Hired
-        </Button>
-        <Button
-          variant="secondary"
-          className="body-satoshi text-xs sm:text-base px-2 sm:px-4 py-1 sm:py-2 h-8 sm:h-9 text-black font-bold"
+          <Button
+            variant="ghost"
+            className="body-satoshi text-xs sm:text-base px-2 sm:px-4 py-1 sm:py-2 h-8 sm:h-9 text-black font-bold cursor-pointer"
+          >
+            Be Hired
+          </Button>
+        </Link>
+
+        <Link
+          href="https://calendly.com/contact-neuronhire/30min"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Start Hiring
-        </Button>
+          <Button
+            variant="secondary"
+            className="body-satoshi text-xs sm:text-base px-2 sm:px-4 py-1 sm:py-2 h-8 sm:h-9 text-black font-bold cursor-pointer"
+          >
+            Start Hiring
+          </Button>
+        </Link>
 
         <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
           <SheetTrigger asChild>
@@ -115,7 +127,7 @@ export function Header() {
                 </span>
               </div>
 
-              <div className="flex-1 py-6">
+              {/* <div className="flex-1 py-6">
                 <Collapsible
                   open={howItWorksOpen}
                   onOpenChange={setHowItWorksOpen}
@@ -178,7 +190,7 @@ export function Header() {
                   </span>
                   <ChevronRight className="h-5 w-5 text-pink-500" />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </SheetContent>
         </Sheet>

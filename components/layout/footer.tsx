@@ -34,16 +34,34 @@ export function Footer() {
 
             <div className="flex items-center justify-center gap-3 pt-2 md:justify-start">
               {[
-                { Icon: X, label: "X", href: "https://www.linkedin.com/company/neuronhire/" },
-                { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/neuronhire/" },
-                { Icon: Instagram, label: "Instagram", href: "https://www.linkedin.com/company/neuronhire/" },
-                { Icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@NeuronHire" },
+                {
+                  Icon: X,
+                  label: "X",
+                  href: "https://www.linkedin.com/company/neuronhire/",
+                },
+                {
+                  Icon: Linkedin,
+                  label: "LinkedIn",
+                  href: "https://www.linkedin.com/company/neuronhire/",
+                },
+                {
+                  Icon: Instagram,
+                  label: "Instagram",
+                  href: "https://www.linkedin.com/company/neuronhire/",
+                },
+                {
+                  Icon: Youtube,
+                  label: "YouTube",
+                  href: "https://www.youtube.com/@NeuronHire",
+                },
               ].map(({ Icon, label, href }) => (
                 <Link
                   key={label}
                   href={href}
                   aria-label={label}
                   className="inline-flex h-8 w-8 items-center justify-center rounded-full  text-white/80 hover:bg-white/10 hover:text-white transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Icon size={16} />
                 </Link>

@@ -136,12 +136,15 @@ export function HiringFlowSection() {
             ))}
           </motion.div>
 
-          <motion.button
+          <motion.a
             variants={textItem}
-            className="body-satoshi px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-neutral-800 transition"
+            href="https://calendly.com/contact-neuronhire/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="body-satoshi px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-neutral-800 transition inline-block"
           >
             Build my team
-          </motion.button>
+          </motion.a>
         </motion.div>
 
         <motion.div variants={sectionVariant} className="order-1 lg:order-2">

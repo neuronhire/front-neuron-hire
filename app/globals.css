@@ -347,7 +347,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("/assets/background/map-background.png");
+    background-image: url("/assets/background/map.svg");
     background-repeat: no-repeat;
     background-position: right center;
     background-size: contain;
@@ -513,11 +513,9 @@
     transform: translateX(-50%);
     width: 80%;
     height: 80%;
-    background: url("/assets/background/sphere-background.png") no-repeat center /
-      contain;
+    background: url("/assets/background/sphere.png") no-repeat center / contain;
     pointer-events: none;
     z-index: -1;
-    filter: blur(2px);
     will-change: transform, opacity;
     animation: sphereBreathing 6s ease-in-out infinite;
   }

@@ -1,10 +1,17 @@
 "use client";
 
-import { Instagram, Linkedin, X, Youtube } from "lucide-react";
+import { ArrowUp, Instagram, Linkedin, X, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 export function Footer() {
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="relative bg-black text-white">
       <div
@@ -16,7 +23,10 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-14">
         <div className="grid grid-cols-1 gap-12 text-center md:text-left md:[grid-template-columns:6fr_1fr_1fr]">
           <div className="space-y-4">
-            <div className="flex items-center justify-center gap-3 md:justify-start">
+            <div
+              onClick={scrollToTop}
+              className="flex items-center justify-center gap-3 md:justify-start"
+            >
               <Image
                 src="/assets/logos/neurohire-white-logo.png"
                 alt="NeuronHire"
@@ -110,6 +120,16 @@ export function Footer() {
               </li>
             </ul>
           </div> */}
+
+          <div className="flex items-start justify-center md:justify-end">
+            <Button
+              onClick={scrollToTop}
+              aria-label="Voltar ao topo"
+              className="flex items-center gap-2 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition cursor-pointer"
+            >
+              <ArrowUp size={16} />
+            </Button>
+          </div>
         </div>
 
         <div className="mt-10 pt-4 text-xs text-white/60 md:flex md:items-center md:justify-between">

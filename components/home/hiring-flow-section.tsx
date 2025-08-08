@@ -90,7 +90,7 @@ export function HiringFlowSection() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
     >
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         <motion.div variants={sectionVariant} className="">
           <motion.p
             variants={textItem}
@@ -120,14 +120,14 @@ export function HiringFlowSection() {
               <motion.div
                 key={index}
                 variants={textItem}
-                className="flex items-start gap-3"
+                className="flex items-start gap-4"
               >
                 <Image
                   src={item.icon}
                   alt="icon"
-                  width={28}
-                  height={28}
-                  className="mt-1"
+                  width={32}
+                  height={32}
+                  className="mt-1 flex-shrink-0"
                 />
                 <p className="text-neuronhire-red-30 text-base font-medium">
                   {item.text}
@@ -141,7 +141,7 @@ export function HiringFlowSection() {
             href="https://calendly.com/contact-neuronhire/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="body-satoshi px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-neutral-800 transition inline-block"
+            className="body-satoshi px-8 py-3 bg-black text-white rounded-full font-medium hover:bg-neutral-800 transition inline-block"
           >
             Build my team
           </motion.a>

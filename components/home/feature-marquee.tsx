@@ -24,18 +24,20 @@ const features = [
 ];
 
 export function FeatureMarquee() {
+  const duplicatedFeatures = [...features, ...features];
+
   return (
     <div className="bg-black h-12 overflow-hidden flex items-center shadow-[0_4px_5px_-1px_rgba(0,0,0,0.6)]">
       <Marquee
         speed={25}
         gradient={false}
         pauseOnHover
-        className=" flex items-center"
+        className="flex items-center"
       >
-        {features.map((item, i) => (
+        {duplicatedFeatures.map((item, i) => (
           <div
             key={i}
-            className="flex items-center gap-2 body-satoshi text-white text-sm font-normal px-10"
+            className="flex items-center gap-2 body-satoshi text-white text-sm font-normal px-6 lg:px-8 xl:px-10 2xl:px-12"
           >
             <item.icon size={18} />
             <span>{item.text}</span>

@@ -7,7 +7,7 @@ export default function ClientFormLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-neuronhire-bg-main min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <Header minimal={true} />
       <main className="flex-1">{children}</main>
       <Footer />

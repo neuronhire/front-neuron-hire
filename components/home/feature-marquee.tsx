@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import Marquee from "react-fast-marquee";
 
-const features = [
+export const features = [
   { icon: Clock, text: "+5k hours delivered" },
   { icon: BadgeCheck, text: "97% match accuracy" },
   { icon: MapPinned, text: "LATAM-based" },

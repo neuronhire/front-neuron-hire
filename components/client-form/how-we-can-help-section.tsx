@@ -54,7 +54,7 @@ const features = [
 
 export function HowWeCanHelpSection() {
   return (
-    <section className="relative overflow-hidden nh-sphere-bg py-24 px-6">
+    <section className="relative overflow-hidden py-24 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

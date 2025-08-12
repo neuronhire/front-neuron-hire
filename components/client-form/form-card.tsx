@@ -16,7 +16,7 @@ export function FormCard() {
     console.log("Form submitted:", formData);
   };
   return (
-    <div className="bg-white/8 backdrop-blur-3xl rounded-2xl p-8 shadow-xl border border-neuronhire-gray-12 h-auto">
+    <div className="bg-white/80 backdrop-blur-3xl rounded-2xl p-8 shadow-xl border border-neuronhire-gray-6 h-auto">
       <div className="mb-6 text-center">
         <div className="inline-flex items-center gap-2 bg-neuronhire-gray-6 rounded-full px-4 py-2 mb-4">
           <span className="text-sm font-semibold text-neuronhire-black-100 body-satoshi">

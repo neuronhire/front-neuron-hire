@@ -288,7 +288,7 @@ export function RolesAndStacksSection() {
                   row.length === 4 && "md:grid-cols-4"
                 )}
               >
-                {row.map((role, i) => (
+                {row.map((role) => (
                   <motion.div
                     key={role.title}
                     variants={cardItem}

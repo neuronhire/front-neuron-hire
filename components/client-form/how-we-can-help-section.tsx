@@ -69,7 +69,7 @@ export function HowWeCanHelpSection() {
             made for speed and certainty.
           </h2>
           <p className="text-lg xl:text-xl text-neuronhire-red-lines max-w-3xl mx-auto body-satoshi">
-            We don't waste your time. We ensure top tier brightest minds for
+            We don&apos;t waste your time. We ensure top tier brightest minds for
             long-term excellence. Join 150+ teams that say no to outdated
             hiring. Time to evolve.
           </p>

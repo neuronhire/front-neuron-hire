@@ -36,11 +36,11 @@ export function FormSection() {
             <div className="space-y-4">
               <div>
                 <h1 className="text-5xl font-extrabold text-neuronhire-black-100 mb-6 body-satoshi leading-none">
-                  Let's build your tech team!
+                  Let&apos;s build your tech team!
                 </h1>
                 <div className="text-lg text-neuronhire-black-100 body-satoshi font-normal">
                   <p>Fill out the form and book your call.</p>
-                  <p>We'll get back to you within 24 hours with next steps.</p>
+                  <p>We&apos;ll get back to you within 24 hours with next steps.</p>
                 </div>
               </div>
               <ul className="space-y-2 text-neuronhire-black-100 body-satoshi font-normal text-lg list-disc pl-5 marker:text-neuronhire-black-100 ml-2">

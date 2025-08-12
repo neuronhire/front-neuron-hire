@@ -14,7 +14,7 @@ interface HeaderProps {
 export function Header({ minimal = false }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [howItWorksOpen, setHowItWorksOpen] = useState(false);
+  //const [howItWorksOpen, setHowItWorksOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {

@@ -1,121 +1,112 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Layers, Shield, Target, Users, Volume2, Zap } from "lucide-react";
+import { BezierDefinition, motion, Variants } from "framer-motion";
+import { Layers, Shield, Target, Volume2, Zap } from "lucide-react";
+import { HowWeCanHelpCard } from "./how-we-can-help-card";
+
+const EASE: BezierDefinition = [0.22, 1, 0.36, 1];
 
 const features = [
   {
-    icon: Users,
-    title: "Long-Term Relationships",
-    description: "We build lasting bonds between engineers and businesses.",
-    color: "bg-purple-100",
-    iconColor: "text-purple-600",
+    title: "Engineering Expertise",
+    description:
+      "We are engineers hiring engineers. We understand technical excellence and match companies with professionals who truly deliver.",
+    backgroundColor: "bg-neuronhire-primary",
+    titleColor: "text-white",
+    descriptionColor: "text-white",
   },
   {
-    icon: Target,
+    title: "Long-Term Relationships",
+    description: "",
+    backgroundColor: "bg-gray-50",
+    titleColor: "text-neuronhire-red-30",
+    descriptionColor: "text-neuronhire-gray-64",
+  },
+  {
     title: "Cost Optimization",
     description:
-      "Optimized global talent with matching quality without sacrificing quality.",
-    color: "bg-blue-100",
-    iconColor: "text-blue-600",
+      "Access global talent while reducing overhead, without sacrificing quality.",
+    backgroundColor: "bg-gray-50",
+    titleColor: "text-neuronhire-red-30",
+    descriptionColor: "text-neuronhire-gray-64",
   },
   {
-    icon: Volume2,
-    title: "Precision Over Volume",
-    description:
-      "We focus on quality matches, not flooding pipelines with noise.",
-    color: "bg-green-100",
-    iconColor: "text-green-600",
-  },
-  {
-    icon: Layers,
-    title: "Flexibility",
-    description: "From full-time to project work, we adapt to your needs.",
-    color: "bg-orange-100",
-    iconColor: "text-orange-600",
-  },
-  {
-    icon: Zap,
-    title: "Efficiency and Speed",
-    description:
-      "Fast, structured hiring without compromising quality or depth of vetting.",
-    color: "bg-yellow-100",
-    iconColor: "text-yellow-600",
-  },
-  {
-    icon: Shield,
     title: "Honesty and Integrity",
-    description:
-      "We are transparent with your best interests at the forefront.",
-    color: "bg-red-100",
-    iconColor: "text-red-600",
+    description: "We act transparently with your best interest at the center.",
+    backgroundColor: "bg-gray-50",
+    titleColor: "text-neuronhire-red-30",
+    descriptionColor: "text-neuronhire-gray-64",
+  },
+  {
+    title: "Efficiency and Speed",
+    description: "",
+    backgroundColor: "bg-gray-50",
+    titleColor: "text-neuronhire-red-30",
+    descriptionColor: "text-neuronhire-gray-64",
+  },
+  {
+    title: "Flexibility",
+    description: "From full-time to fractional roles, we adapt to your needs.",
+    backgroundColor: "bg-gray-50",
+    titleColor: "text-neuronhire-red-30",
+    descriptionColor: "text-neuronhire-gray-64",
   },
 ];
 
+const textVariants: Variants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: (custom: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: custom,
+      duration: 0.55,
+      ease: EASE,
+    },
+  }),
+};
+
 export function HowWeCanHelpSection() {
   return (
-    <section className="relative overflow-hidden py-24 px-6">
+    <section className="py-24 px-6 text-center">
       <div className="max-w-6xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-16"
+        <motion.h4
+          className="text-sm uppercase tracking-wide text-black mb-2 font-satoshi font-normal"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.35 }}
+          variants={textVariants}
+          custom={0}
         >
-          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-neuronhire-red-lines mb-6 body-mackinac">
-            A frictionless hiring engine
-            <br />
-            made for speed and certainty.
-          </h2>
-          <p className="text-lg xl:text-xl text-neuronhire-red-lines max-w-3xl mx-auto body-satoshi">
-            We don&apos;t waste your time. We ensure top tier brightest minds for
-            long-term excellence. Join 150+ teams that say no to outdated
-            hiring. Time to evolve.
-          </p>
-        </motion.div>
+          How we can help
+        </motion.h4>
+        <motion.h2
+          className="text-3xl md:text-5xl text-black mb-4 font-mackinac font-bold"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.35 }}
+          variants={textVariants}
+          custom={0.05}
+        >
+          A frictionless hiring engine <br /> made for speed and certainty.
+        </motion.h2>
 
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow ${
-                  index === 3
-                    ? "md:col-span-2 lg:col-span-1 relative overflow-hidden"
-                    : ""
-                }`}
-              >
-                {index === 3 && (
-                  <div className="absolute inset-0 bg-gradient-to-br from-pink-100 to-purple-100 opacity-50"></div>
-                )}
+        <motion.p
+          className="text-black max-w-2xl mx-auto mb-12 font-normal text-lg"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.35 }}
+          variants={textVariants}
+          custom={0.1}
+        >
+          We don’t waste your time with endless calls or shallow candidate
+          pools. You tell us what you need. We deliver top-tier matches. Fast.
+        </motion.p>
 
-                <div
-                  className={`w-16 h-16 ${feature.color} rounded-xl flex items-center justify-center mb-4 relative z-10`}
-                >
-                  <feature.icon className={`w-8 h-8 ${feature.iconColor}`} />
-                </div>
-                <h3 className="text-xl xl:text-2xl font-semibold text-gray-900 mb-3 body-mackinac relative z-10">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 body-satoshi relative z-10">
-                  {feature.description}
-                </p>
-
-                {index === 3 && (
-                  <div className="absolute bottom-4 right-4 opacity-20">
-                    <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-purple-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">TECH</span>
-                    </div>
-                  </div>
-                )}
-              </motion.div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {features.map((feature, index) => (
+            <HowWeCanHelpCard key={index} index={index} {...feature} />
+          ))}
         </div>
       </div>
     </section>

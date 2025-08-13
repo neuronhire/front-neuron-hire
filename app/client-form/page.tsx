@@ -5,7 +5,7 @@ import { HowWeCanHelpSection } from "@/components/client-form/how-we-can-help-se
 export default function ClientFormPage() {
   return (
     <div className="min-h-screen">
-      <section className="relative overflow-hidden nh-hero-right-bg min-h-[100svh]  mx-auto">
+      <section className="relative overflow-hidden nh-hero-right-bg md:min-h-[85svh] mx-auto">
         <FormSection />
       </section>
       <HowWeCanHelpSection />

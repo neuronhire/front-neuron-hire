@@ -361,8 +361,8 @@ export function FormCard() {
                   Meeting Scheduled!
                 </h3>
                 <p className="text-neuronhire-gray-64 body-satoshi">
-                  Thank you for scheduling a meeting with us. You'll receive a
-                  confirmation email shortly with all the details.
+                  Thank you for scheduling a meeting with us. You&apos;ll
+                  receive a confirmation email shortly with all the details.
                 </p>
               </div>
 

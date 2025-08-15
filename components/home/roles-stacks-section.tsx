@@ -348,7 +348,7 @@ export function RolesAndStacksSection() {
                 "md:grid-cols-4"
               )}
             >
-              {row.map((stack, i) => (
+              {row.map((stack) => (
                 <motion.div
                   key={stack.name}
                   variants={stackItem}

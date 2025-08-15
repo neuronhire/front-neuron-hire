@@ -1,7 +1,6 @@
 "use client";
 
 import { BezierDefinition, motion, Variants } from "framer-motion";
-import { Layers, Shield, Target, Volume2, Zap } from "lucide-react";
 import { HowWeCanHelpCard } from "./how-we-can-help-card";
 
 const EASE: BezierDefinition = [0.22, 1, 0.36, 1];

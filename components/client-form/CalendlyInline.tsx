@@ -23,7 +23,8 @@ export default function CalendlyInline({
 }: CalendlyInlineProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [ready, setReady] = useState<boolean>(
-    typeof window !== "undefined" && !!(window as any).Calendly
+    typeof window !== "undefined" &&
+      !!(window as { Calendly?: unknown }).Calendly
   );
 
   // carrega script uma vez
@@ -64,9 +65,9 @@ export default function CalendlyInline({
     const el = containerRef.current;
     if (!ready || !el) return;
     el.innerHTML = "";
-    // @ts-ignore
+    // @ts-expect-error Calendly global is not typed
     if (window.Calendly?.initInlineWidget) {
-      // @ts-ignore
+      // @ts-expect-error Calendly global is not typed
       window.Calendly.initInlineWidget({
         url: builtUrl,
         parentElement: el,

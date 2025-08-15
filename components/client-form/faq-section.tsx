@@ -1,8 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 interface FaqItem {
   question: string;
@@ -10,26 +15,23 @@ interface FaqItem {
 }
 
 const faqMap: Record<string, FaqItem[]> = {
-  "faq_1": [
+  faq_1: [
     {
       question: "This is a question from the Faq?",
       answer:
-        "This would be the answer to the frequently asked question that provides helpful information to potential clients.",
+        "This would be the answer to the frequently asked question that provides helpful information to potential clients. 1",
     },
     {
       question: "This is a question from the Faq?",
       answer:
         "This would be the answer to the frequently asked question that provides helpful information to potential clients.",
     },
+  ],
+  faq_2: [
     {
       question: "This is a question from the Faq?",
       answer:
-        "This would be the answer to the frequently asked question that provides helpful information to potential clients.",
-    },
-    {
-      question: "This is a question from the Faq?",
-      answer:
-        "This would be the answer to the frequently asked question that provides helpful information to potential clients.",
+        "This would be the answer to the frequently asked question that provides helpful information to potential clients. 2 ",
     },
     {
       question: "This is a question from the Faq?",
@@ -42,45 +44,23 @@ const faqMap: Record<string, FaqItem[]> = {
         "This would be the answer to the frequently asked question that provides helpful information to potential clients.",
     },
   ],
-    "faq_2": [
+  faq_3: [
     {
       question: "This is a question from the Faq?",
       answer:
-        "This would be the answer to the frequently asked question that provides helpful information to potential clients.",
-    },
-    {
-      question: "This is a question from the Faq?",
-      answer:
-        "This would be the answer to the frequently asked question that provides helpful information to potential clients.",
+        "This would be the answer to the frequently asked question that provides helpful information to potential clients. 3",
     },
   ],
-    "faq_3": [
-    {
-      question: "This is a question from the Faq?",
-      answer:
-        "This would be the answer to the frequently asked question that provides helpful information to potential clients.",
-    },
-    {
-      question: "This is a question from the Faq?",
-      answer:
-        "This would be the answer to the frequently asked question that provides helpful information to potential clients.",
-    },
-    {
-      question: "This is a question from the Faq?",
-      answer:
-        "This would be the answer to the frequently asked question that provides helpful information to potential clients.",
-    },
-  ],
-}
+};
 
 export function FaqSection() {
   const categories = Object.keys(faqMap);
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <section className="py-24 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -103,15 +83,12 @@ export function FaqSection() {
 
         {/* Layout em duas colunas */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Coluna de categorias */}
+          {/* Categorias */}
           <div className="flex md:flex-col gap-4">
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => {
-                  setSelectedCategory(cat);
-                  setOpenFaq(null);
-                }}
+                onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-2 body-mackinac rounded-lg border ${
                   selectedCategory === cat
                     ? "bg-gray-900 text-white border-gray-900"
@@ -123,47 +100,24 @@ export function FaqSection() {
             ))}
           </div>
 
-          {/* Coluna de perguntas e respostas */}
-          <div className="md:col-span-3 space-y-4">
-            {faqMap[selectedCategory].map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <button
-                  onClick={() =>
-                    setOpenFaq(openFaq === index ? null : index)
-                  }
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+          {/* Perguntas */}
+          <div className="md:col-span-3">
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {faqMap[selectedCategory].map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`faq-${index}`}
+                  className="border border-gray-200 rounded-lg px-2 !border-b"
                 >
-                  <span className="text-lg font-medium text-gray-900 body-satoshi">
+                  <AccordionTrigger className="text-lg font-medium text-gray-900 body-satoshi hover:no-underline">
                     {faq.question}
-                  </span>
-                  {openFaq === index ? (
-                    <ChevronUp className="w-5 h-5 text-neuronhire-gray-64 flex-shrink-0" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-neuronhire-gray-64 flex-shrink-0" />
-                  )}
-                </button>
-                {openFaq === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="px-6 pb-6"
-                  >
-                    <p className="text-gray-600 body-satoshi leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </motion.div>
-                )}
-              </motion.div>
-            ))}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 body-satoshi leading-relaxed pb-4">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </div>

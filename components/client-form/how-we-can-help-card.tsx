@@ -67,7 +67,8 @@ export function HowWeCanHelpCard({
       whileHover={
         index === 0 && backgroundImage
           ? {
-              scale: 1.02,
+              scale: 1.01,
+              y: -2,
               transition: { duration: 0.3, ease: "easeOut" },
             }
           : {

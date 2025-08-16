@@ -119,13 +119,15 @@ export function HowWeCanHelpSection() {
           We don’t waste your time with endless calls or shallow candidate
           pools. You tell us what you need. We deliver top-tier matches. Fast.
         </motion.p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 auto-rows-fr">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {features.map((feature, index) => (
             <HowWeCanHelpCard
               key={index}
               index={index}
               {...feature}
-              className={index === 0 ? "lg:row-span-3 h-full" : ""}
+              className={
+                index === 0 ? "lg:row-span-3 min-h-[400px]" : "min-h-[180px]"
+              }
             />
           ))}
         </div>

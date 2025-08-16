@@ -76,7 +76,6 @@ export function FlagsMarquee() {
         speed={30}
         className="flex items-center"
         play={isPlaying}
-        pauseOnHover={true}
       >
         {duplicatedFlags.map((flag, i) => (
           <div

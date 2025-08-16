@@ -138,9 +138,7 @@ export function HiringFlowSection() {
 
           <motion.a
             variants={textItem}
-            href="https://calendly.com/contact-neuronhire/30min"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/client-form"
             className="body-satoshi px-8 py-3 bg-black text-white rounded-full font-medium hover:bg-neutral-800 transition inline-block"
           >
             Build my team

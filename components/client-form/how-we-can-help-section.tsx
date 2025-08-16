@@ -13,42 +13,56 @@ const features = [
     backgroundColor: "bg-neuronhire-primary",
     titleColor: "text-white",
     descriptionColor: "text-white",
+    icon: "/assets/icons/how-can-we-help-section/engineering_expertise.svg",
   },
   {
     title: "Long-Term Relationships",
-    description: "",
+    description: "We build lasting bonds between engineers and companies that value growth.",
     backgroundColor: "bg-gray-50",
-    titleColor: "text-neuronhire-red-30",
+    titleColor: "text-neuronhire-secondary-red",
     descriptionColor: "text-neuronhire-gray-64",
+    icon: "/assets/icons/how-can-we-help-section/group.svg",
   },
   {
     title: "Cost Optimization",
     description:
       "Access global talent while reducing overhead, without sacrificing quality.",
     backgroundColor: "bg-gray-50",
-    titleColor: "text-neuronhire-red-30",
+    titleColor: "text-neuronhire-secondary-red",
     descriptionColor: "text-neuronhire-gray-64",
+    icon: "/assets/icons/how-can-we-help-section/dollar.svg",
   },
   {
-    title: "Honesty and Integrity",
-    description: "We act transparently with your best interest at the center.",
+    title: "Precision",
+    description: "We focus on perfect-fit talent, not flooding pipelines with noise.",
     backgroundColor: "bg-gray-50",
-    titleColor: "text-neuronhire-red-30",
+    titleColor: "text-neuronhire-secondary-red",
     descriptionColor: "text-neuronhire-gray-64",
-  },
-  {
-    title: "Efficiency and Speed",
-    description: "",
-    backgroundColor: "bg-gray-50",
-    titleColor: "text-neuronhire-red-30",
-    descriptionColor: "text-neuronhire-gray-64",
+    icon: "/assets/icons/how-can-we-help-section/precision.svg",
   },
   {
     title: "Flexibility",
     description: "From full-time to fractional roles, we adapt to your needs.",
     backgroundColor: "bg-gray-50",
-    titleColor: "text-neuronhire-red-30",
+    titleColor: "text-neuronhire-secondary-red",
     descriptionColor: "text-neuronhire-gray-64",
+    icon: "/assets/icons/how-can-we-help-section/trending.svg",
+  },
+  {
+    title: "Efficiency and Speed",
+    description: "Fast, structured hiring without compromising quality or depth of evaluation.",
+    backgroundColor: "bg-gray-50",
+    titleColor: "text-neuronhire-secondary-red",
+    descriptionColor: "text-neuronhire-gray-64",
+    icon: "/assets/icons/how-can-we-help-section/lightning.svg",
+  },
+  {
+    title: "Honesty and Integrity",
+    description: "We act transparently with your best interest at the center.",
+    backgroundColor: "bg-gray-50",
+    titleColor: "text-neuronhire-secondary-red",
+    descriptionColor: "text-neuronhire-gray-64",
+    icon: "/assets/icons/how-can-we-help-section/shield.svg",
   },
 ];
 
@@ -70,7 +84,7 @@ export function HowWeCanHelpSection() {
     <section className="py-24 px-6 text-center">
       <div className="max-w-6xl mx-auto text-center">
         <motion.h4
-          className="text-sm uppercase tracking-wide text-black mb-2 font-satoshi font-normal"
+          className="text-xs uppercase tracking-wide text-black mb-2 font-satoshi font-normal"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.35 }}
@@ -91,7 +105,7 @@ export function HowWeCanHelpSection() {
         </motion.h2>
 
         <motion.p
-          className="text-black max-w-2xl mx-auto mb-12 font-normal text-lg"
+          className="text-lg xl:text-xl text-gray-600 max-w-3xl mx-auto body-satoshi mb-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.35 }}
@@ -101,12 +115,17 @@ export function HowWeCanHelpSection() {
           We don’t waste your time with endless calls or shallow candidate
           pools. You tell us what you need. We deliver top-tier matches. Fast.
         </motion.p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 auto-rows-fr">
           {features.map((feature, index) => (
-            <HowWeCanHelpCard key={index} index={index} {...feature} />
+            <HowWeCanHelpCard
+              key={index}
+              index={index}
+              {...feature}
+              className={index === 0 ? "lg:row-span-3 h-full" : ""}
+            />
           ))}
         </div>
+
       </div>
     </section>
   );

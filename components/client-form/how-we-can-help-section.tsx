@@ -7,17 +7,19 @@ const EASE: BezierDefinition = [0.22, 1, 0.36, 1];
 
 const features = [
   {
-    title: "Engineering Expertise",
+    title: "Tech Hiring Tech",
     description:
       "We are engineers hiring engineers. We understand technical excellence and match companies with professionals who truly deliver.",
     backgroundColor: "bg-neuronhire-primary",
     titleColor: "text-white",
     descriptionColor: "text-white",
     icon: "/assets/icons/how-can-we-help-section/engineering_expertise.svg",
+    backgroundImage: "/assets/client-form/tech-hire-card.png",
   },
   {
     title: "Long-Term Relationships",
-    description: "We build lasting bonds between engineers and companies that value growth.",
+    description:
+      "We build lasting bonds between engineers and companies that value growth.",
     backgroundColor: "bg-gray-50",
     titleColor: "text-neuronhire-secondary-red",
     descriptionColor: "text-neuronhire-gray-64",
@@ -33,8 +35,9 @@ const features = [
     icon: "/assets/icons/how-can-we-help-section/dollar.svg",
   },
   {
-    title: "Precision",
-    description: "We focus on perfect-fit talent, not flooding pipelines with noise.",
+    title: "Precision Over Volume",
+    description:
+      "We focus on perfect-fit talent, not flooding pipelines with noise.",
     backgroundColor: "bg-gray-50",
     titleColor: "text-neuronhire-secondary-red",
     descriptionColor: "text-neuronhire-gray-64",
@@ -50,7 +53,8 @@ const features = [
   },
   {
     title: "Efficiency and Speed",
-    description: "Fast, structured hiring without compromising quality or depth of evaluation.",
+    description:
+      "Fast, structured hiring without compromising quality or depth of evaluation.",
     backgroundColor: "bg-gray-50",
     titleColor: "text-neuronhire-secondary-red",
     descriptionColor: "text-neuronhire-gray-64",
@@ -125,7 +129,6 @@ export function HowWeCanHelpSection() {
             />
           ))}
         </div>
-
       </div>
     </section>
   );

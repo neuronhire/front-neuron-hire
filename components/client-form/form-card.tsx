@@ -170,10 +170,9 @@ export function FormCard() {
         </div>
       </div>
 
-      {/* body */}
       <div className="flex-1 min-h-0 relative">
         {currentStep === 1 && (
-          <div className="h-full overflow-auto pr-1">
+          <div className="h-full overflow-auto p-2">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onContactSubmit)}
@@ -322,7 +321,6 @@ export function FormCard() {
           </div>
         )}
 
-        {/* Calendly or Success Screen */}
         <div
           className={
             isSchedule

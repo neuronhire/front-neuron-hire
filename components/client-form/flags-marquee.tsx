@@ -26,6 +26,7 @@ import {
   UY,
   VE,
 } from "country-flag-icons/react/3x2";
+import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 
 const countryFlags = [
@@ -58,11 +59,25 @@ const countryFlags = [
 ];
 
 export function FlagsMarquee() {
+  const [isPlaying, setIsPlaying] = useState(false);
   const duplicatedFlags = [...countryFlags, ...countryFlags, ...countryFlags];
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsPlaying(true);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="w-full h-16 overflow-hidden flex items-center">
-      <Marquee speed={30} className="flex items-center">
+      <Marquee
+        speed={30}
+        className="flex items-center"
+        play={isPlaying}
+        pauseOnHover={true}
+      >
         {duplicatedFlags.map((flag, i) => (
           <div
             key={i}

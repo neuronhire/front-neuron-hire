@@ -79,9 +79,14 @@ export function FormSection() {
             </div>
           </div>
 
-          <div className="absolute left-0 right-0 z-10">
+          <motion.div
+            className="absolute left-0 right-0 z-10"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          >
             <FlagsMarquee />
-          </div>
+          </motion.div>
         </motion.div>
 
         <div className="hidden lg:block lg:col-span-1" aria-hidden />

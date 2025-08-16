@@ -68,7 +68,7 @@ export function FaqSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="body-mackinac text-sm font-normal uppercase tracking-wide mb-2">
+          <p className="body-mackinac text-xs font-normal uppercase tracking-wide mb-2">
             FAQ
           </p>
           <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 body-mackinac">
@@ -89,10 +89,10 @@ export function FaqSection() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 body-mackinac rounded-lg border ${
+                className={`px-4 py-2 body-mackinac rounded-lg text-left ${
                   selectedCategory === cat
-                    ? "bg-gray-900 text-white border-gray-900"
-                    : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
+                    ? "bg-gray-100 font-extrabold"
+                    : "bg-white font-bold hover:bg-gray-100"
                 } transition`}
               >
                 {cat.replace("_", " ").toUpperCase()}
@@ -107,12 +107,12 @@ export function FaqSection() {
                 <AccordionItem
                   key={index}
                   value={`faq-${index}`}
-                  className="border border-gray-200 rounded-lg px-2 !border-b"
+                  className="border border-gray-200 rounded-lg px-2 body-mackinac !border-b"
                 >
-                  <AccordionTrigger className="text-lg font-medium text-gray-900 body-satoshi hover:no-underline">
+                  <AccordionTrigger className="text-2xl font-extrabold hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 body-satoshi leading-relaxed pb-4">
+                  <AccordionContent className="text-gray-600 leading-relaxed pb-4">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

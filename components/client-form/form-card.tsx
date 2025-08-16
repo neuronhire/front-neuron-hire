@@ -22,6 +22,7 @@ import {
 } from "../ui/select";
 import { Textarea } from "../ui/textarea";
 import CalendlyInline from "./CalendlyInline";
+import { ArrowLeft } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -129,8 +130,8 @@ export function FormCard() {
     <div
       className={`
         bg-white/80 backdrop-blur-3xl rounded-2xl p-8 shadow-xl border border-neuronhire-gray-6
-        ${isSchedule ? "h-[75vh]" : "h-[60vh]"} flex flex-col overflow-hidden
-        w-full lg:w-[420px]
+        ${isSchedule ? "h-[75vh]" : "h-[70vh]"} flex flex-col overflow-hidden
+        w-full
         ${
           isSchedule
             ? "xl:w-[560px] 2xl:w-[600px]"
@@ -172,7 +173,7 @@ export function FormCard() {
 
       <div className="flex-1 min-h-0 relative">
         {currentStep === 1 && (
-          <div className="h-full overflow-auto p-2">
+          <div className="h-full overflow-auto p-2 lg:pt-15">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onContactSubmit)}
@@ -303,7 +304,7 @@ export function FormCard() {
                   )}
                 />
 
-                <div>
+                <div className="lg:pt-10">
                   <div
                     className="inline-block p-0.5 rounded-full w-full"
                     style={{ background: "var(--neuronhire-gradient-2)" }}
@@ -376,13 +377,6 @@ export function FormCard() {
                 >
                   Schedule Another Meeting
                 </Button>
-                <Button
-                  onClick={() => window.location.reload()}
-                  variant="ghost"
-                  className="w-full text-neuronhire-gray-64 hover:text-neuronhire-black-100 py-3 rounded-full"
-                >
-                  Return to Home
-                </Button>
               </div>
             </div>
           )}
@@ -396,7 +390,8 @@ export function FormCard() {
             variant="ghost"
             className="px-6 py-3 text-neuronhire-gray-64 border-neuronhire-gray-40 hover:bg-neuronhire-gray-6 rounded-full"
           >
-            ← Back to Contact
+            <ArrowLeft/>
+            Back to Contact
           </Button>
         </div>
       )}

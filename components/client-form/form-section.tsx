@@ -18,20 +18,20 @@ export function FormSection() {
     <section
       className="
         relative w-full max-w-none
-        pl-6 sm:pl-8 md:pl-12
-        pr-6 sm:pr-8 md:pr-12 lg:pr-0
+        pl-6 sm:pl-8 md:pl-12 lg:pl-15 xl:pl-7
+        pr-6 sm:pr-8 md:pr-12
         py-20 lg:py-15
         overflow-visible
       "
     >
-      <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-16 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 xl:grid-cols-3 items-center max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           className="lg:col-span-2 space-y-8"
         >
-          <div className="space-y-4">
+          <div className="space-y-4 pt-5 lg:pt-15 xl:pt-20">
             <div>
               <h1 className="text-5xl font-extrabold text-neuronhire-black-100 mb-6 body-satoshi leading-none">
                 Let&apos;s build your tech team!
@@ -59,7 +59,7 @@ export function FormSection() {
               </li>
             </ul>
 
-            <div className="mt-6 lg:hidden">
+            <div className="mt-6 xl:hidden">
               <FormCard />
             </div>
 
@@ -96,7 +96,7 @@ export function FormSection() {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="hidden xl:block absolute z-30 top-20 lg:top-[60px] right-0 pr-16"
+        className="hidden xl:block absolute z-30 top-[60px] right-0 pr-16"
       >
         <FormCard />
       </motion.div>

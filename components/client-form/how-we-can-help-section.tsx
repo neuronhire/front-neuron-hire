@@ -85,7 +85,7 @@ const textVariants: Variants = {
 
 export function HowWeCanHelpSection() {
   return (
-    <section className="py-24 px-6 text-center">
+    <section className="pb-24 pt-10 xl:pt-0 px-6 text-center">
       <div className="max-w-6xl mx-auto text-center">
         <motion.h4
           className="text-xs uppercase tracking-wide text-black mb-2 font-satoshi font-normal"

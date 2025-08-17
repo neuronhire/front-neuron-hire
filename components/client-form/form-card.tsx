@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { ArrowLeft } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -22,7 +23,6 @@ import {
 } from "../ui/select";
 import { Textarea } from "../ui/textarea";
 import CalendlyInline from "./CalendlyInline";
-import { ArrowLeft } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -331,7 +331,6 @@ export function FormCard() {
         >
           {!isScheduled ? (
             <CalendlyInline
-              url="https://calendly.com/msouzapedro97/30min"
               prefill={{ name: contactData?.name, email: contactData?.email }}
               height="100%"
               className="w-full h-full"
@@ -390,7 +389,7 @@ export function FormCard() {
             variant="ghost"
             className="px-6 py-3 text-neuronhire-gray-64 border-neuronhire-gray-40 hover:bg-neuronhire-gray-6 rounded-full"
           >
-            <ArrowLeft/>
+            <ArrowLeft />
             Back to Contact
           </Button>
         </div>

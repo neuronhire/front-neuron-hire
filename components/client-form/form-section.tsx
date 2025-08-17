@@ -63,7 +63,7 @@ export function FormSection() {
               <FormCard />
             </div>
 
-            <div className="mt-15 flex flex-wrap gap-3 sm:gap-4 lg:gap-5 max-w-4xl">
+            <div className="mt-15 grid grid-cols-2 sm:flex sm:flex-wrap gap-3 sm:gap-4 lg:gap-5 max-w-4xl">
               {featuresList.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -72,8 +72,8 @@ export function FormSection() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="flex items-center gap-2 text-sm text-neuronhire-black-100 body-satoshi font-semibold"
                 >
-                  <feature.icon className="w-5 h-5 text-neuronhire-primary" />
-                  <span>{feature.text}</span>
+                  <feature.icon className="w-5 h-5 text-neuronhire-primary flex-shrink-0" />
+                  <span className="leading-tight">{feature.text}</span>
                 </motion.div>
               ))}
             </div>

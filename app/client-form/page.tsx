@@ -1,6 +1,7 @@
-import { FaqSection } from "@/components/client-form/faq-section";
 import { FormSection } from "@/components/client-form/form-section";
 import { HowWeCanHelpSection } from "@/components/client-form/how-we-can-help-section";
+import { MultiFaqSection } from "@/components/multi-faq-section";
+import faqData from "@/data/client-form-faq.json";
 
 export default function ClientFormPage() {
   return (
@@ -9,7 +10,7 @@ export default function ClientFormPage() {
         <FormSection />
       </section>
       <HowWeCanHelpSection />
-      <FaqSection />
+      <MultiFaqSection sections={faqData.sections} />
     </div>
   );
 }

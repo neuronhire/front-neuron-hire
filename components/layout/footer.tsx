@@ -25,7 +25,7 @@ export function Footer() {
           <div className="space-y-4">
             <div
               onClick={scrollToTop}
-              className="flex items-center justify-center gap-3 md:justify-start"
+              className="flex items-center justify-center gap-3 md:justify-start cursor-pointer w-fit"
             >
               <Image
                 src="/assets/logos/neurohire-white-logo.png"

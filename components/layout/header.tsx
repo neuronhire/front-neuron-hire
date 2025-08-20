@@ -7,10 +7,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export function Header() {
+interface HeaderProps {
+  minimal?: boolean;
+}
+
+export function Header({ minimal = false }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [howItWorksOpen, setHowItWorksOpen] = useState(false);
+  //const [howItWorksOpen, setHowItWorksOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +23,29 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (minimal) {
+    return (
+      <header
+        className={`fixed top-0 left-0 right-0 w-full z-50 px-4 sm:px-12 h-16 flex items-center transition-all duration-300 ${
+          isScrolled ? "bg-white shadow-sm" : "bg-transparent"
+        }`}
+      >
+        <Link href="/" className="flex items-center space-x-3">
+          <Image
+            src="/assets/logo.svg"
+            alt="NeuronHire Logo"
+            className="w-8 h-8"
+            width={32}
+            height={32}
+          />
+          <span className="text-2xl font-bold text-neuronhire-black-100">
+            NeuronHire
+          </span>
+        </Link>
+      </header>
+    );
+  }
 
   return (
     <header
@@ -59,9 +86,7 @@ export function Header() {
           </Link>
           <nav className="flex items-center space-x-5 pr-3">
             <Link
-              href="https://calendly.com/contact-neuronhire/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/client-form"
               className="body-satoshi text-neuronhire-black-100 hover:text-gray-700 text-base font-medium cursor-pointer"
             >
               For Companies
@@ -93,9 +118,7 @@ export function Header() {
         </Link>
 
         <Link
-          href="https://calendly.com/contact-neuronhire/30min"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/client-form"
         >
           <Button
             variant="secondary"

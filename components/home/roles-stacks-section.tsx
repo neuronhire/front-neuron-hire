@@ -4,13 +4,7 @@ import { cn } from "@/lib/utils";
 import type { BezierDefinition, Variants } from "framer-motion";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
-
-interface RoleItem {
-  title: string;
-  description: string;
-  icon: string;
-}
+import { useMemo, useRef, useState } from "react";
 
 const EASE: BezierDefinition = [0.22, 1, 0.36, 1];
 
@@ -48,6 +42,19 @@ const stackItem: Variants = {
     transition: { duration: 0.45, ease: EASE },
   },
 };
+
+function chunkArray<T>(arr: T[], chunkSize: number): T[][] {
+  const res: T[][] = [];
+  for (let i = 0; i < arr.length; i += chunkSize)
+    res.push(arr.slice(i, i + chunkSize));
+  return res;
+}
+
+interface RoleItem {
+  title: string;
+  description: string;
+  icon: string;
+}
 
 const roles_map: Record<string, RoleItem[]> = {
   Engineering: [
@@ -202,15 +209,107 @@ const stacks: { name: string; icon: string }[] = [
   { name: "PostgreSQL", icon: "/assets/icons/tech/postgres.svg" },
 ];
 
-function chunkArray<T>(arr: T[], chunkSize: number): T[][] {
-  const res: T[][] = [];
-  for (let i = 0; i < arr.length; i += chunkSize)
-    res.push(arr.slice(i, i + chunkSize));
-  return res;
+function TabsPills({
+  tabs,
+  value,
+  onChange,
+}: {
+  tabs: string[];
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  const selectedIndex = useMemo(() => tabs.indexOf(value), [tabs, value]);
+  const itemsRef = useRef<Array<HTMLButtonElement | null>>([]);
+
+  function handleKeyDown(e: React.KeyboardEvent) {
+    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) return;
+    e.preventDefault();
+
+    let next = selectedIndex;
+    if (e.key === "ArrowRight") next = (selectedIndex + 1) % tabs.length;
+    if (e.key === "ArrowLeft")
+      next = (selectedIndex - 1 + tabs.length) % tabs.length;
+    if (e.key === "Home") next = 0;
+    if (e.key === "End") next = tabs.length - 1;
+
+    const nextValue = tabs[next];
+    onChange(nextValue);
+    itemsRef.current[next]?.focus();
+  }
+
+  return (
+    <motion.div variants={rowStagger} className="text-left">
+      <div
+        role="tablist"
+        aria-label="Roles"
+        className="relative flex gap-3 overflow-x-auto rounded-xl p-2"
+        onKeyDown={handleKeyDown}
+      >
+        {tabs.map((label, i) => {
+          const active = value === label;
+          return (
+            <motion.button
+              key={label}
+              ref={(el) => {
+                itemsRef.current[i] = el;
+              }}
+              role="tab"
+              aria-selected={active}
+              aria-controls={`panel-${label}`}
+              id={`tab-${label}`}
+              variants={pillItem}
+              onClick={() => onChange(label)}
+              whileHover={{
+                y: -2,
+                transition: { type: "spring", stiffness: 240, damping: 18 },
+              }}
+              className={cn(
+                " cursor-pointer relative isolate px-4 py-2 rounded-xl text-sm font-medium transition whitespace-nowrap",
+                "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black",
+                "ring-1 ring-inset ring-neutral-200/60",
+                !active && "text-neutral-600 bg-neuronhire-bg-main"
+              )}
+            >
+              {active && (
+                <motion.span
+                  layoutId="tab-pill"
+                  className="absolute inset-0 -z-10 rounded-xl bg-black shadow-sm"
+                  transition={{
+                    type: "spring",
+                    stiffness: 500,
+                    damping: 40,
+                    mass: 0.7,
+                  }}
+                />
+              )}
+
+              <span className="inline-flex items-center gap-2">
+                <span
+                  className={cn(
+                    "inline-block size-2 rounded-full",
+                    active ? "bg-white" : "bg-neuronhire-red-lines/40"
+                  )}
+                />
+                <span
+                  className={cn(
+                    active ? "text-white" : "text-neuronhire-red-lines/40"
+                  )}
+                >
+                  {label}
+                </span>
+              </span>
+            </motion.button>
+          );
+        })}
+      </div>
+    </motion.div>
+  );
 }
 
 export function RolesAndStacksSection() {
-  const [selectedTab, setSelectedTab] = useState("Engineering");
+  const [selectedTab, setSelectedTab] = useState<string>(
+    Object.keys(roles_map)[0]
+  );
 
   return (
     <motion.section
@@ -242,30 +341,11 @@ export function RolesAndStacksSection() {
           Roles
         </motion.h3>
 
-        <motion.div variants={rowStagger} className="flex text-left">
-          <span className="p-1 gap-2 mb-10 rounded-sm">
-            {Object.keys(roles_map).map((key, index) => (
-              <motion.button
-                key={key}
-                variants={pillItem}
-                onClick={() => setSelectedTab(key)}
-                whileHover={{
-                  y: -2,
-                  transition: { type: "spring", stiffness: 240, damping: 18 },
-                }}
-                className={cn(
-                  "body-mackinac px-4 py-1 rounded-sm text-sm font-normal",
-                  index !== 0 && "ml-2",
-                  selectedTab === key
-                    ? "bg-black text-white"
-                    : "bg-white border border-neutral-300 text-[var(--neuronhire-red-lines-60)]"
-                )}
-              >
-                {key}
-              </motion.button>
-            ))}
-          </span>
-        </motion.div>
+        <TabsPills
+          tabs={Object.keys(roles_map)}
+          value={selectedTab}
+          onChange={setSelectedTab}
+        />
 
         {roles_map[selectedTab] && roles_map[selectedTab].length > 0 && (
           <motion.div
@@ -273,7 +353,7 @@ export function RolesAndStacksSection() {
             variants={rowStagger}
             initial="hidden"
             animate="visible"
-            className="space-y-2"
+            className="space-y-2 mt-6"
           >
             {chunkArray(roles_map[selectedTab], 4).map((row, rowIndex) => (
               <motion.div
@@ -288,7 +368,7 @@ export function RolesAndStacksSection() {
                   row.length === 4 && "md:grid-cols-4"
                 )}
               >
-                {row.map((role, i) => (
+                {row.map((role) => (
                   <motion.div
                     key={role.title}
                     variants={cardItem}
@@ -348,7 +428,7 @@ export function RolesAndStacksSection() {
                 "md:grid-cols-4"
               )}
             >
-              {row.map((stack, i) => (
+              {row.map((stack) => (
                 <motion.div
                   key={stack.name}
                   variants={stackItem}

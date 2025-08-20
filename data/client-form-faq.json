@@ -1,0 +1,100 @@
+{
+  "sections": [
+    {
+      "name": "hiring-process",
+      "faqs": [
+        {
+          "question": "How quickly can I hire developers through NeuronHire?",
+          "answer": "Most clients hire in less than 15 days. We provide pre-vetted candidates matching your requirements within this period."
+        },
+        {
+          "question": "Can I test candidates before hiring?",
+          "answer": "Yes. You'll receive all our graded technical reports of each pre-vetted candidate, including live coding recordings and solution analyses."
+        },
+        {
+          "question": "What if a developer isn't a good fit after hiring?",
+          "answer": "Our placements include a warranty period (defined in the SOW): if a hire departs within that window we will source a replacement per contract terms."
+        },
+        {
+          "question": "Do you support onboarding and integration?",
+          "answer": "Yes, we provide onboarding checklists, first-week touchpoints and optional cultural onboarding sessions to accelerate ramp-up."
+        }
+      ]
+    },
+    {
+      "name": "technical-evaluation",
+      "faqs": [
+        {
+          "question": "How do you verify technical skills?",
+          "answer": "We use practical exercises that can include algorithm tests and real-world projects. We also conduct peer technical interviews and reference checks to confirm real hands-on ability."
+        },
+        {
+          "question": "Can I customize your assessment criteria?",
+          "answer": "Absolutely. Share your rubric, and we'll adapt evaluations to mirror your team's standards."
+        },
+        {
+          "question": "Do you provide code samples from past projects?",
+          "answer": "Yes, anonymized GitHub portfolios are available upon request."
+        },
+        {
+          "question": "Do you assess English and cultural fit?",
+          "answer": "Yes! Every candidate goes through an English check and a behavioral interview focused on collaboration and timezone compatibility."
+        }
+      ]
+    },
+    {
+      "name": "management-support",
+      "faqs": [
+        {
+          "question": "How is NeuronHire different from a normal recruiting agency?",
+          "answer": "We combine deep technical vetting with a white-glove operational model: sourcing, hands-on technical checks, English & cultural screening, and contract/payroll support."
+        },
+        {
+          "question": "What tools do you offer for remote team management?",
+          "answer": "Our dashboard includes time-tracking, performance analytics, and integrated communication tools."
+        },
+        {
+          "question": "How are contract extensions handled?",
+          "answer": "We notify you 30 days before contract expiry and handle all renewal paperwork automatically."
+        },
+        {
+          "question": "Do you assist with project conflict resolution?",
+          "answer": "Our HR specialists provide mediation within 24 hours of escalation."
+        },
+        {
+          "question": "Which engagement models do you support?",
+          "answer": "We support direct contractor arrangements, EOR/payroll solutions via partners, or client-preferred models, chosen per engagement."
+        },
+        {
+          "question": "Who owns the IP of delivered work?",
+          "answer": "IP and assignment terms are contractually defined in the SOW; we ensure client ownership can be implemented as required."
+        },
+        {
+          "question": "How do you protect confidential data and security?",
+          "answer": "Contractors and NeuronHire sign NDAs and we follow secure handling practices; additional client security controls can be enforced on request."
+        }
+      ]
+    },
+    {
+      "name": "pricing-scalability",
+      "faqs": [
+        {
+          "question": "How are your fees structured?",
+          "answer": "Fees and payment terms are set in the SOW / Master Services Agreement; clients are invoiced per the agreed total for the engagement."
+        },
+        {
+          "question": "How quickly can I scale my team up/down?",
+          "answer": "We can onboard new developers in 15days. Contract pauses require 15 days' notice."
+        },
+        {
+          "question": "Can you scale teams quickly for urgent needs?",
+          "answer": "Yes, we keep a vetted pipeline and offer expedited sourcing and structured onboarding for high-priority projects."
+        },
+        {
+          "question": "How are payments, invoicing and taxes handled?",
+          "answer": "We invoice clients per the SOW; tax obligations depend on the engagement model. We coordinate with clients and EOR partners to ensure compliance."
+        }
+      ]
+    }
+  ]
+}

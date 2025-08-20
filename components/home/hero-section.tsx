@@ -21,9 +21,7 @@ export function HeroSection() {
 
       <div className="mt-6 flex justify-center items-center gap-3 flex-wrap font-bold body-mackinac">
         <Link
-          href="https://calendly.com/contact-neuronhire/30min"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/client-form"
         >
           <div
             className="inline-block p-0.5 rounded-full"

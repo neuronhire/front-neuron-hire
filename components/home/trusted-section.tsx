@@ -3,37 +3,33 @@
 import Image from "next/image";
 
 const firstRow = [
-  { src: "/assets/logos/linkedin.png", alt: "LinkedIn" },
-  { src: "/assets/logos/glassdoor.png", alt: "Glassdoor" },
-  { src: "/assets/logos/github.png", alt: "GitHub" },
-  { src: "/assets/logos/stackoverflow.png", alt: "Stack Overflow" },
+  { src: "/assets/logos/InPower.png", alt: "InPower" },
+  { src: "/assets/logos/app_onboard.png", alt: "App Onboard" },
+  { src: "/assets/logos/aws.png", alt: "AWS" },
+  { src: "/assets/logos/buildbox.png", alt: "Buildbox" },
 ];
 
 const secondRow = [
-  { src: "/assets/logos/slack.png", alt: "Slack" },
-  { src: "/assets/logos/codility.png", alt: "Codility" },
-  { src: "/assets/logos/toptal.png", alt: "Toptal" },
+  { src: "/assets/logos/cloud303.png", alt: "Cloud303" },
+  { src: "/assets/logos/quvy.png", alt: "Quvy" },
 ];
 
 const mobileFirstRow = [
-  { src: "/assets/logos/linkedin.png", alt: "LinkedIn" },
-  { src: "/assets/logos/glassdoor.png", alt: "Glassdoor" },
-  { src: "/assets/logos/github.png", alt: "GitHub" },
+  { src: "/assets/logos/InPower.png", alt: "InPower" },
+  { src: "/assets/logos/app_onboard.png", alt: "App Onboard" },
+  { src: "/assets/logos/aws.png", alt: "AWS" },
 ];
 
 const mobileSecondRow = [
-  { src: "/assets/logos/stackoverflow.png", alt: "Stack Overflow" },
-  { src: "/assets/logos/slack.png", alt: "Slack" },
+  { src: "/assets/logos/buildbox.png", alt: "Buildbox" },
+  { src: "/assets/logos/cloud303.png", alt: "Cloud303" },
 ];
 
-const mobileThirdRow = [
-  { src: "/assets/logos/codility.png", alt: "Codility" },
-  { src: "/assets/logos/toptal.png", alt: "Toptal" },
-];
+const mobileThirdRow = [{ src: "/assets/logos/quvy.png", alt: "Quvy" }];
 
 export function TrustedBySection() {
   return (
-    <section className="pt-14 pb-0 sm:pb-10 px-6">
+    <section className="pt-12 pb-0 sm:pb-10 px-6">
       <div className="max-w-6xl mx-auto space-y-10">
         <div className="block sm:hidden space-y-6">
           <div className="flex justify-center gap-x-8 gap-y-6">

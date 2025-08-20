@@ -86,15 +86,13 @@ export function Header({ minimal = false }: HeaderProps) {
           </Link>
           <nav className="flex items-center space-x-5 pr-3">
             <Link
-              href="/client-form"
+              href="/for-companies"
               className="body-satoshi text-neuronhire-black-100 hover:text-gray-700 text-base font-medium cursor-pointer"
             >
               For Companies
             </Link>
             <Link
-              href="https://calendly.com/contact-neuronhire/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/for-developers"
               className="body-satoshi text-neuronhire-black-100 hover:text-gray-700 text-base font-medium cursor-pointer"
             >
               For Developers
@@ -117,9 +115,7 @@ export function Header({ minimal = false }: HeaderProps) {
           </Button>
         </Link>
 
-        <Link
-          href="/client-form"
-        >
+        <Link href="/client-form">
           <Button
             variant="secondary"
             className="body-satoshi text-xs sm:text-base px-2 sm:px-4 py-1 sm:py-2 h-8 sm:h-9 text-black font-bold cursor-pointer"

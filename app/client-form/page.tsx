@@ -1,7 +1,7 @@
 import { FormSection } from "@/components/client-form/form-section";
 import { HowWeCanHelpSection } from "@/components/client-form/how-we-can-help-section";
 import { MultiFaqSection } from "@/components/multi-faq-section";
-import faqData from "@/data/client-form-faq.json";
+import faqData from "@/data/companies-faq.json";
 
 export default function ClientFormPage() {
   return (

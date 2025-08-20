@@ -40,14 +40,6 @@ export function MultiFaqSection({
   const currentSection =
     sections.find((section) => section.name === selectedSection) || sections[0];
 
-  const formatSectionName = (name: string) => {
-    return name
-      .replace(/[-_]/g, " ")
-      .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-  };
-
   if (!sections || sections.length === 0) {
     return null;
   }
@@ -87,7 +79,7 @@ export function MultiFaqSection({
                       : "bg-white font-medium hover:bg-gray-100"
                   } transition`}
                 >
-                  {formatSectionName(section.name)}
+                  {section.name}
                 </Button>
               ))}
             </div>

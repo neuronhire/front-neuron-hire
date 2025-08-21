@@ -201,7 +201,7 @@ const stacks: { name: string; icon: string }[] = [
   { name: "SVELTE", icon: "/assets/icons/tech/svelte.svg" },
   { name: "Node.JS", icon: "/assets/icons/tech/node.svg" },
   { name: "Python", icon: "/assets/icons/tech/python.svg" },
-  { name: "Golang", icon: "/assets/icons/tech/golang.svg" },
+  { name: "Rails", icon: "/assets/icons/tech/golang.svg" },
   { name: "Java", icon: "/assets/icons/tech/java.svg" },
   { name: "Go", icon: "/assets/icons/tech/go.svg" },
   { name: ".NET Core", icon: "/assets/icons/tech/dotnet.svg" },

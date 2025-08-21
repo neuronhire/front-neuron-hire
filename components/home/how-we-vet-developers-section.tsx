@@ -61,7 +61,7 @@ const steps = [
 
 export function HowWeVetDevelopersSection() {
   return (
-    <section className="py-24 px-6">
+    <section className="py-12 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <motion.p
           className="text-neuronhire-secondary-red text-sm font-normal uppercase tracking-wide mb-4 body-satoshi"
@@ -105,12 +105,10 @@ export function HowWeVetDevelopersSection() {
               className="text-left flex flex-col h-full bg-[#FAFAFA] rounded-2xl p-6 pb-0"
               initial="hidden"
               whileInView="visible"
-              whileHover={
-                {
-                  y: -4,
-                  transition: { duration: 0.2, ease: "easeOut" },
-                }
-              }
+              whileHover={{
+                y: -4,
+                transition: { duration: 0.2, ease: "easeOut" },
+              }}
               viewport={{ once: true, amount: 0.2 }}
               variants={cardVariants}
               custom={0.3 + index * 0.1}

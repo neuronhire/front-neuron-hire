@@ -31,7 +31,7 @@ const steps = [
     description:
       "We verify experience, outcomes, and seniority. Only proven professionals move forward.",
     icon: "/assets/icons/vetting/profile-review.svg",
-    color: "text-pink-500",
+    color: "text-neuronhire-pink",
   },
   {
     percentage: "12%",
@@ -39,7 +39,7 @@ const steps = [
     description:
       "We assess communication, collaboration, and English, no multiple-choice fluff.",
     icon: "/assets/icons/vetting/collaboration.svg",
-    color: "text-pink-500",
+    color: "text-neuronhire-pink",
   },
   {
     percentage: "3%",
@@ -47,7 +47,7 @@ const steps = [
     description:
       "We test critical thinking and culture fit with real-world engineering challenges.",
     icon: "/assets/icons/vetting/technical.svg",
-    color: "text-pink-500",
+    color: "text-neuronhire-pink",
   },
   {
     percentage: "1%",
@@ -55,7 +55,7 @@ const steps = [
     description:
       "Only aligned talent reaches you, by skills, timezone, and team style.",
     icon: "/assets/icons/vetting/matching.svg",
-    color: "text-pink-500",
+    color: "text-neuronhire-pink",
   },
 ];
 
@@ -64,7 +64,7 @@ export function HowWeVetDevelopersSection() {
     <section className="py-24 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <motion.p
-          className="text-neuronhire-black-100/60 text-sm font-normal uppercase tracking-wide mb-4 body-mackinac"
+          className="text-neuronhire-secondary-red text-sm font-normal uppercase tracking-wide mb-4 body-satoshi"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.35 }}
@@ -75,7 +75,7 @@ export function HowWeVetDevelopersSection() {
         </motion.p>
 
         <motion.h2
-          className="text-4xl lg:text-5xl xl:text-6xl font-bold text-neuronhire-black-100 mb-6 body-mackinac max-w-4xl mx-auto"
+          className="text-4xl lg:text-5xl xl:text-6xl font-bold text-neuronhire-secondary-red mb-6 body-satoshi max-w-4xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.35 }}
@@ -98,26 +98,32 @@ export function HowWeVetDevelopersSection() {
           cultural alignment.
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-2">
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              className="text-center flex flex-col h-full"
+              className="text-left flex flex-col h-full bg-[#FAFAFA] rounded-2xl p-6 pb-0"
               initial="hidden"
               whileInView="visible"
+              whileHover={
+                {
+                  y: -4,
+                  transition: { duration: 0.2, ease: "easeOut" },
+                }
+              }
               viewport={{ once: true, amount: 0.2 }}
               variants={cardVariants}
               custom={0.3 + index * 0.1}
             >
               <div className="mb-6">
                 <span
-                  className={`text-5xl lg:text-6xl font-bold ${step.color} body-mackinac`}
+                  className={`text-5xl lg:text-4xl font-bold ${step.color} body-mackinac`}
                 >
                   {step.percentage}
                 </span>
               </div>
 
-              <h3 className="text-xl lg:text-2xl font-bold text-neuronhire-black-100 mb-4 body-mackinac">
+              <h3 className="text-xl lg:text-2xl font-bold text-neuronhire-secondary-red mb-4 body-mackinac">
                 {step.title}
               </h3>
 

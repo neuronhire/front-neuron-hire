@@ -92,7 +92,7 @@ export function Header({ minimal = false }: HeaderProps) {
               For Companies
             </Link>
             <Link
-              href="/for-developers"
+              href="/client-form"
               className="body-satoshi text-neuronhire-black-100 hover:text-gray-700 text-base font-medium cursor-pointer"
             >
               For Developers

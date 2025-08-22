@@ -1,7 +1,7 @@
 {
   "sections": [
     {
-      "name": "hiring-process",
+      "name": "Hiring process",
       "faqs": [
         {
           "question": "How quickly can I hire developers through NeuronHire?",
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "name": "technical-evaluation",
+      "name": "Technical evaluation",
       "faqs": [
         {
           "question": "How do you verify technical skills?",
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "name": "management-support",
+      "name": "Management support",
       "faqs": [
         {
           "question": "How is NeuronHire different from a normal recruiting agency?",
@@ -76,7 +76,7 @@
       ]
     },
     {
-      "name": "pricing-scalability",
+      "name": "Pricing scalability",
       "faqs": [
         {
           "question": "How are your fees structured?",

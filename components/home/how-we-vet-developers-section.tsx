@@ -75,7 +75,7 @@ export function HowWeVetDevelopersSection() {
         </motion.p>
 
         <motion.h2
-          className="text-4xl lg:text-5xl xl:text-6xl font-bold text-neuronhire-secondary-red mb-6 body-satoshi max-w-4xl mx-auto"
+          className="text-4xl lg:text-5xl xl:text-6xl font-bold text-neuronhire-secondary-red mb-6 body-mackinac max-w-4xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.35 }}

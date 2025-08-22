@@ -37,7 +37,7 @@ export function FeatureMarquee() {
         {duplicatedFeatures.map((item, i) => (
           <div
             key={i}
-            className="flex items-center gap-2 body-satoshi text-white text-sm font-normal px-6 lg:px-8 xl:px-10 2xl:px-12"
+            className="flex items-center gap-2 body-satoshi text-white text-sm font-normal px-3 lg:px-4 xl:px-5 2xl:px-6"
           >
             <item.icon size={18} />
             <span>{item.text}</span>

@@ -27,7 +27,7 @@ export function Header({ minimal = false }: HeaderProps) {
   if (minimal) {
     return (
       <header
-        className={`fixed top-0 left-0 right-0 w-full z-50 px-4 sm:px-12 h-16 flex items-center transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 w-full max-w-5xl z-50 px-4 sm:px-12 h-16 flex items-center transition-all duration-300 ${
           isScrolled ? "bg-white shadow-sm" : "bg-transparent"
         }`}
       >

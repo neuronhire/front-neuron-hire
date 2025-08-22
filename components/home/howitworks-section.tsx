@@ -88,7 +88,7 @@ export function HowItWorksSection() {
         You tell us what you need. We deliver top-tier matches. Fast.
       </motion.p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 text-left sm:grid-cols-2 lg:grid-cols-4 gap-2.5 max-w-6xl mx-auto">
         {steps.map((step, index) => (
           <HowItWorksCard key={index} index={index} {...step} />
         ))}

@@ -39,7 +39,7 @@ export function TrustedBySection() {
                 src={logo.src}
                 alt={logo.alt}
                 width={140}
-                height={40}
+                height={32}
                 className="object-contain w-26 h-10"
               />
             ))}
@@ -52,7 +52,7 @@ export function TrustedBySection() {
                 src={logo.src}
                 alt={logo.alt}
                 width={140}
-                height={40}
+                height={32}
                 className="object-contain w-30 h-10"
               />
             ))}
@@ -65,7 +65,7 @@ export function TrustedBySection() {
                 src={logo.src}
                 alt={logo.alt}
                 width={140}
-                height={40}
+                height={42}
                 className="object-contain w-25 h-10"
               />
             ))}
@@ -80,7 +80,7 @@ export function TrustedBySection() {
                 src={logo.src}
                 alt={logo.alt}
                 width={140}
-                height={40}
+                height={32}
                 className="object-contain"
               />
             ))}
@@ -93,7 +93,7 @@ export function TrustedBySection() {
                 src={logo.src}
                 alt={logo.alt}
                 width={140}
-                height={40}
+                height={32}
                 className="object-contain"
               />
             ))}

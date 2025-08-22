@@ -27,7 +27,7 @@ export function Header({ minimal = false }: HeaderProps) {
   if (minimal) {
     return (
       <header
-        className={`fixed top-0 left-0 right-0 w-full z-50 px-4 sm:px-12 h-16 flex items-center transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 w-full max-w-5xl z-50 px-4 sm:px-12 h-16 flex items-center transition-all duration-300 ${
           isScrolled ? "bg-white shadow-sm" : "bg-transparent"
         }`}
       >
@@ -86,15 +86,13 @@ export function Header({ minimal = false }: HeaderProps) {
           </Link>
           <nav className="flex items-center space-x-5 pr-3">
             <Link
-              href="/client-form"
+              href="/for-companies"
               className="body-satoshi text-neuronhire-black-100 hover:text-gray-700 text-base font-medium cursor-pointer"
             >
               For Companies
             </Link>
             <Link
-              href="https://calendly.com/contact-neuronhire/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/client-form"
               className="body-satoshi text-neuronhire-black-100 hover:text-gray-700 text-base font-medium cursor-pointer"
             >
               For Developers
@@ -117,9 +115,7 @@ export function Header({ minimal = false }: HeaderProps) {
           </Button>
         </Link>
 
-        <Link
-          href="/client-form"
-        >
+        <Link href="/client-form">
           <Button
             variant="secondary"
             className="body-satoshi text-xs sm:text-base px-2 sm:px-4 py-1 sm:py-2 h-8 sm:h-9 text-black font-bold cursor-pointer"

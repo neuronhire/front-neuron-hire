@@ -1,0 +1,132 @@
+{
+  "sections": [
+    {
+      "name": "Application requirements",
+      "faqs": [
+        {
+          "question": "How do I apply to NeuronHire roles?",
+          "answer": "You can apply via our job postings (website and social media) or via candidate form; if your profile matches we’ll invite you to the vetting process."
+        },
+        {
+          "question": "What are the minimum requirements to join NeuronHire?",
+          "answer": "Requirements vary per role. We match your profile to the role’s needs; some roles ask seniority, others focus on hands-on skills or specific domain knowledge. Good English communication skills are non-negotiable."
+        },
+        {
+          "question": "Where are the roles based? Can I work remotely?",
+          "answer": "Most roles are remote / timezone-aligned; some may be location-preferred and others may require occasional travel. Details are always in the role description."
+        },
+        {
+          "question": "Do I need a visa to work remotely with US-based companies?",
+          "answer": "No. You'll be hired as an international contractor (not an employee), requiring no visa for remote work."
+        },
+        {
+          "question": "How long does the onboarding process take?",
+          "answer": "Typically 5-7 business days post-contract signing. Delays only occur if background checks or document submissions (e.g., Personal Legal Entity Documentation) are pending."
+        },
+        {
+          "question": "What level of English is required?",
+          "answer": "Intermediate to fluent English is usually required for international roles; we assess English during vetting to ensure team communication."
+        },
+        {
+          "question": "Do you offer support after placement?",
+          "answer": "Yes, we run follow-ups in the early months to ensure fit and can assist as a mediator if issues arise per the contract."
+        }
+      ]
+    },
+    {
+      "name": "Technical preparation",
+      "faqs": [
+        {
+          "question": "What does the vetting process look like?",
+          "answer": "Typical steps: CV screen, short call, technical exercise or live interview, peer technical interview, English check and cultural interview."
+        },
+        {
+          "question": "What technical assessments should I expect?",
+          "answer": "Role-specific evaluations (e.g., live coding for engineers, system design for architects). Tests mirror real tasks from the job description."
+        },
+        {
+          "question": "Can I request mock interviews for practice?",
+          "answer": "Yes! We offer free mock interviews with senior developers upon profile approval."
+        },
+        {
+          "question": "Are coding tests time-limited?",
+          "answer": "Most are 60-120 minutes long."
+        },
+        {
+          "question": "Will you help me prepare for interviews?",
+          "answer": "Yes, we provide guidance and pre-interview tips to help you present your technical and soft skills effectively. We also constantly post on our social media tips to prepare you for interviews."
+        }
+      ]
+    },
+    {
+      "name": "Payments benefits",
+      "faqs": [
+        {
+          "question": "When and how do I get paid?",
+          "answer": "Payments are usually monthly upon invoice submission, per the contract schedule (typical timing: invoice → payment within the agreed period, standard practice is early in the following month). Exact terms appear in each contract. Payments are made to a contractor-registered global bank account. NeuronHire helps set this up and acts as payment agent when needed."
+        },
+        {
+          "question": "Will I be paid in USD?",
+          "answer": "Payment currency depends on the client and the engagement model; many international contracts pay in USD, but specifics are confirmed in offers."
+        },
+        {
+          "question": "Do I need to be a legal entity?",
+          "answer": "We require contractors to invoice as a legal entity. If you don’t have one, we can advise options, but payments are processed only after required documentation is in place."
+        },
+        {
+          "question": "Will NeuronHire deduct anything from my pay?",
+          "answer": "The gross price in the contract covers all costs. NeuronHire may withhold pre-agreed amounts for vendor benefits (health plans, gym, administrative service fees) only if you explicitly agree and these withholdings are listed in the contract/annex."
+        },
+        {
+          "question": "Does NeuronHire offer benefits?",
+          "answer": "We offer optional benefit packages (examples: health plans, gym) for eligible contractors; specifics depend on the engagement and are detailed in the contract or annex. Benefits and any related deductions are clearly disclosed before signing."
+        },
+        {
+          "question": "Who pays for travel or expenses?",
+          "answer": "Pre-approved business travel and reasonable expenses are reimbursed by the client per the contract. Always get approval beforehand and keep receipts."
+        },
+        {
+          "question": "What about taxes and social contributions?",
+          "answer": "As an independent contractor you are solely responsible for all taxes, social security contributions and local compliance. Tax responsibilities depend on your legal status and local law; we can share common models and connect you with local tax partners for guidance."
+        }
+      ]
+    },
+    {
+      "name": "Contract legal",
+      "faqs": [
+        {
+          "question": "Can I work for competitors?",
+          "answer": "No. Contracts include non-compete clauses. You must avoid conflicts of interest with client activities."
+        },
+        {
+          "question": "What happens if a client terminates a contract early?",
+          "answer": "You’ll be notified at least with a 15 days prior written notice and we prioritize finding replacement projects."
+        },
+        {
+          "question": "How does contract termination work?",
+          "answer": "Termination terms vary by contract. Typical clauses allow termination with 15-day prior written notice and include remedies for breach (e.g., cure periods, fines for confidentiality breaches). Read the termination section before signing."
+        },
+        {
+          "question": "Can I subcontract my work?",
+          "answer": "No. Contracts prohibit assignment of duties without written consent."
+        },
+        {
+          "question": "Who owns the IP of the work I do?",
+          "answer": "Typically the client owns the deliverables. Contracts include an IP assignment clause: by signing, you agree to assign rights to the client as defined in the specific agreement. Full terms are in the contract."
+        },
+        {
+          "question": "Will I be treated as an employee?",
+          "answer": "No. You are engaged as an independent contractor. You are responsible for taxes, social contributions and compliance applicable to your jurisdiction. Contracts explicitly state there is no employment relationship."
+        },
+        {
+          "question": "Can I work with other clients while engaged?",
+          "answer": "Usually yes, unless the contract includes exclusivity for the project. Any restrictions will be explicit in the agreement."
+        },
+        {
+          "question": "How are disputes or performance issues handled?",
+          "answer": "Dispute and termination procedures are in your contract; NeuronHire will help facilitate resolution between you and the client within contractual terms."
+        }
+      ]
+    }
+  ]
+}

@@ -26,83 +26,73 @@ const cardVariants: Variants = {
 
 const steps = [
   {
-    percentage: "100%",
-    title: "Profile Review",
-    description:
-      "We verify experience, outcomes, and seniority. Only proven professionals move forward.",
-    icon: "/assets/icons/vetting/profile-review.svg",
-    color: "text-neuronhire-pink",
+    title: "Apply Once",
+    description: "Fill out your profile with experience, stack, and timezone.",
+    icon: "/assets/icons/join-our-community/megaphone.png",
   },
   {
-    percentage: "12%",
-    title: "Soft Skills & Collaboration",
+    title: "Get Vetted",
     description:
-      "We assess communication, collaboration, and English, no multiple-choice fluff.",
-    icon: "/assets/icons/vetting/collaboration.svg",
-    color: "text-neuronhire-pink",
+      "Technical, english and soft skills evaluation, reviewed by real engineers.",
+    icon: "/assets/icons/join-our-community/broom.png",
   },
   {
-    percentage: "3%",
-    title: "Technical Evaluation",
+    title: "Get Matched",
     description:
-      "We test critical thinking and culture fit with real-world engineering challenges.",
-    icon: "/assets/icons/vetting/technical.svg",
-    color: "text-neuronhire-pink",
+      "Receive role suggestions that fit your skills and work style.",
+    icon: "/assets/icons/join-our-community/matched.png",
   },
   {
-    percentage: "1%",
-    title: "Precision Matching",
+    title: "Start Building",
     description:
-      "Only aligned talent reaches you, by skills, timezone, and team style.",
-    icon: "/assets/icons/vetting/matching.svg",
-    color: "text-neuronhire-pink",
+      "Join a real team, work remotely, grow with purpose and clarity.",
+    icon: "/assets/icons/join-our-community/brackets.png",
   },
 ];
 
-export function HowWeVetDevelopersSection() {
+export function JoinOurCommunity() {
   return (
     <section className="py-12 px-6">
-      <div className="max-w-6xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto text-center bg-neuronhire-black-100 p-6 rounded-3xl">
         <motion.p
-          className="text-neuronhire-secondary-red text-sm font-normal uppercase tracking-wide mb-4 body-satoshi"
+          className="text-white text-sm font-normal uppercase tracking-wide mb-4 body-satoshi"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.35 }}
           variants={textVariants}
           custom={0}
         >
-          HOW WE VET DEVELOPERS
+          HOW TO JOIN OUR COMMUNITY
         </motion.p>
 
         <motion.h2
-          className="text-4xl lg:text-5xl xl:text-6xl font-bold text-neuronhire-secondary-red mb-6 body-mackinac max-w-4xl mx-auto"
+          className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 body-mackinac max-w-3xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.35 }}
           variants={textVariants}
           custom={0.1}
         >
-          How we rigorously choose before you ever see them
+          Join a community that opens doors
         </motion.h2>
 
         <motion.p
-          className="text-lg xl:text-xl text-neuronhire-black-100/60 max-w-3xl mx-auto mb-16 body-satoshi"
+          className="text-lg xl:text-xl text-white max-w-3xl mx-auto mb-16 body-satoshi"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.35 }}
           variants={textVariants}
           custom={0.2}
         >
-          From code quality to communication style, every candidate goes through
-          a multi-layered process designed to ensure technical excellence and
-          cultural alignment.
+          We're not another platform, we're your gateway to global product
+          teams, better projects, and long-term career growth on your terms.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-2">
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              className="text-left flex flex-col h-full bg-[#FAFAFA] rounded-2xl p-6 pb-0"
+              className="text-left flex flex-col h-full bg-white/5 rounded-2xl p-6 pb-0"
               initial="hidden"
               whileInView="visible"
               whileHover={{
@@ -113,19 +103,16 @@ export function HowWeVetDevelopersSection() {
               variants={cardVariants}
               custom={0.3 + index * 0.1}
             >
-              <div className="mb-6">
-                <span
-                  className={`text-5xl lg:text-4xl font-bold ${step.color} body-mackinac`}
-                >
-                  {step.percentage}
-                </span>
+              <div className="flex gap-2 items-center mb-4">
+                <h3 className="rounded-full h-8 w-8 text-white bg-white/5 items-center flex justify-center">
+                  {index + 1}
+                </h3>
+                <h3 className="text-xl lg:text-2xl font-bold text-white body-mackinac">
+                  {step.title}
+                </h3>
               </div>
 
-              <h3 className="text-xl lg:text-2xl font-bold text-neuronhire-secondary-red mb-4 body-mackinac">
-                {step.title}
-              </h3>
-
-              <p className="text-neuronhire-black-100/60 body-satoshi leading-relaxed mb-8 flex-grow">
+              <p className="text-white/70 body-satoshi leading-relaxed mb-8 flex-grow">
                 {step.description}
               </p>
 

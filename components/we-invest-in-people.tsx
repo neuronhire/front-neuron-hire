@@ -54,7 +54,7 @@ export function WeInvestInPeopleSection() {
           alt="Globe background"
           width={800}
           height={800}
-          className="w-auto h-auto max-w-[50%] object-contain"
+          className="w-auto h-auto sm:max-w-[50%] object-contain"
         />
       </div>
 

@@ -84,8 +84,9 @@ export function JoinOurCommunity() {
           variants={textVariants}
           custom={0.2}
         >
-          We're not another platform, we're your gateway to global product
-          teams, better projects, and long-term career growth on your terms.
+          We&apos;re not another platform, we&apos;re your gateway to global
+          product teams, better projects, and long-term career growth on your
+          terms.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-2">

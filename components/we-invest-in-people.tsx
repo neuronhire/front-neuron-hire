@@ -24,6 +24,15 @@ const cardVariants: Variants = {
   }),
 };
 
+const globeVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: (delay: number = 0) => ({
+    opacity: 0.6,
+    scale: 1,
+    transition: { delay, duration: 1.2, ease: EASE },
+  }),
+};
+
 const steps = [
   {
     title: "Growth & Development",
@@ -48,7 +57,14 @@ const steps = [
 export function WeInvestInPeopleSection() {
   return (
     <section className="py-12 px-6 relative overflow-hidden">
-      <div className="absolute  flex items-center justify-center pointer-events-none">
+      <motion.div
+        className="absolute flex items-center justify-center pointer-events-none"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={globeVariants}
+        custom={0.15}
+      >
         <Image
           src="/assets/icons/we-invest-in-people/globe.png"
           alt="Globe background"
@@ -56,7 +72,7 @@ export function WeInvestInPeopleSection() {
           height={800}
           className="w-auto h-auto sm:max-w-[50%] object-contain"
         />
-      </div>
+      </motion.div>
 
       <div className="max-w-6xl mx-auto text-center relative z-10">
         <motion.p
@@ -78,7 +94,7 @@ export function WeInvestInPeopleSection() {
           variants={textVariants}
           custom={0.1}
         >
-          We don't just find great talent, we invest in it
+          We don&apos;t just find great talent, we invest in it
         </motion.h2>
 
         <motion.p
@@ -89,7 +105,7 @@ export function WeInvestInPeopleSection() {
           variants={textVariants}
           custom={0.2}
         >
-          We don't just connect people to companies. We invest in people so
+          We don&apos;t just connect people to companies. We invest in people so
           companies want to keep them.
         </motion.p>
 

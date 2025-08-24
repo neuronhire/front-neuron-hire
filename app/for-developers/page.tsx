@@ -1,8 +1,8 @@
 import { FlagsMarquee } from "@/components/client-form/flags-marquee";
 import { HeroSection } from "@/components/home/hero-section";
-import { JoinOurCommunity } from "@/components/join-our-community";
+import { JoinOurCommunity } from "@/components/for-developers/join-our-community";
 import { MultiFaqSection } from "@/components/multi-faq-section";
-import { WeInvestInPeopleSection } from "@/components/we-invest-in-people";
+import { WeInvestInPeopleSection } from "@/components/for-developers/we-invest-in-people";
 
 import faqData from "@/data/dev-faq.json";
 

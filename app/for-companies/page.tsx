@@ -1,7 +1,7 @@
 import { FlagsMarquee } from "@/components/client-form/flags-marquee";
 import { HowWeCanHelpSection } from "@/components/client-form/how-we-can-help-section";
 import { HeroSection } from "@/components/home/hero-section";
-import { HowWeVetDevelopersSection } from "@/components/home/how-we-vet-developers-section";
+import { HowWeVetDevelopersSection } from "@/components/for-companies/how-we-vet-developers-section";
 import { MultiFaqSection } from "@/components/multi-faq-section";
 import faqData from "@/data/companies-faq.json";
 

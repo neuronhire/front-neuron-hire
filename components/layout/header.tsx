@@ -2,10 +2,15 @@
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "../ui/collapsible";
 
 interface HeaderProps {
   minimal?: boolean;
@@ -14,12 +19,11 @@ interface HeaderProps {
 export function Header({ minimal = false }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  //const [howItWorksOpen, setHowItWorksOpen] = useState(false);
+  const [companiesOpen, setCompaniesOpen] = useState(false);
+  const [developersOpen, setDevelopersOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 0);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -55,7 +59,7 @@ export function Header({ minimal = false }: HeaderProps) {
     >
       <div className="flex items-center">
         <div className="md:hidden flex items-center">
-          <Link href="#" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/assets/logo.svg"
               alt="NeuronHire Logo"
@@ -70,7 +74,7 @@ export function Header({ minimal = false }: HeaderProps) {
         <div
           className={`hidden md:flex items-center rounded-full px-3 py-2 space-x-6 bg-white`}
         >
-          <Link href="#">
+          <Link href="/">
             <div className="flex items-center space-x-2 pr-4">
               <Image
                 src="/assets/logo.svg"
@@ -146,70 +150,61 @@ export function Header({ minimal = false }: HeaderProps) {
                 </span>
               </div>
 
-              {/* <div className="flex-1 py-6">
+              <div className="flex-1 py-6">
                 <Collapsible
-                  open={howItWorksOpen}
-                  onOpenChange={setHowItWorksOpen}
+                  open={companiesOpen}
+                  onOpenChange={setCompaniesOpen}
                 >
                   <CollapsibleTrigger className="flex items-center justify-between w-full px-6 py-4 text-left hover:bg-gray-50">
-                    <span className="text-lg font-semibold text-gray-900">
-                      How It Works
+                    <span className="text-lg font-semibold body-mackinac text-neuronhire-black-100">
+                      For Companies
                     </span>
                     <ChevronDown
-                      className={`h-5 w-5 text-pink-500 transition-transform ${
-                        howItWorksOpen ? "rotate-180" : ""
+                      className={`h-5 w-5 text-neuronhire-primary transition-transform ${
+                        companiesOpen ? "rotate-180" : ""
                       }`}
                     />
                   </CollapsibleTrigger>
                   <CollapsibleContent className="px-6 pb-4">
                     <div className="space-y-3 ml-4">
                       <Link
-                        href="#"
-                        className="block text-gray-600 hover:text-gray-900 py-1"
+                        href="/for-companies"
+                        className="block text-neuronhire-gray-80 body-mackinac py-1"
                         onClick={() => setMenuOpen(false)}
                       >
-                        Subpage
-                      </Link>
-                      <Link
-                        href="#"
-                        className="block text-gray-600 hover:text-gray-900 py-1"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        Subpage
-                      </Link>
-                      <Link
-                        href="#"
-                        className="block text-gray-600 hover:text-gray-900 py-1"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        Subpage
+                        How it works
                       </Link>
                     </div>
                   </CollapsibleContent>
                 </Collapsible>
 
-                <Link
-                  href="#"
-                  className="flex items-center justify-between px-6 py-4 hover:bg-gray-50"
-                  onClick={() => setMenuOpen(false)}
+                <Collapsible
+                  open={developersOpen}
+                  onOpenChange={setDevelopersOpen}
                 >
-                  <span className="text-lg font-semibold text-gray-900">
-                    For Companies
-                  </span>
-                  <ChevronRight className="h-5 w-5 text-pink-500" />
-                </Link>
-
-                <Link
-                  href="#"
-                  className="flex items-center justify-between px-6 py-4 hover:bg-gray-50"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <span className="text-lg font-semibold text-gray-900">
-                    For Talent
-                  </span>
-                  <ChevronRight className="h-5 w-5 text-pink-500" />
-                </Link>
-              </div> */}
+                  <CollapsibleTrigger className="flex items-center justify-between w-full px-6 py-4 text-left hover:bg-gray-50">
+                    <span className="text-lg font-semibold body-mackinac text-neuronhire-black-100">
+                      For Developers
+                    </span>
+                    <ChevronDown
+                      className={`h-5 w-5 text-neuronhire-primary transition-transform ${
+                        developersOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="px-6 pb-4">
+                    <div className="space-y-3 ml-4">
+                      <Link
+                        href="/client-form"
+                        className="block text-neuronhire-gray-80 body-mackinac py-1"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        How to join us
+                      </Link>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </div>
             </div>
           </SheetContent>
         </Sheet>

@@ -72,18 +72,14 @@ export function FlagsMarquee() {
 
   return (
     <div className="w-full h-16 overflow-hidden flex items-center">
-      <Marquee
-        speed={30}
-        className="flex items-center"
-        play={isPlaying}
-      >
+      <Marquee speed={30} className="flex items-center" play={isPlaying}>
         {duplicatedFlags.map((flag, i) => (
           <div
             key={i}
             className="flex items-center justify-center px-1"
             title={flag.name}
           >
-            <flag.Component className="w-8 h-6 rounded-sm shadow-sm border border-gray-200/50" />
+            <flag.Component className="w-8 h-6 rounded-sm shadow-sm" />
           </div>
         ))}
       </Marquee>

@@ -11,7 +11,12 @@ export default function NeuronHireLanding() {
     <div className="min-h-screen">
       <div className="bg-neuronhire-bg-main">
         <section className="relative overflow-hidden nh-hero-right-bg min-h-[100svh]  mx-auto">
-          <HeroSection />
+          <HeroSection 
+            header={{ text: <>Hire the best full-time remote <br className="block" /> tech talent from Latin America</>, color: "text-neuronhire-black-100" }}
+            subHeader={{ text: <>Top tech talents of LATAM, pre-vetted and timezone-aligned. <br className="hidden md:block" /> Transparent pricing. No hidden fees. No long-term commitments.</>, color: "text-neuronhire-black-100" }}
+                    button1={{text: <>Start Hiring</>, color: ""}}
+          button2={{text: <>Start Hiring</>, color: ""}}
+/>
           <FeatureMarquee />
           <TrustedBySection />
         </section>

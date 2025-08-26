@@ -5,6 +5,7 @@ import type { BezierDefinition, Variants } from "framer-motion";
 import { motion } from "framer-motion";
 import { BriefcaseMedical, Shredder, TestTubeDiagonal } from "lucide-react";
 import Link from "next/link";
+import { ReactNode } from "react";
 
 const EASE: BezierDefinition = [0.22, 1, 0.36, 1];
 
@@ -35,31 +36,44 @@ const featureVariants: Variants = {
   }),
 };
 
-export function HeroSection() {
+interface Header {
+  text: ReactNode;
+  color: string;
+}
+
+interface MeuCardProps {
+  header: Header;
+  subHeader: Header;
+  button1: Header;
+  button2: Header;
+}
+
+export function HeroSection({
+    header, 
+    subHeader,
+    button1,
+    button2,
+  }: MeuCardProps) {
   return (
     <section className="px-6 md:px-6 lg:px-0 pt-10 pb-7 mt-15 md:mt-25 text-center max-w-4xl mx-auto">
       <motion.h1
-        className="text-5xl md:text-6xl font-bold tracking-tight text-neuronhire-black-100 body-mackinac"
+        className={`text-5xl md:text-6xl font-bold tracking-tight body-mackinac ${header.color}`}
         initial="hidden"
         animate="visible"
         variants={textVariants}
         custom={0}
       >
-        Hire the best full-time remote
-        <br className="block" />
-        tech talent from Latin America
+        {header.text}
       </motion.h1>
 
       <motion.p
-        className="mt-8 text-base md:text-lg xl:text-xl text-neuronhire-black-100 font-normal body-satoshi"
+        className={`mt-8 text-base md:text-lg xl:text-xl font-normal body-satoshi ${subHeader.color}`}
         initial="hidden"
         animate="visible"
         variants={textVariants}
         custom={0.15}
       >
-        Top tech talents of LATAM, pre-vetted and timezone-aligned.
-        <br className="hidden md:block" />
-        Transparent pricing. No hidden fees. No long-term commitments.
+        {subHeader.text}
       </motion.p>
 
       <motion.div
@@ -77,7 +91,7 @@ export function HeroSection() {
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
           >
-            <Button className="px-7 cursor-pointer">Start Hiring</Button>
+            <Button className="px-7 cursor-pointer">{button1.text}</Button>
           </motion.div>
         </Link>
         <Link
@@ -94,7 +108,7 @@ export function HeroSection() {
               variant="ghost"
               className="rounded-full px-7 py-2 text-base font-semibold border border-gray-300 bg-neuronhire-gray-12 text-black hover:bg-gray-100 cursor-pointer"
             >
-              Be Hired
+              {button2.text}
             </Button>
           </motion.div>
         </Link>

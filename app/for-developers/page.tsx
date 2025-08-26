@@ -10,7 +10,12 @@ export default function NeuronHireLanding() {
   return (
     <div className="min-h-screen">
       <div className="pb-10 md:pb-15">
-        <HeroSection />
+        <HeroSection
+          header={{ text: <>Join a curated network of Latin America’s top developers</>,  color: "text-neuronhire-black-100" }}
+          subHeader={{ text: <>You won’t chase gigs. You won’t fight for attention. <br className="hidden md:block" /> NeuronHire connects you directly with global product teams looking for people like you.</>, color: "text-neuronhire-black-100" }}
+          button1={{text: <>Join as developer</>, color: ""}}
+          button2={{text: <>See Jobs</>, color: ""}}
+        />
         <FlagsMarquee />
       </div>
 

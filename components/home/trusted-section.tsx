@@ -30,6 +30,11 @@ const mobileThirdRow = [{ src: "/assets/logos/quvy.png", alt: "Quvy" }];
 export function TrustedBySection() {
   return (
     <section className="pt-12 pb-0 sm:pb-10 px-6">
+      <h4
+        className="text-sm tracking-wide uppercase text-black mb-2 body-mackinac text-center font-normal"
+      >
+        trusted by
+      </h4>
       <div className="max-w-6xl mx-auto space-y-10">
         <div className="block sm:hidden space-y-6">
           <div className="flex justify-center gap-x-8 gap-y-6">

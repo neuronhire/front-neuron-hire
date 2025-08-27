@@ -51,15 +51,15 @@ export const metadata: Metadata = {
     siteName: "NeuronHire",
     images: [
       {
-        url: "/assets/logo.svg",
-        width: 48,
-        height: 48,
+        url: "https://neuronhire.com/assets/logo/neurohire-color-logo.png",
+        width: 715,
+        height: 160,
         alt: "NeuronHire - AI-Powered Technical Talent Hiring",
       },
       {
-        url: "/assets/logo/neurohire-white-logo.png",
-        width: 425,
-        height: 80,
+        url: "https://neuronhire.com/assets/logo/neurohire-color-logo.png",
+        width: 715,
+        height: 160,
         alt: "NeuronHire - AI-Powered Technical Talent Hiring",
       },
     ],
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "NeuronHire - AI-Powered Technical Talent Hiring",
     description:
       "Find and hire the best technical talent with AI-powered matching. Connect with top developers, engineers, and tech professionals worldwide.",
-    images: ["/assets/logo.svg"],
+    images: ["https://neuronhire.com/assets/logo/neurohire-color-logo.png"],
     creator: "@neuronhire",
   },
   robots: {

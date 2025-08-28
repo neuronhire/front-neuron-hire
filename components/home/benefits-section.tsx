@@ -138,7 +138,7 @@ export function BenefitsSection() {
               custom={0}
             >
               <BenefitsCard className="bg-neuronhire-red-30 h-90 flex flex-col justify-end overflow-hidden relative">
-                <div className="absolute left-5 -top-16 z-10">
+                <div className="absolute left-5 -top-0 z-10">
                   <Image
                     src="/assets/benefits-cards-images/card2.png"
                     alt="Candidates match illustration"
@@ -168,12 +168,12 @@ export function BenefitsSection() {
               custom={0.1}
             >
               <BenefitsCard className="bg-neuronhire-red-30 h-90 flex flex-col justify-end overflow-hidden relative">
-                <div className="absolute -top-11 -right-18 md:-top-15 md:-right-22 z-10">
+                <div className="absolute -top-2 -right-0 z-10">
                   <Image
                     src="/assets/benefits-cards-images/card4.png"
                     alt="Long-Term Retention Support illustration"
-                    width={260}
-                    height={330}
+                    width={175}
+                    height={175}
                     className="object-contain"
                   />
                 </div>
@@ -197,7 +197,7 @@ export function BenefitsSection() {
               custom={0.2}
             >
               <BenefitsCard className="bg-neuronhire-red-30 h-90 flex flex-col justify-end overflow-hidden relative">
-                <div className="absolute left-5 -top-15 z-10">
+                <div className="absolute left-5 -top-0 z-10">
                   <Image
                     src="/assets/benefits-cards-images/card5.png"
                     alt="Onboarding illustration"

@@ -73,7 +73,7 @@ export function MultiFaqSection({
                   key={section.name}
                   variant="ghost"
                   onClick={() => setSelectedSection(section.name)}
-                  className={`body-mackinac rounded-md whitespace-nowrap flex-shrink-0 ${
+                  className={`body-mackinac rounded-md whitespace-nowrap flex-shrink-0 justify-start text-left${
                     selectedSection === section.name
                       ? "bg-gray-100 font-bold"
                       : "bg-white font-medium hover:bg-gray-100"

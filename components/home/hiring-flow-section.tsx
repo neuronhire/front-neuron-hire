@@ -159,7 +159,7 @@ export function HiringFlowSection() {
                 <p className="body-satoshi text-sm text-neuronhire-red-30 z-10 pr-16 leading-relaxed">
                   {item.description}
                 </p>
-                <div className="absolute bottom-2 right-2 pointer-events-none select-none opacity-60">
+                <div className="absolute bottom-0 right-0 pointer-events-none select-none opacity-60">
                   <Image
                     src={item.icon || "/placeholder.svg"}
                     alt={`${item.title} icon`}
@@ -188,7 +188,7 @@ export function HiringFlowSection() {
                   <p className="body-satoshi text-neuronhire-red-30 text-sm sm:text-base lg:text-lg z-10 pr-16 leading-relaxed">
                     {item.description}
                   </p>
-                  <div className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 lg:bottom-4 lg:right-4 pointer-events-none select-none opacity-60">
+                  <div className="absolute bottom-0 right-0 pointer-events-none select-none opacity-60">
                     <Image
                       src={item.icon || "/placeholder.svg"}
                       alt={`${item.title} icon`}

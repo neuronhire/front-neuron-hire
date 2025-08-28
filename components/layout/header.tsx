@@ -96,7 +96,7 @@ export function Header({ minimal = false }: HeaderProps) {
               For Companies
             </Link>
             <Link
-              href="/client-form"
+              href="/for-developers"
               className="body-satoshi text-neuronhire-black-100 hover:text-gray-700 text-base font-medium cursor-pointer"
             >
               For Developers
@@ -195,7 +195,7 @@ export function Header({ minimal = false }: HeaderProps) {
                   <CollapsibleContent className="px-6 pb-4">
                     <div className="space-y-3 ml-4">
                       <Link
-                        href="/client-form"
+                        href="/for-developers"
                         className="block text-neuronhire-gray-80 body-mackinac py-1"
                         onClick={() => setMenuOpen(false)}
                       >

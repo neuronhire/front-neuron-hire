@@ -130,7 +130,7 @@ export function HowWeVetDevelopersSection() {
               </p>
 
               <div className="flex justify-center mt-auto">
-                <div className="w-[70%] max-w-32 aspect-square flex items-center justify-center">
+                <div className="w-[70%] max-w-32 flex items-center justify-center">
                   <Image
                     src={step.icon}
                     alt={step.title}

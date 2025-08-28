@@ -5,6 +5,9 @@ import type { BezierDefinition, Variants } from "framer-motion";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useMemo, useRef, useState } from "react";
+import { ChevronRight} from "lucide-react";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 const EASE: BezierDefinition = [0.22, 1, 0.36, 1];
 
@@ -334,12 +337,29 @@ export function RolesAndStacksSection() {
           Organized by what really <br /> matters.
         </motion.h2>
 
-        <motion.h3
-          variants={textItem}
-          className="body-mackinac text-left text-4xl font-bold text-neuronhire-red-lines py-3"
-        >
-          Roles
-        </motion.h3>
+        <div className="flex justify-between items-center">
+          <motion.h3
+            variants={textItem}
+            className="body-mackinac text-left text-4xl font-bold text-neuronhire-red-lines py-3"
+          >
+            Roles
+          </motion.h3>
+
+          <motion.div
+            variants={textItem}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+            <Link
+              href="/client-form"
+              className="flex items-center body-mackinac text-left text-sm font-bold text-neuronhire-gray-64 py-3"
+            >
+              View all roles
+              <ChevronRight className="size-4 ml-1" />
+            </Link>
+          </motion.div>
+        </div>
 
         <TabsPills
           tabs={Object.keys(roles_map)}

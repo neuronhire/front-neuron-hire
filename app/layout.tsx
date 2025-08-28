@@ -8,7 +8,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://neuronhire.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.neuronhire.com";
 const OG_IMAGE = {
   url: "/assets/banner.png",
   width: 2628,

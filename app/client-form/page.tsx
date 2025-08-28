@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     title: "Hire Top Technical Talent - Get Started | NeuronHire",
     description:
       "Start your journey to hire the best technical talent. Fill out our form and let our AI-powered platform match you with top developers and engineers.",
-    url: "https://neuronhire.com/client-form",
+    url: "https://www.neuronhire.com/client-form",
     images: [
       {
-        url: "https://neuronhire.com/assets/banner.png",
+        url: "https://www.neuronhire.com/assets/banner.png",
         width: 2628,
         height: 882,
         alt: "NeuronHire - AI-Powered Technical Talent Hiring",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Hire Top Technical Talent - Get Started | NeuronHire",
     description:
       "Start your journey to hire the best technical talent. Fill out our form and let our AI-powered platform match you with top developers and engineers.",
-    images: ["https://neuronhire.com/assets/banner.png"],
+    images: ["https://www.neuronhire.com/assets/banner.png"],
   },
 };
 

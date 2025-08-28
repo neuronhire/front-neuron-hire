@@ -60,14 +60,12 @@ export default function CalendlyInline({
     }
   }, [url, params]);
 
-  // init + reinit controlado
+
   useEffect(() => {
     const el = containerRef.current;
     if (!ready || !el) return;
     el.innerHTML = "";
-    // @ts-expect-error Calendly global is not typed
     if (window.Calendly?.initInlineWidget) {
-      // @ts-expect-error Calendly global is not typed
       window.Calendly.initInlineWidget({
         url: builtUrl,
         parentElement: el,

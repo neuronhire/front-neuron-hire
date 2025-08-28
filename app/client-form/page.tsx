@@ -23,6 +23,12 @@ export const metadata: Metadata = {
     url: "https://www.neuronhire.com/client-form",
     images: [
       {
+        url: "/assets/square-banner.jpeg",
+        width: 1000,
+        height: 1000,
+        alt: "NeuronHire - AI-Powered Technical Talent Hiring",
+      },
+      {
         url: "https://www.neuronhire.com/assets/banner.png",
         width: 2628,
         height: 882,

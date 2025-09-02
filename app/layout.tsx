@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -37,29 +38,29 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://neuronhire.com"),
+  metadataBase: new URL("https://www.neuronhire.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://neuronhire.com",
+    url: "https://www.neuronhire.com",
     title: "NeuronHire - AI-Powered Technical Talent Hiring",
     description:
       "Find and hire the best technical talent with AI-powered matching. Connect with top developers, engineers, and tech professionals worldwide.",
     siteName: "NeuronHire",
     images: [
       {
-        url: "/assets/logo.svg",
-        width: 48,
-        height: 48,
+        url: "https://www.neuronhire.com/assets/square-banner.jpeg",
+        width: 1000,
+        height: 1000,
         alt: "NeuronHire - AI-Powered Technical Talent Hiring",
       },
       {
-        url: "/assets/logo/neurohire-white-logo.png",
-        width: 425,
-        height: 80,
+        url: "https://www.neuronhire.com/assets/banner.png",
+        width: 2628,
+        height: 882,
         alt: "NeuronHire - AI-Powered Technical Talent Hiring",
       },
     ],
@@ -69,7 +70,7 @@ export const metadata: Metadata = {
     title: "NeuronHire - AI-Powered Technical Talent Hiring",
     description:
       "Find and hire the best technical talent with AI-powered matching. Connect with top developers, engineers, and tech professionals worldwide.",
-    images: ["/assets/logo.svg"],
+    images: ["https://www.neuronhire.com/assets/banner.png"],
     creator: "@neuronhire",
   },
   robots: {
@@ -107,6 +108,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </body>
     </html>
   );

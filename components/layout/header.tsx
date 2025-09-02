@@ -20,7 +20,7 @@ import {
   CollapsibleTrigger,
 } from "../ui/collapsible";
 
-type MenuItem = { title: string; href: string };
+type MenuItem = { title: string; href: string; externalLink?: boolean };
 type MenuColumn = { title?: string; items: MenuItem[] };
 
 type MenuSection = {
@@ -34,7 +34,7 @@ type MenuSection = {
 type Cta = {
   label: string;
   href: string;
-  external?: boolean;
+  externalLink?: boolean;
   variant?:
     | "ghost"
     | "secondary"
@@ -54,62 +54,12 @@ interface HeaderProps {
 
 const defaultMenu: MenuSection[] = [
   {
-    title: "Hire LATAM Talent",
-    submenuTitle: "Hire LATAM Talent",
-    columns: [
-      {
-        title: "By Role",
-        items: [
-          { title: "Frontend Developers", href: "/hire/frontend" },
-          { title: "Backend Developers", href: "/hire/backend" },
-          { title: "Full Stack Developers", href: "/hire/fullstack" },
-          { title: "Mobile Engineers", href: "/hire/mobile" },
-          { title: "Data and AI", href: "/hire/data-ai" },
-          { title: "Cloud and DevOps", href: "/hire/devops" },
-          { title: "Product and Design", href: "/hire/product-design" },
-          { title: "QA and Automation", href: "/hire/qa" },
-        ],
-      },
-      {
-        title: "By Seniority",
-        items: [
-          { title: "Senior", href: "/hire/senior" },
-          { title: "Lead", href: "/hire/lead" },
-          { title: "Staff", href: "/hire/staff" },
-          { title: "Mid Level", href: "/hire/mid" },
-        ],
-      },
-      {
-        title: "Engagement Models",
-        items: [
-          { title: "Full Time Employees", href: "/hire/fte" },
-          { title: "Contract to Hire", href: "/hire/contract-to-hire" },
-          { title: "Build a Dedicated Team", href: "/hire/dedicated-team" },
-        ],
-      },
-      {
-        title: "Fast Tracks",
-        items: [
-          { title: "48h Shortlist", href: "/hire/shortlist-48h" },
-          { title: "Replacement Guarantee", href: "/hire/replacement" },
-        ],
-      },
-    ],
+    title: "For Companies",
+    items: [{ title: "How it works", href: "/for-developers" }],
   },
   {
-    title: "How everything works",
-    submenuTitle: "How everything works",
-    items: [
-      { title: "Security and NDA Policy", href: "/companies/security" },
-      { title: "Legal, Payroll, Compliance", href: "/companies/legal" },
-      { title: "Trial Period and Onboarding", href: "/companies/trial" },
-      { title: "Interview Coordination", href: "/companies/interview" },
-      { title: "Matching Engine and Shortlist", href: "/companies/matching" },
-      {
-        title: "Screening and Technical Vetting",
-        href: "/companies/screening",
-      },
-    ],
+    title: "For Developers",
+    items: [{ title: "How to join us", href: "/for-developers" }],
   },
 ];
 
@@ -117,37 +67,50 @@ const defaultCtas: Cta[] = [
   {
     label: "Be Hired",
     href: "https://docs.google.com/forms/d/e/1FAIpQLSfK_M8uJ7t8Dt5RguEJm-u4XNGzznIoniMoiJjRRxA6tO6ozA/viewform",
-    external: true,
+    externalLink: true,
     variant: "ghost",
   },
   { label: "Start Hiring", href: "/client-form", variant: "secondary" },
 ];
-
-/* ===== Itens do dropdown ===== */
 function ListItem({
   title,
   href,
+  externalLink,
   ...props
 }: React.ComponentPropsWithoutRef<"li"> & MenuItem) {
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
-        <Link
-          href={href}
-          className="group block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-        >
-          <div className="flex gap-2 items-center">
-            <ChevronRight className="h-4 w-4 text-neuronhire-primary opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-            <div className="text-sm font-medium leading-none">{title}</div>
-          </div>
-        </Link>
+        {externalLink ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+          >
+            <div className="flex gap-2 items-center">
+              <ChevronRight className="h-4 w-4 text-neuronhire-primary opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+              <div className="text-sm font-medium leading-none">{title}</div>
+            </div>
+          </a>
+        ) : (
+          <Link
+            href={href}
+            className="group block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+          >
+            <div className="flex gap-2 items-center">
+              <ChevronRight className="h-4 w-4 text-neuronhire-primary opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+              <div className="text-sm font-medium leading-none">{title}</div>
+            </div>
+          </Link>
+        )}
       </NavigationMenuLink>
     </li>
   );
 }
 
 export function Header({
-  minimal = false,
+  minimal = true,
   menu = defaultMenu,
   ctas,
   logoSrc = "/assets/logo.svg",
@@ -225,11 +188,13 @@ export function Header({
           <div className={`p-4 ${minimal ? "w-[320px]" : "w-[720px]"}`}>
             {cols.length > 0 && (
               <>
-                <div className="border-b border-gray-100 pb-3 mb-4">
-                  <h3 className="text-2xl font-extrabold text-neuronhire-black-100 body-satoshi">
-                    {section.submenuTitle ?? section.title}
-                  </h3>
-                </div>
+                {section.submenuTitle && (
+                  <div className="border-b border-gray-100 pb-3 mb-4">
+                    <h3 className="text-2xl font-extrabold text-neuronhire-black-100 body-satoshi">
+                      {section.submenuTitle}
+                    </h3>
+                  </div>
+                )}
 
                 <div
                   className={
@@ -310,16 +275,29 @@ export function Header({
         </CollapsibleTrigger>
         <CollapsibleContent className="px-6 pb-4">
           <div className="space-y-3 ml-4">
-            {mobileItems.map((item) => (
-              <Link
-                key={`${section.title}-${item.title}`}
-                href={item.href}
-                className="block text-neuronhire-gray-80 body-mackinac py-1"
-                onClick={() => setMenuOpen(false)}
-              >
-                {item.title}
-              </Link>
-            ))}
+            {mobileItems.map((item) =>
+              item.externalLink ? (
+                <a
+                  key={`${section.title}-${item.title}`}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-neuronhire-gray-80 body-mackinac py-1"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.title}
+                </a>
+              ) : (
+                <Link
+                  key={`${section.title}-${item.title}`}
+                  href={item.href}
+                  className="block text-neuronhire-gray-80 body-mackinac py-1"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.title}
+                </Link>
+              )
+            )}
           </div>
         </CollapsibleContent>
       </Collapsible>
@@ -379,7 +357,7 @@ export function Header({
               {cta.label}
             </Button>
           );
-          return cta.external ? (
+          return cta.externalLink ? (
             <a
               key={cta.label}
               href={cta.href}

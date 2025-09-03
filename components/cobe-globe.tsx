@@ -1,4 +1,3 @@
-// app/components/CobeGlobeBg.tsx
 "use client";
 
 import createGlobe from "cobe";

@@ -53,7 +53,7 @@ export default function CobeGlobeBg({
         maxWidth: "none",
         aspectRatio: 1,
         pointerEvents: "none",
-        opacity: 0.5,
+        opacity: 0.4,
       }}
     />
   );

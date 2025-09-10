@@ -301,7 +301,7 @@
     --neuronhire-bg-main: #fcf4f8;
     --neuronhire-red-30: #330f1b;
     --neuronhire-secondary-red: #330009;
-    --neuronhire-pink: #D24573;
+    --neuronhire-pink: #d24573;
     --neuronhire-red-lines: #4d1729;
     --neuronhire-red-lines-70: rgba(77, 23, 41, 0.7);
     --neuronhire-red-lines-60: rgba(77, 23, 41, 0.6);
@@ -517,7 +517,8 @@
     transform: translateX(-50%);
     width: 80%;
     height: 80%;
-    background: url("/assets/background/sphere.png") no-repeat center / contain;
+    background: url("/assets/background/no-background-sphere.png") no-repeat
+      center / contain;
     pointer-events: none;
     z-index: -1;
     will-change: transform, opacity;

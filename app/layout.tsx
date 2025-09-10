@@ -86,8 +86,12 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.webmanifest",
   icons: {
-    icon: "/assets/logo.svg",
-    apple: "/assets/logo.svg",
+    icon: [
+      { url: "/assets/logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/assets/logo.svg", type: "image/svg+xml" }
+    ],
+    apple: "/assets/logo.png",
+    shortcut: "/assets/logo.png",
   },
 };
 

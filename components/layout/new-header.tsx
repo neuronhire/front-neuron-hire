@@ -204,8 +204,21 @@ export function NewHeader({
         <NavigationMenuTrigger className="body-satoshi text-neuronhire-black-100 text-base font-medium bg-transparent hover:underline">
           {section.title}
         </NavigationMenuTrigger>
-        <NavigationMenuContent>
-          <div className={`p-4 ${minimal ? "w-[320px]" : "w-[720px]"}`}>
+        <NavigationMenuContent className="p-0">
+          <div
+            className={`p-4 ${
+              minimal ? "w-[320px]" : "w-[720px] relative overflow-hidden"
+            }`}
+          >
+            {!minimal && (
+              <Image
+                src="/assets/background/quarter-sphere.png"
+                alt=""
+                className="absolute right-0 bottom-0 pointer-events-none opacity-40"
+                width={400}
+                height={200}
+              />
+            )}
             {cols.length > 0 && (
               <>
                 {section.submenuTitle && (

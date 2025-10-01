@@ -38,22 +38,29 @@ const featureVariants: Variants = {
 
 interface Header {
   text: ReactNode;
-  color: string;
+  color?: string;
+}
+
+interface ButtonConfig {
+  text: ReactNode;
+  href: string;
+  target?: "_blank" | "_self";
+  rel?: string;
 }
 
 interface MeuCardProps {
   header: Header;
   subHeader: Header;
-  button1: Header;
-  button2: Header;
+  button1: ButtonConfig;
+  button2: ButtonConfig;
 }
 
 export function HeroSection({
-    header, 
-    subHeader,
-    button1,
-    button2,
-  }: MeuCardProps) {
+  header,
+  subHeader,
+  button1,
+  button2,
+}: MeuCardProps) {
   return (
     <section className="px-6 md:px-6 lg:px-0 pt-10 pb-7 mt-15 md:mt-25 text-center max-w-4xl mx-auto">
       <motion.h1
@@ -83,7 +90,7 @@ export function HeroSection({
         variants={buttonVariants}
         custom={0.3}
       >
-        <Link href="/client-form">
+        <Link href={button1.href} target={button1.target} rel={button1.rel}>
           <motion.div
             className="inline-block p-0.5 rounded-full"
             style={{ background: "var(--neuronhire-gradient-2)" }}
@@ -94,11 +101,7 @@ export function HeroSection({
             <Button className="px-7 cursor-pointer">{button1.text}</Button>
           </motion.div>
         </Link>
-        <Link
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfK_M8uJ7t8Dt5RguEJm-u4XNGzznIoniMoiJjRRxA6tO6ozA/viewform"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href={button2.href} target={button2.target} rel={button2.rel}>
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}

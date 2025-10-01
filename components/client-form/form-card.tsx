@@ -130,7 +130,7 @@ export function FormCard() {
     <div
       className={`
         bg-white/80 backdrop-blur-3xl rounded-2xl p-8 shadow-xl border border-neuronhire-gray-6
-        ${isSchedule ? "h-[75vh]" : "h-[70vh]"} flex flex-col overflow-hidden
+        ${isSchedule ? "h-[75vh]" : "h-[50%]"} flex flex-col overflow-hidden
         w-full
         ${
           isSchedule
@@ -171,41 +171,20 @@ export function FormCard() {
         </div>
       </div>
 
-      <div className="flex-1 min-h-0 relative">
+      <div className="flex-1 min-h-0 relative flex flex-col">
         {currentStep === 1 && (
-          <div className="h-full overflow-auto p-2 lg:pt-15">
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onContactSubmit)}
-                className="space-y-4"
-              >
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input
-                          placeholder="Full name"
-                          className="w-full px-4 py-3 border border-neuronhire-black-100/8 rounded-lg focus:ring-2 focus:ring-neuronhire-primary focus:border-transparent transition-all body-satoshi bg-white placeholder-neuronhire-gray-40"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <>
+            <div className=" overflow-auto p-2 lg:pt-15">
+              <Form {...form}>
+                <div className="space-y-4">
                   <FormField
                     control={form.control}
-                    name="email"
+                    name="name"
                     render={({ field }) => (
                       <FormItem>
                         <FormControl>
                           <Input
-                            type="email"
-                            placeholder="Email"
+                            placeholder="Full name"
                             className="w-full px-4 py-3 border border-neuronhire-black-100/8 rounded-lg focus:ring-2 focus:ring-neuronhire-primary focus:border-transparent transition-all body-satoshi bg-white placeholder-neuronhire-gray-40"
                             {...field}
                           />
@@ -214,16 +193,110 @@ export function FormCard() {
                       </FormItem>
                     )}
                   />
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input
+                              type="email"
+                              placeholder="Email"
+                              className="w-full px-4 py-3 border border-neuronhire-black-100/8 rounded-lg focus:ring-2 focus:ring-neuronhire-primary focus:border-transparent transition-all body-satoshi bg-white placeholder-neuronhire-gray-40"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input
+                              type="tel"
+                              placeholder="Phone"
+                              className="w-full px-4 py-3 border border-neuronhire-black-100/8 rounded-lg focus:ring-2 focus:ring-neuronhire-primary focus:border-transparent transition-all body-satoshi bg-white placeholder-neuronhire-gray-40"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
                   <FormField
                     control={form.control}
-                    name="phone"
+                    name="whoYouNeedToHire"
+                    render={({ field }) => (
+                      <FormItem>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
+                          <FormControl>
+                            <SelectTrigger className="w-full px-4 py-3 border border-neuronhire-black-100/8 rounded-lg focus:ring-2 focus:ring-neuronhire-primary focus:border-transparent transition-all body-satoshi bg-white text-neuronhire-gray-40">
+                              <SelectValue placeholder="Who you need to hire?" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="developer">
+                              Hire a developer
+                            </SelectItem>
+                            <SelectItem value="team">Hire a team</SelectItem>
+                            <SelectItem value="software-development">
+                              Software Development
+                            </SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="howManyPeople"
                     render={({ field }) => (
                       <FormItem>
                         <FormControl>
                           <Input
-                            type="tel"
-                            placeholder="Phone"
+                            type="number"
+                            placeholder="How many people do you need to hire?"
+                            min="1"
+                            step="1"
                             className="w-full px-4 py-3 border border-neuronhire-black-100/8 rounded-lg focus:ring-2 focus:ring-neuronhire-primary focus:border-transparent transition-all body-satoshi bg-white placeholder-neuronhire-gray-40"
+                            {...field}
+                            onChange={(e) => {
+                              const value = e.target.value.replace(
+                                /[^0-9]/g,
+                                ""
+                              );
+                              field.onChange(value);
+                            }}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="howCanWeHelpYou"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Textarea
+                            placeholder="How can we help you?"
+                            rows={4}
+                            className="w-full px-4 pt-3 mb-4 border border-neuronhire-black-100/8 rounded-lg focus:ring-2 focus:ring-neuronhire-primary focus:border-transparent transition-all body-satoshi resize-none bg-white placeholder-neuronhire-gray-40"
                             {...field}
                           />
                         </FormControl>
@@ -232,79 +305,12 @@ export function FormCard() {
                     )}
                   />
                 </div>
+              </Form>
+            </div>
 
-                <FormField
-                  control={form.control}
-                  name="whoYouNeedToHire"
-                  render={({ field }) => (
-                    <FormItem>
-                      <Select
-                        onValueChange={field.onChange}
-                        defaultValue={field.value}
-                      >
-                        <FormControl>
-                          <SelectTrigger className="w-full px-4 py-3 border border-neuronhire-black-100/8 rounded-lg focus:ring-2 focus:ring-neuronhire-primary focus:border-transparent transition-all body-satoshi bg-white text-neuronhire-gray-40">
-                            <SelectValue placeholder="Who you need to hire?" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="developer">
-                            Hire a developer
-                          </SelectItem>
-                          <SelectItem value="team">Hire a team</SelectItem>
-                          <SelectItem value="software-development">
-                            Software Development
-                          </SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="howManyPeople"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input
-                          type="number"
-                          placeholder="How many people do you need to hire?"
-                          min="1"
-                          step="1"
-                          className="w-full px-4 py-3 border border-neuronhire-black-100/8 rounded-lg focus:ring-2 focus:ring-neuronhire-primary focus:border-transparent transition-all body-satoshi bg-white placeholder-neuronhire-gray-40"
-                          {...field}
-                          onChange={(e) => {
-                            const value = e.target.value.replace(/[^0-9]/g, "");
-                            field.onChange(value);
-                          }}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="howCanWeHelpYou"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Textarea
-                          placeholder="How can we help you?"
-                          rows={4}
-                          className="w-full px-4 pt-3 mb-7 border border-neuronhire-black-100/8 rounded-lg focus:ring-2 focus:ring-neuronhire-primary focus:border-transparent transition-all body-satoshi resize-none bg-white placeholder-neuronhire-gray-40"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <div className="lg:pt-10">
+            <div className="shrink-0 p-2">
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onContactSubmit)}>
                   <div
                     className="inline-block p-0.5 rounded-full w-full"
                     style={{ background: "var(--neuronhire-gradient-2)" }}
@@ -316,10 +322,10 @@ export function FormCard() {
                       Continue to Schedule
                     </Button>
                   </div>
-                </div>
-              </form>
-            </Form>
-          </div>
+                </form>
+              </Form>
+            </div>
+          </>
         )}
 
         <div
